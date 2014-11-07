@@ -20,7 +20,7 @@ public class ARest extends Attack {
 		g.setFont(nameFont);
 		g.drawString("             Rest" , x, y + 20);
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"energy.jpg"), x + 40,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 40,y + 25, applet);
 		g.drawString("                      + 20" , x, y +40);
 	}
 

@@ -35,6 +35,6 @@ public class JMBear extends Monster {
 		g.drawString("Sleepful:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 5" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"health.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 20,y + 35, applet);
 	}
 }

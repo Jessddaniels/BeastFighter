@@ -35,6 +35,6 @@ public class JMDragon extends Monster {
 		g.drawString("Magic Power:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 5" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"spirit.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 20,y + 35, applet);
 	}
 }

@@ -35,7 +35,7 @@ public class JMAlligator extends Monster {
 		g.drawString("Sneaky Gator:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("     add 1/5        ("+ getHP() / 5+") to    " , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"health.jpg"), x + 60,y + 35, applet);
-		g.drawImage(applet.getImage(getURL(),"spirit.jpg"), x + 120,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 60,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 120,y + 35, applet);
 	}
 }

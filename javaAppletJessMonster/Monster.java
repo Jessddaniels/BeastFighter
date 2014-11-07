@@ -48,7 +48,6 @@ public abstract class Monster {
 	    	g.drawString(""+getEnergy(), x + 205, y + 60);
 	    	g.drawString(""+getPower(), x + 205, y + 100);
 	    	g.drawString(""+getSpirit(), x + 205, y + 140);
-	    	//g.drawString(nameToString(), x+30, y + 160);
 			
 		}
 		if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	

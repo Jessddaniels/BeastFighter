@@ -23,7 +23,8 @@ public class JessMonster extends Applet implements Runnable{
     public void init(){
     	setSize(800,600);
     	url = this.getDocumentBase();
-    	bg = this.getImage(url,"Bridge.jpg");
+    	bg = this.getImage(url,"bgGraveyard.jpg");
+    	
     	textbox = new BattleText(this);
     	int rand = (int) (Math.random() * 2);
     	if (rand == 0){

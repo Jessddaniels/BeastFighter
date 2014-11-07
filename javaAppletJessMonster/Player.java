@@ -13,8 +13,8 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	private Image youLose;
 	public Player(JessMonster applet){
 		super(applet);
-		youWin = applet.getImage(super.getURL(),"YouWin.jpg");
-		youLose = applet.getImage(super.getURL(),"YouLose.jpg");
+		youWin = applet.getImage(getURL(),"YouWin.jpg");
+		youLose = applet.getImage(getURL(),"YouLose.jpg");
 		tradeOK = true;
 	}
 	public void update(JessMonster applet){
@@ -22,7 +22,7 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 		applet.addMouseListener(this);
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(super.getPlayer(), 168, 0, applet);
+		g.drawImage(getPlayer(), 168, 0, applet);
 		for (int i = 0; i < monsterList.size(); i++){
 			if (getViewMon() == monsterList.get(i) ){
 				monsterList.get(i).paint(g,168,100, applet);

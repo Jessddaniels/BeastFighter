@@ -43,8 +43,8 @@ public class JMSkeletalCow extends Monster {
 		g.setFont(normalFont);
 		g.drawString("        < 80" , x + 80, y + 30);
 		g.drawString("convert          to" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"health.jpg"), x + 80,y + 17, applet);
-		g.drawImage(applet.getImage(getURL(),"health.jpg"), x + 85,y + 40, applet);
-		g.drawImage(applet.getImage(getURL(),"spirit.jpg"), x + 45,y + 40, applet);
+		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 80,y + 17, applet);
+		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 85,y + 40, applet);
+		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 45,y + 40, applet);
 	}
 }

@@ -25,7 +25,7 @@ public class AFireball extends Attack {
 		g.setFont(nameFont);
 		g.drawString("           Fireball" , x, y + 20 );
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"energy.jpg"), x + 35,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 35,y + 25, applet);
 		g.drawString("50            / 65 DMG (" + calcDamage() + ")" , x + 15, y + 40);
 	}
 
