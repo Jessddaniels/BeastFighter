@@ -21,7 +21,7 @@ public class AAmbush extends Attack {
 		return true;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"TakeDown.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/TakeDown.jpg"), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Ambush" , x + 20, y + 15);

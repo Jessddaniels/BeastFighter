@@ -8,7 +8,7 @@ public class JMAlligator extends Monster {
 	
 	public JMAlligator(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"Alligator.jpg");
+		pic = applet.getImage(super.getURL(),"Pictures/Alligator.jpg");
 		setHP(80);
 		setEnergy(80);
 		setPower(120);
@@ -33,7 +33,7 @@ public class JMAlligator extends Monster {
 		g.drawString("Sneaky Gator:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("     add 1/10        ("+ getHP() / 10+") to    " , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 65,y + 35, applet);
-		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 125,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 65,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 125,y + 35, applet);
 	}
 }

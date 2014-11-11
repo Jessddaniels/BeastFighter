@@ -20,12 +20,12 @@ public class ATackle extends Attack {
 		return true;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"TakeDown.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/TakeDown.jpg"), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("         Tackle" , x, y + 15);
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 33,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 33,y + 25, applet);
 		g.drawString("10          / 25 DMG (" + calcDamage() + ")" , x + 13, y + 40);
 	}
 }

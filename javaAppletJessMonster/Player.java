@@ -13,8 +13,8 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	private Image youLose;
 	public Player(JessMonster applet){
 		super(applet);
-		youWin = applet.getImage(getURL(),"YouWin.jpg");
-		youLose = applet.getImage(getURL(),"YouLose.jpg");
+		youWin = applet.getImage(getURL(),"Pictures/YouWin.jpg");
+		youLose = applet.getImage(getURL(),"Pictures/YouLose.jpg");
 		tradeOK = true;
 	}
 	public void update(JessMonster applet){

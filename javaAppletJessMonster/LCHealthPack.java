@@ -19,11 +19,11 @@ public class LCHealthPack extends LeaderCard {
 		return false;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(player.getURL(),"HealthPack.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/HealthPack.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20     -20" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Health.jpg"), x,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Spirit.jpg"), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/Health.jpg"), x,y + 30, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
 	}
 	@Override
 	String nameToString() {

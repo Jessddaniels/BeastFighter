@@ -7,7 +7,7 @@ public class JMSkeletalCow extends Monster {
 	private Image pic;
 	public JMSkeletalCow(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"SkeletalCow.jpg");
+		pic = applet.getImage(super.getURL(),"Pictures/SkeletalCow.jpg");
 		setHP(80);
 		setEnergy(140);
 		setPower(90);
@@ -41,8 +41,8 @@ public class JMSkeletalCow extends Monster {
 		g.setFont(normalFont);
 		g.drawString("        < 80" , x + 80, y + 30);
 		g.drawString("convert          to" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 80,y + 17, applet);
-		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 85,y + 40, applet);
-		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 45,y + 40, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 80,y + 17, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 85,y + 40, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 45,y + 40, applet);
 	}
 }

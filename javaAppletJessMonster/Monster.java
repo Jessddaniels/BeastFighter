@@ -27,10 +27,10 @@ public abstract class Monster {
 		this.lead = p;
 		this.applet = applet;
 		url = applet.url;
-		goldFrame = applet.getImage(getURL(),"FrameActive.png");
-		silverFrame = applet.getImage(getURL(),"FrameInactive.png");
-		attackPage = applet.getImage(getURL(),"AttackPage.jpg");
-		statPage = applet.getImage(getURL(),"StatPage.jpg");
+		goldFrame = applet.getImage(getURL(),"Pictures/FrameActive.png");
+		silverFrame = applet.getImage(getURL(),"Pictures/FrameInactive.png");
+		attackPage = applet.getImage(getURL(),"Pictures/AttackPage.jpg");
+		statPage = applet.getImage(getURL(),"Pictures/StatPage.jpg");
 		normalFont = applet.getFont();
 	}
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
@@ -51,10 +51,10 @@ public abstract class Monster {
 	    	g.drawString(""+getPower(), x + 205, y + 90);
 	    	g.drawString(""+getSpirit(), x + 205, y + 110);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 175, y + 35, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Energy.jpg"), x + 175, y + 55, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Combat.jpg"), x + 175, y + 75, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 175, y + 95, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 175, y + 55, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 175, y + 75, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 175, y + 95, applet);
 			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
 				g.drawImage(goldFrame, x+ 20, y+ 35, applet);
 			} else {

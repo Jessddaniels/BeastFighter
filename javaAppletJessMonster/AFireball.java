@@ -20,12 +20,12 @@ public class AFireball extends Attack {
 		return true;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Fireball.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Fireball.jpg"), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("           Fireball" , x, y + 20 );
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 35,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 35,y + 25, applet);
 		g.drawString("60            / 65 DMG (" + calcDamage() + ")" , x + 15, y + 40);
 	}
 

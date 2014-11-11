@@ -8,7 +8,7 @@ public class JMMountainLion extends Monster {
 
 	public JMMountainLion(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"MountainLion.jpg");
+		pic = applet.getImage(super.getURL(),"Pictures/MountainLion.jpg");
 		setHP(100);
 		setEnergy(100);
 		setSpirit(100);
@@ -33,6 +33,6 @@ public class JMMountainLion extends Monster {
 		g.drawString("Ferocity:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 3" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Combat.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 20,y + 35, applet);
 	}
 }

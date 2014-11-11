@@ -8,7 +8,7 @@ public class JMDragon extends Monster {
 
 	public JMDragon(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"Dragon.jpg");
+		pic = applet.getImage(super.getURL(),"Pictures/Dragon.jpg");
 		setHP(80);
 		setEnergy(80);
 		setPower(120);
@@ -33,6 +33,6 @@ public class JMDragon extends Monster {
 		g.drawString("Magic Power:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 5" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 20,y + 35, applet);
 	}
 }

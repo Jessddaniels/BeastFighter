@@ -21,8 +21,8 @@ public abstract class Leader{
 	public Leader(JessMonster applet){
 		this.setApplet(applet);
 		url = applet.url;
-		player = applet.getImage(url,"Ninja.png");
-		cardListBG = applet.getImage(url,"CardList.jpg");
+		player = applet.getImage(url,"Pictures/Ninja.png");
+		cardListBG = applet.getImage(url,"Pictures/CardList.jpg");
 		monsterList.add(applet.ranMonster(this));
 		monsterList.add(applet.ranMonster(this));
 		monsterList.add(applet.ranMonster(this));

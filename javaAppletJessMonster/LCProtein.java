@@ -19,11 +19,11 @@ public class LCProtein extends LeaderCard {
 		return false;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(player.getURL(),"Protein.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/Protein.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 10     -20" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Combat.jpg"), x,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Spirit.jpg"), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/Combat.jpg"), x,y + 30, applet);
+		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
 	}
 	@Override
 	String nameToString() {

@@ -22,14 +22,14 @@ public class APackInstincts extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"PackInstincts.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/PackInstincts.jpg"), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Pack Instincts" , x, y + 12);
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 17,y + 15, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 12,y + 35, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Health.jpg"), x + 55,y + 35, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 17,y + 15, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 12,y + 35, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 55,y + 35, applet);
 		g.drawString("15         / Switch Active" , x, y + 30);
 		g.drawString("0           if           < 40" , x, y + 50);
 	}

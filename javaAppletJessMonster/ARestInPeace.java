@@ -17,13 +17,13 @@ public class ARestInPeace extends Attack {
 		return true;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"RestInPeace.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/RestInPeace.jpg"), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Rest in Peace" , x, y + 15);
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Spirit.jpg"), x + 55,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x ,y + 25, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x + 55,y + 25, applet);
 		g.drawString("       + 15" , x, y + 40);
 		g.drawString("+ 5" , x + 80, y + 40);
 	}

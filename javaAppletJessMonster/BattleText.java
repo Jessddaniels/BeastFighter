@@ -9,7 +9,7 @@ public class BattleText {
 	private ArrayList<TextUnit> textbox = new ArrayList<TextUnit>();
 	public Image pic;
 	public BattleText(JessMonster applet){
-		pic = applet.getImage(applet.url,"TextBox.jpg");
+		pic = applet.getImage(applet.url,"Pictures/TextBox.jpg");
 	}
 	public void paint(Graphics g, JessMonster applet){
 		g.drawImage(pic, 250, 0, applet);

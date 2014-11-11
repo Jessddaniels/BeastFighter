@@ -8,7 +8,7 @@ public class JMBoar extends Monster {
 
 	public JMBoar(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"Boar.jpg");
+		pic = applet.getImage(super.getURL(),"Pictures/Boar.jpg");
 		setHP(100);
 		setEnergy(100);
 		setSpirit(100);
@@ -33,6 +33,6 @@ public class JMBoar extends Monster {
 		g.drawString("Strong Appetite:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 5" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 20,y + 35, applet);
 	}
 }
