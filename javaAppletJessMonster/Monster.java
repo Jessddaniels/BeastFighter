@@ -27,35 +27,47 @@ public abstract class Monster {
 		this.lead = p;
 		this.applet = applet;
 		url = applet.url;
-		goldFrame = applet.getImage(getURL(),"PictureFrameGold150Height.png");
-		silverFrame = applet.getImage(getURL(),"PictureFrameSilver150Height.png");
+		goldFrame = applet.getImage(getURL(),"FrameActive.png");
+		silverFrame = applet.getImage(getURL(),"FrameInactive.png");
 		attackPage = applet.getImage(getURL(),"AttackPage.jpg");
 		statPage = applet.getImage(getURL(),"StatPage.jpg");
 		normalFont = applet.getFont();
 	}
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
 	public void paint(Graphics g, int x, int y, JessMonster applet, Image pic){
-		g.drawImage(pic, x, y, applet);
 		if (applet.p1.getViewMon() == this || applet.p2.getViewMon() == this){
-			g.drawImage(attackPage, x, y + 150, applet);
+			g.drawImage(attackPage, x, y, applet);
+			g.setFont(nameFont);
+			g.drawString("     " + nameToString(), x + 5, y + 25);
+			g.setFont(normalFont);
 			paintPassive(g, x + 35, y + 150, applet);
-			paintA1(g, x + 35, y + 220, applet);
-			paintA2(g, x + 35, y + 290, applet);
-			paintA3(g, x + 35, y + 360, applet);
-			paintA4(g, x + 35, y + 430, applet);
-			g.drawImage(statPage, x + 150, y, applet);
-			g.drawString(""+getHP(), x + 205, y + 20  );
-	    	g.drawString(""+getEnergy(), x + 205, y + 60);
-	    	g.drawString(""+getPower(), x + 205, y + 100);
-	    	g.drawString(""+getSpirit(), x + 205, y + 140);
-			
-		}
-		if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
-			g.drawImage(goldFrame, x, y, applet);
+			paintA1(g, x + 20, y + 210, applet);
+			paintA2(g, x + 20, y + 280, applet);
+			paintA3(g, x + 20, y + 350, applet);
+			paintA4(g, x + 20, y + 420, applet);
+			//g.drawImage(statPage, x + 150, y, applet);
+			g.drawString(""+getHP(), x + 205, y + 50  );
+	    	g.drawString(""+getEnergy(), x + 205, y + 70);
+	    	g.drawString(""+getPower(), x + 205, y + 90);
+	    	g.drawString(""+getSpirit(), x + 205, y + 110);
+	    	g.drawImage(pic, x + 20, y + 35, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Health.jpg"), x + 175, y + 35, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Energy.jpg"), x + 175, y + 55, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Combat.jpg"), x + 175, y + 75, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Spirit.jpg"), x + 175, y + 95, applet);
+			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
+				g.drawImage(goldFrame, x+ 20, y+ 35, applet);
+			} else {
+				g.drawImage(silverFrame, x+ 20, y+ 35, applet);
+			}
 		} else {
-			g.drawImage(silverFrame, x, y, applet);
+			g.drawImage(pic, x, y, applet);
+			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
+				g.drawImage(goldFrame, x, y, applet);
+			} else {
+				g.drawImage(silverFrame, x, y, applet);
+			}
 		}
-		
 	}
 	abstract String nameToString();
 	abstract void passive();

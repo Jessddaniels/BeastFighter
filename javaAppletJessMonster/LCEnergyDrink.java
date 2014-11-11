@@ -20,9 +20,14 @@ public class LCEnergyDrink extends LeaderCard {
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(player.getURL(),"EnergyDrink.jpg"), x,y, applet);
-		g.drawString("Energy Drink" , x, y + 15);
+		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20     -20" , x, y + 25);
 		g.drawImage(applet.getImage(player.getURL(),"Energy.jpg"), x,y + 30, applet);
 		g.drawImage(applet.getImage(player.getURL(),"Spirit.jpg"), x + 30,y + 30, applet);
+	}
+	@Override
+	String nameToString() {
+		// TODO Auto-generated method stub
+		return "Energy Drink";
 	}
 }

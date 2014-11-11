@@ -15,7 +15,7 @@ public class ASpiritSink extends Attack {
 		
 	}
 	public boolean isMet(Leader defender) {
-		if(mon.getEnergy() < 40) {
+		if(mon.getEnergy() < 25) {
 			return false;
 		}
 		return true;

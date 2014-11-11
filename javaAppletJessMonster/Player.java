@@ -22,16 +22,20 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 		applet.addMouseListener(this);
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(getPlayer(), 168, 0, applet);
+		g.drawImage(getPlayer(), 150, 0, applet);
 		for (int i = 0; i < monsterList.size(); i++){
 			if (getViewMon() == monsterList.get(i) ){
-				monsterList.get(i).paint(g,168,100, applet);
+				monsterList.get(i).paint(g,150,100, applet);
 			} else {
-				monsterList.get(i).paint(g,0,150 * (i + 1), applet);
+				monsterList.get(i).paint(g,0,125 * (i) + 225, applet);
 			}
 		}
+		g.drawImage(cardListBG, 0, 0, applet);
 		for (int i = 0; i < cardList.size(); i++){
-			cardList.get(i).paint(g,0,i * 50, applet);
+			g.drawString(cardList.get(i).nameToString(),0 ,i * 20 + 10 );
+			if (cardList.get(i) == getActiveCard()){
+				cardList.get(i).paint(g,0, 100, applet);
+			}
 		}
 	}
 	public void paintEnd(Graphics g, JessMonster applet){
@@ -57,6 +61,12 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	}
 	public void knockedOut() {
 		tradeOK = true;
+	}
+	public LeaderCard getActiveCard(){
+		return super.getActiveCard();
+	}
+	public void setActiveCard(LeaderCard card){
+		super.setActiveCard(card);
 	}
 	public void keyPressed(KeyEvent e) {
 		switch(e.getKeyCode()){
@@ -100,89 +110,89 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	public void mouseExited(MouseEvent arg0) {}
 	public void mousePressed(MouseEvent arg0) {
 		if (myTurn == true){
-			if (arg0.getX() < 200 && cardOK && arg0.getY() < 150){
+			if (arg0.getX() < 150 && cardOK && arg0.getY() < 225){
 				if (arg0.getY() > 100){
-					if (cardList.get(2).isMet()){
-						cardList.get(2).activate();
+					if (getActiveCard().isMet()){
+						getActiveCard().activate();
 						cardOK = false;
 					}
-				} else if (arg0.getY() > 50){
-					if (cardList.get(1).isMet()){
-						cardList.get(1).activate();
-						cardOK = false;
-					}
+				} else if (arg0.getY() > 80){
+					setActiveCard(cardList.get(4));
+				} else if (arg0.getY() > 60){
+					setActiveCard(cardList.get(3));
+				} else if (arg0.getY() > 40){
+					setActiveCard(cardList.get(2));
+				} else if (arg0.getY() > 20){
+					setActiveCard(cardList.get(1));
 				} else if (arg0.getY() > 0){
-					if (cardList.get(0).isMet()){
-						cardList.get(0).activate();
-						cardOK = false;
-					}
+					setActiveCard(cardList.get(0));
 				}
 			}
-			if (arg0.getX() < 200 && tradeOK){//trading active monster
-				if (arg0.getY() > 450){
+			if (arg0.getX() < 150 && tradeOK){//trading active monster
+				if (arg0.getY() > 475){
 					setActiveMon(monsterList.get(2));
 					tradeOK = false;
-				} else if (arg0.getY() > 300){
+				} else if (arg0.getY() > 350){
 					setActiveMon(monsterList.get(1));
 					tradeOK = false;
-				} else if (arg0.getY() > 150){
+				} else if (arg0.getY() > 225){
 					setActiveMon(monsterList.get(0));
 					tradeOK = false;
 				}
-			} else if (arg0.getX() < 200 && !tradeOK) {//set own view monster
-				if (arg0.getY() > 450){
+			} else if (arg0.getX() < 150 && !tradeOK) {//set own view monster
+				if (arg0.getY() > 475){
 					setViewMon(monsterList.get(2));
 					tradeOK = false;
-				} else if (arg0.getY() > 300){
+				} else if (arg0.getY() > 350){
 					setViewMon(monsterList.get(1));
 					tradeOK = false;
-				} else if (arg0.getY() > 150){
+				} else if (arg0.getY() > 225){
 					setViewMon(monsterList.get(0));
 					tradeOK = false;
 				}
-			} else if (arg0.getX() > 600) {//set opponent view monster
-				if (arg0.getY() > 450){
+			} else if (arg0.getX() > 650) {//set opponent view monster
+				if (arg0.getY() > 475){
 					getO().setViewMon(getO().monsterList.get(2));
 					tradeOK = false;
-				} else if (arg0.getY() > 300){
+				} else if (arg0.getY() > 350){
 					getO().setViewMon(getO().monsterList.get(1));
 					tradeOK = false;
-				} else if (arg0.getY() > 150){
+				} else if (arg0.getY() > 225){
 					getO().setViewMon(getO().monsterList.get(0));
 					tradeOK = false;
 				}
 				//monster attacks
-			} else if (arg0.getX() < 400 && arg0.getX() > 200 && !tradeOK && getViewMon() == getActiveMon()){
-				if (arg0.getY() > 530){
+			} else if (arg0.getX() < 400 && arg0.getX() > 150 && !tradeOK && getViewMon() == getActiveMon()){
+				if (arg0.getY() > 520){
 					if(getActiveMon().reqA4(this,getO())) {
 						myTurn = false;
 						getActiveMon().attack4(this, getO());
 					}
-				} else if (arg0.getY() > 460){
+				} else if (arg0.getY() > 450){
 					if(getActiveMon().reqA3(this,getO())) {
 						getActiveMon().attack3(this, getO());
 						myTurn = false;
 					}
-				} else if (arg0.getY() > 390){
+				} else if (arg0.getY() > 380){
 					if(getActiveMon().reqA2(this,getO())) {
 						getActiveMon().attack2(this, getO());
 						myTurn = false;
 					}
-				} else if (arg0.getY() > 320){
+				} else if (arg0.getY() > 310){
 					if(getActiveMon().reqA1(this,getO())) {
 						getActiveMon().attack1(this, getO());
 						myTurn = false;
 					}
 				}
 			}
-		} else if (arg0.getX() < 200 && tradeOK && getActiveMon() == null){//trading active monster
-			if (arg0.getY() > 450){
+		} else if (arg0.getX() < 150 && tradeOK && getActiveMon() == null){//trading active monster
+			if (arg0.getY() > 475){
 				setActiveMon(monsterList.get(2));
 				tradeOK = false;
-			} else if (arg0.getY() > 300){
+			} else if (arg0.getY() > 350){
 				setActiveMon(monsterList.get(1));
 				tradeOK = false;
-			} else if (arg0.getY() > 150){
+			} else if (arg0.getY() > 225){
 				setActiveMon(monsterList.get(0));
 				tradeOK = false;
 			}

@@ -21,10 +21,15 @@ public class LCSteroids extends LeaderCard {
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(player.getURL(),"Steroids.jpg"), x,y, applet);
-		g.drawString("Steroids" , x, y + 15);
+		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20    -20   -15" , x, y + 25);
 		g.drawImage(applet.getImage(player.getURL(),"Combat.jpg"), x,y + 30, applet);
 		g.drawImage(applet.getImage(player.getURL(),"Spirit.jpg"), x + 30,y + 30, applet);
 		g.drawImage(applet.getImage(player.getURL(),"Health.jpg"), x + 60,y + 30, applet);
+	}
+	@Override
+	String nameToString() {
+		// TODO Auto-generated method stub
+		return "Steroids";
 	}
 }

@@ -11,7 +11,7 @@ public class AGore extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setEnergy(mon.getEnergy() - 30);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Headbutt for " + calcDamage()+ " DMG", mon.lead));
+		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Gore for " + calcDamage()+ " DMG", mon.lead));
 	}
 	public boolean isMet(Leader defender) {
 		if(mon.getEnergy() < 30) {

@@ -7,7 +7,7 @@ public class JMSkeletalCow extends Monster {
 	private Image pic;
 	public JMSkeletalCow(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"SkeletalCowResized.jpg");
+		pic = applet.getImage(super.getURL(),"SkeletalCow.jpg");
 		setHP(80);
 		setEnergy(140);
 		setPower(90);
@@ -36,8 +36,6 @@ public class JMSkeletalCow extends Monster {
 		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
-		g.setFont(nameFont);
-		g.drawString("     " + nameToString(), x, y + 15);
 		g.setFont(passiveFont);
 		g.drawString("Spirit Link:" , x, y + 30);
 		g.setFont(normalFont);

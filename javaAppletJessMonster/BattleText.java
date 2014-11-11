@@ -12,14 +12,14 @@ public class BattleText {
 		pic = applet.getImage(applet.url,"TextBox.jpg");
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(pic, 268, 0, applet);
+		g.drawImage(pic, 250, 0, applet);
 		for (int i = 0; i < textbox.size() && i < 9; i++){
 			if (textbox.get(textbox.size() - i - 1).getPlayer().playerNum == "Player 1"){
 				g.setColor(Color.BLUE);
 			} else if (textbox.get(textbox.size() - i - 1).getPlayer().playerNum == "Player 2") {
 				g.setColor(Color.RED.darker());
 			}
-			g.drawString(textbox.get(textbox.size() - i - 1).getWords() , 268, 95 - i * 10);
+			g.drawString(textbox.get(textbox.size() - i - 1).getWords() , 250, 95 - i * 10);
 			g.setColor(Color.BLACK);
 		}
 	}

@@ -8,7 +8,7 @@ public class JMBear extends Monster {
 
 	public JMBear(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"BearResized.jpg");
+		pic = applet.getImage(super.getURL(),"Bear.jpg");
 		setHP(140);
 		setEnergy(60);
 		setPower(110);
@@ -29,8 +29,6 @@ public class JMBear extends Monster {
 		applet.textbox.getArray().add(new TextUnit("HP + 5", lead));
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
-		g.setFont(nameFont);
-		g.drawString("     " + nameToString(), x, y + 15);
 		g.setFont(passiveFont);
 		g.drawString("Sleepful:" , x, y + 30);
 		g.setFont(normalFont);

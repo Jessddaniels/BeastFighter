@@ -10,4 +10,5 @@ public abstract class LeaderCard {
 	abstract void activate();
 	abstract boolean isMet();
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
+	abstract String nameToString();
 }

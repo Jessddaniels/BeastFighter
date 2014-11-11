@@ -6,9 +6,11 @@ public abstract class Leader{
 	private JessMonster applet;
 	private URL url;
 	private Image player;
+	public Image cardListBG;
 	ArrayList<Monster> monsterList = new ArrayList<Monster>();
 	ArrayList<LeaderCard> cardList = new ArrayList<LeaderCard>();
 	private Monster activeMon;
+	private LeaderCard activeCard;
 	private Leader o;
 	public boolean myTurn = false;
 	public boolean tradeOK = false;
@@ -20,24 +22,32 @@ public abstract class Leader{
 		this.setApplet(applet);
 		url = applet.url;
 		player = applet.getImage(url,"Ninja.png");
+		cardListBG = applet.getImage(url,"CardList.jpg");
 		monsterList.add(applet.ranMonster(this));
 		monsterList.add(applet.ranMonster(this));
 		monsterList.add(applet.ranMonster(this));
 		cardList.add(applet.ranCard(this));
 		cardList.add(applet.ranCard(this));
 		cardList.add(applet.ranCard(this));
+		cardList.add(applet.ranCard(this));
+		cardList.add(applet.ranCard(this));
+		activeCard = cardList.get(0);
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(player, applet.getWidth() - 266, 0, applet);
+		g.drawImage(player, applet.getWidth() - 250, 0, applet);
 		for (int i = 0; i < monsterList.size(); i++){
 			if (monsterList.get(i) != null && viewMon == monsterList.get(i) ){
 				monsterList.get(i).paint(g,applet.getWidth() - 400,100, applet);
 			} else {
-				monsterList.get(i).paint(g,applet.getWidth() - 166,150 * (i + 1), applet);
+				monsterList.get(i).paint(g,applet.getWidth() - 150,125 * (i) + 225, applet);
 			}
 		}
+		g.drawImage(cardListBG, 650, 0, applet);
 		for (int i = 0; i < cardList.size(); i++){
-			cardList.get(i).paint(g,632, i * 50, applet);
+			g.drawString(cardList.get(i).nameToString(),650 ,i * 20 + 10 );
+			if (cardList.get(i) == activeCard){
+				cardList.get(i).paint(g,650, 100, applet);
+			}
 		}
 	}
 	public Monster getActiveMon(){
@@ -61,6 +71,8 @@ public abstract class Leader{
 	public void updateEOT(JessMonster applet){
 		getApplet().sleeper(1000);
 		cardList.clear();
+		cardList.add(applet.ranCard(this));
+		cardList.add(applet.ranCard(this));
 		cardList.add(applet.ranCard(this));
 		cardList.add(applet.ranCard(this));
 		cardList.add(applet.ranCard(this));
@@ -97,4 +109,10 @@ public abstract class Leader{
 	abstract void update(JessMonster applet);
 	abstract void takeTurn();
 	abstract void paintEnd(Graphics g, JessMonster applet);
+	public LeaderCard getActiveCard() {
+		return activeCard;
+	}
+	public void setActiveCard(LeaderCard activeCard) {
+		this.activeCard = activeCard;
+	}
 }
