@@ -11,7 +11,7 @@ public class JMAlligator extends Monster {
 		pic = applet.getImage(super.getURL(),"Pictures/Alligator.jpg");
 		setHP(80);
 		setEnergy(80);
-		setPower(120);
+		setCombat(120);
 		setSpirit(100);
 		getAttackList().add(new ABite(this));
 		getAttackList().add(new ADeathRoll(this));

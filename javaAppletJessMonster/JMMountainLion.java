@@ -12,7 +12,7 @@ public class JMMountainLion extends Monster {
 		setHP(100);
 		setEnergy(100);
 		setSpirit(100);
-		setPower(100);
+		setCombat(100);
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new AAmbush(this));
 		getAttackList().add(new ARest(this));
@@ -25,8 +25,8 @@ public class JMMountainLion extends Monster {
 		return "Mountain Lion";
 	}
 	void passive() {
-		setPower(getPower() + 3);
-		applet.textbox.getArray().add(new TextUnit("Power + 3", lead));
+		setCombat(getCombat() + 5);
+		applet.textbox.getArray().add(new TextUnit("Combat + 5", lead));
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

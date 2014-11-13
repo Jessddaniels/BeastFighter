@@ -8,7 +8,7 @@ public class LCProtein extends LeaderCard {
 	}
 	void activate() {
 		Monster mon = player.getActiveMon();
-		mon.setPower(mon.getPower() + 10);
+		mon.setCombat(mon.getCombat() + 10);
 		mon.setSpirit(mon.getSpirit() - 20);
 		player.getApplet().textbox.getArray().add(new TextUnit("used Protein", player));
 	}

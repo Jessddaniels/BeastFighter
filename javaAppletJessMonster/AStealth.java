@@ -8,7 +8,7 @@ public class AStealth extends Attack {
 	}
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() - 40);
-		mon.setPower(mon.getPower() + 25);
+		mon.setCombat(mon.getCombat() + 25);
 		mon.lead.tradeOK = true;
 		mon.lead.myTurn = true;
 		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Stealth", mon.lead));

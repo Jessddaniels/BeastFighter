@@ -11,7 +11,7 @@ public class JMBear extends Monster {
 		pic = applet.getImage(super.getURL(),"Pictures/Bear.jpg");
 		setHP(140);
 		setEnergy(60);
-		setPower(110);
+		setCombat(110);
 		setSpirit(80);
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new ABodySlam(this));

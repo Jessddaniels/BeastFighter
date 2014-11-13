@@ -12,7 +12,7 @@ public class JMRam extends Monster {
 		setHP(100);
 		setEnergy(100);
 		setSpirit(100);
-		setPower(100);
+		setCombat(100);
 		getAttackList().add(new ATackle(this));
 		getAttackList().add(new AHeadbutt(this));
 		getAttackList().add(new ARest(this));

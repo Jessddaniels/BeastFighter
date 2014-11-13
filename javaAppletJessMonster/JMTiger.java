@@ -11,7 +11,7 @@ public class JMTiger extends Monster {
 		pic = applet.getImage(super.getURL(),"Pictures/Tiger.jpg");
 		setHP(80);
 		setEnergy(120);
-		setPower(110);
+		setCombat(110);
 		setSpirit(80);
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new ABite(this));

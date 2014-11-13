@@ -29,8 +29,8 @@ public class AAmbush extends Attack {
 		g.drawString("opponent         >" + calcDamage() , x + 10, y + 30);
 		g.setFont(normalFont);
 		g.drawString("50           / 65 DMG (" + calcDamage() + ")" , x + 10, y + 50);
-		g.drawImage(applet.getImage(mon.getURL(),"Health.jpg"), x + 60,y + 18, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Energy.jpg"), x + 30,y + 35, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 60,y + 18, applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30,y + 35, applet);
 	}
 
 }

@@ -11,7 +11,7 @@ public abstract class Monster {
 	private URL url;
 	private int hp;
 	private int energy;
-	private int power;
+	private int combat;
 	private int spirit;
 	public Leader lead;
 	public Image pic;
@@ -48,7 +48,7 @@ public abstract class Monster {
 			//g.drawImage(statPage, x + 150, y, applet);
 			g.drawString(""+getHP(), x + 205, y + 50  );
 	    	g.drawString(""+getEnergy(), x + 205, y + 70);
-	    	g.drawString(""+getPower(), x + 205, y + 90);
+	    	g.drawString(""+getCombat(), x + 205, y + 90);
 	    	g.drawString(""+getSpirit(), x + 205, y + 110);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
@@ -126,11 +126,11 @@ public abstract class Monster {
 	public ArrayList<Attack> getAttackList() {
 		return attackList;
 	}
-	public int getPower() {
-		return power;
+	public int getCombat() {
+		return combat;
 	}
-	public void setPower(int power) {
-		this.power = power;
+	public void setCombat(int combat) {
+		this.combat = combat;
 	}
 	public int getSpirit() {
 		return spirit;

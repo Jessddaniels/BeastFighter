@@ -10,7 +10,7 @@ public class JMSkeletalCow extends Monster {
 		pic = applet.getImage(super.getURL(),"Pictures/SkeletalCow.jpg");
 		setHP(80);
 		setEnergy(140);
-		setPower(90);
+		setCombat(90);
 		setSpirit(100);
 		getAttackList().add(new AHeadbutt(this));
 		getAttackList().add(new ARestInPeace(this));

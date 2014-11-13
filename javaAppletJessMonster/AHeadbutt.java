@@ -28,7 +28,7 @@ public class AHeadbutt extends Attack {
 		g.setFont(normalFont);
 		g.drawString("15            /" , x + 35, y + 30);
 		g.drawString("40 DMG (" + calcDamage()  + ")", x + 35, y + 45);
-		g.drawString("-10 (" + (int) (10 * (mon.getPower() / 100.0)) + ")" , x + 35, y + 65);
+		g.drawString("-10 (" + calcDamage()+ ")" , x + 35, y + 65);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 55,y + 15, applet);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 85,y + 50, applet);
 	}

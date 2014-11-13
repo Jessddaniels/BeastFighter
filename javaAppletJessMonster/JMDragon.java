@@ -11,7 +11,7 @@ public class JMDragon extends Monster {
 		pic = applet.getImage(super.getURL(),"Pictures/Dragon.jpg");
 		setHP(80);
 		setEnergy(80);
-		setPower(120);
+		setCombat(120);
 		setSpirit(100);
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new AFireball(this));

@@ -23,6 +23,6 @@ public abstract class Attack {
 		this.damage = damage;
 	}
 	public int calcDamage(){
-		return (int) (getDamage() * ( mon.getPower() / 100.0));
+		return (int) (getDamage() * ( mon.getCombat() / 100.0));
 	}
 }

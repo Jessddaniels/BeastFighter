@@ -9,7 +9,7 @@ public class LCSteroids extends LeaderCard {
 	void activate() {
 		Monster mon = player.getActiveMon();
 		mon.setHP(mon.getHP() - 15);
-		mon.setPower(mon.getPower() + 20);
+		mon.setCombat(mon.getCombat() + 20);
 		mon.setSpirit(mon.getSpirit() - 20);
 		player.getApplet().textbox.getArray().add(new TextUnit("used Steroids", player));
 	}

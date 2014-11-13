@@ -12,7 +12,7 @@ public class JMWolf extends Monster {
 		setHP(100);
 		setEnergy(100);
 		setSpirit(100);
-		setPower(100);
+		setCombat(100);
 		getAttackList().add(new ABite(this));
 		getAttackList().add(new ATakeDown(this));
 		getAttackList().add(new ARest(this));
