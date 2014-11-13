@@ -32,7 +32,7 @@ public class JMMountainLion extends Monster {
 		g.setFont(passiveFont);
 		g.drawString("Ferocity:" , x, y + 30);
 		g.setFont(normalFont);
-		g.drawString("              + 3" , x, y + 50);
+		g.drawString("              + 5" , x, y + 50);
 		g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 20,y + 35, applet);
 	}
 }

@@ -162,7 +162,7 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = false;
 				}
 				//monster attacks
-			} else if (arg0.getX() < 400 && arg0.getX() > 150 && !tradeOK && getViewMon() == getActiveMon()){
+			} else if (arg0.getX() < 325 && arg0.getX() > 150 && !tradeOK && getViewMon() == getActiveMon()){
 				if (arg0.getY() > 520){
 					if(getActiveMon().reqA4(this,getO())) {
 						myTurn = false;
@@ -183,6 +183,14 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 						getActiveMon().attack1(this, getO());
 						myTurn = false;
 					}
+				}
+			} else if (arg0.getX() > 360 && arg0.getX() < 385 && !tradeOK && getViewMon() == getActiveMon()){
+				Monster mon = getActiveMon();
+				if (arg0.getY() > 550 && mon.getEnergy() >= 20) {
+					mon.setEnergy(mon.getEnergy() - 20);
+					tradeOK = true;
+					myTurn = true;
+					mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Switched", mon.lead));
 				}
 			}
 		} else if (arg0.getX() < 150 && tradeOK && getActiveMon() == null){//trading active monster
