@@ -162,13 +162,13 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = false;
 				}
 				//monster attacks
-			} else if (arg0.getX() < 325 && arg0.getX() > 150 && !tradeOK && getViewMon() == getActiveMon()){
-				if (arg0.getY() > 520){
+			} else if (arg0.getX() < 325 && arg0.getX() > 150 && arg0.getY() < 520 && !tradeOK && getViewMon() == getActiveMon()){
+				/*if (arg0.getY() > 520){
 					if(getActiveMon().reqA4(this,getO())) {
 						myTurn = false;
 						getActiveMon().attack4(this, getO());
 					}
-				} else if (arg0.getY() > 450){
+				} else*/ if (arg0.getY() > 450){
 					if(getActiveMon().reqA3(this,getO())) {
 						getActiveMon().attack3(this, getO());
 						myTurn = false;

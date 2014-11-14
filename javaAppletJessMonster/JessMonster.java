@@ -134,7 +134,7 @@ public class JessMonster extends Applet implements Runnable{
     }
     public Monster ranMonster(Leader l){
     	Monster mon;
-    	int rand = (int) (Math.random() * 9);
+    	int rand = (int) (Math.random() * 10);
     	if (rand == 0) {
     		mon = new JMTiger(this, l);
     	} else if (rand == 1) {
@@ -151,6 +151,8 @@ public class JessMonster extends Applet implements Runnable{
     		mon = new JMMountainLion(this, l);
     	} else if (rand == 7) {
     		mon = new JMBoar(this, l);
+    	} else if (rand == 8) {
+    		mon = new CSoldier(this, l);
     	} else {
     		mon = new JMDragon(this, l);
     	} 

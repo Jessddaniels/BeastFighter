@@ -13,6 +13,8 @@ public abstract class Monster {
 	private int energy;
 	private int combat;
 	private int spirit;
+	private int experience;
+	private int knowledge;
 	public Image runner;
 	public Leader lead;
 	public Image pic;
@@ -46,18 +48,23 @@ public abstract class Monster {
 			paintA1(g, x + 20, y + 210, applet);
 			paintA2(g, x + 20, y + 280, applet);
 			paintA3(g, x + 20, y + 350, applet);
-			paintA4(g, x + 20, y + 420, applet);
+			//paintA4(g, x + 20, y + 420, applet);
 			//g.drawImage(statPage, x + 150, y, applet);
 			g.drawString(""+getHP(), x + 205, y + 50  );
 	    	g.drawString(""+getEnergy(), x + 205, y + 70);
 	    	g.drawString(""+getCombat(), x + 205, y + 90);
 	    	g.drawString(""+getSpirit(), x + 205, y + 110);
+	    	g.drawString(""+getKnowledge(), x + 205, y + 130);
+	    	g.drawString(""+getExperience(), x + 205, y + 150);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 175, y + 55, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 175, y + 75, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 175, y + 95, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Knowledge.jpg"), x + 175, y + 115, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 175, y + 135, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Runner.jpg"), x + 210, y + 455, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/RestButton.jpg"), x + 20, y + 455, applet);
 			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
 				g.drawImage(goldFrame, x+ 20, y+ 35, applet);
 			} else {
@@ -84,9 +91,9 @@ public abstract class Monster {
 	void attack3(Leader attacker, Leader defender) {
 		getAttackList().get(2).attack(defender);
 	}
-	void attack4(Leader attacker, Leader defender) {
+	/*void attack4(Leader attacker, Leader defender) {
 		getAttackList().get(3).attack(defender);
-	}
+	}*/
 	void paintA1(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(0).paint(g, x, y, applet);
 	}
@@ -96,9 +103,9 @@ public abstract class Monster {
 	void paintA3(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(2).paint(g, x, y, applet);
 	}
-	void paintA4(Graphics g, int x, int y, JessMonster applet) {
+	/*void paintA4(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(3).paint(g, x, y, applet);
-	}
+	}*/
 	boolean reqA1(Leader attacker, Leader defender) {
 		return getAttackList().get(0).isMet(defender);
 	}
@@ -108,9 +115,9 @@ public abstract class Monster {
 	boolean reqA3(Leader attacker, Leader defender) {
 		return getAttackList().get(2).isMet(defender);
 	}
-	boolean reqA4(Leader attacker, Leader defender) {
+	/*boolean reqA4(Leader attacker, Leader defender) {
 		return getAttackList().get(3).isMet(defender);
-	}
+	}*/
 	public URL getURL(){
 		return url;
 	}
@@ -140,5 +147,17 @@ public abstract class Monster {
 	}
 	public void setSpirit(int spirit) {
 		this.spirit = spirit;
+	}
+	public int getExperience() {
+		return experience;
+	}
+	public void setExperience(int experience) {
+		this.experience = experience;
+	}
+	public int getKnowledge() {
+		return knowledge;
+	}
+	public void setKnowledge(int knowledge) {
+		this.knowledge = knowledge;
 	}
 }
