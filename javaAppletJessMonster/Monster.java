@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public abstract class Monster {
 	private ArrayList<Attack> attackList = new ArrayList<Attack>();
 	private URL url;
+	public String type = "monster";
 	private int hp;
 	private int energy;
 	private int combat;

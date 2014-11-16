@@ -69,6 +69,26 @@ public abstract class Leader{
 		this.o = opponent;
 	}
 	public void updateEOT(JessMonster applet){
+		if (activeMon.type.equals("character")){
+			Character mon = (Character) activeMon;
+			mon.setHP(mon.getHP() + 10 * mon.HDice);
+			mon.setEnergy(mon.getEnergy() + 10 * mon.EnDice);
+			mon.setSpirit(mon.getSpirit() + 10 * mon.SDice);
+			mon.setCombat(mon.getCombat() + 10 * mon.CDice);
+			mon.setKnowledge(mon.getKnowledge() + 10 * mon.KDice);
+			mon.setExperience(mon.getExperience() + 10 * mon.ExDice);
+			mon.getDiceList().clear();
+			mon.HDice = 0;
+			mon.EnDice = 0;
+			mon.SDice = 0;
+			mon.CDice = 0;
+			mon.KDice = 0;
+			mon.ExDice = 0;
+			mon.RollNum = 0;
+		}
+		
+	}
+	public void updateBOT(JessMonster applet){
 		getApplet().sleeper(1000);
 		cardList.clear();
 		cardList.add(applet.ranCard(this));

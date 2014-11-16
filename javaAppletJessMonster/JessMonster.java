@@ -74,7 +74,7 @@ public class JessMonster extends Applet implements Runnable{
     		repaint();
     		if (p1.getActiveMon() != null && p2.getActiveMon() != null ){
 	    		if (p2.myTurn == true){
-	    			p2.updateEOT(this);
+	    			p2.updateBOT(this);
 	    			p2.cardOK = true;
 	    			while (p2.myTurn == true){
 	    				p2.update(this);
@@ -83,9 +83,10 @@ public class JessMonster extends Applet implements Runnable{
 		    			p2.takeTurn();
 		    			repaint();
 	    			}
+	    			p2.updateEOT(this);
 	    			p1.myTurn = true;
 	    		} else if (p1.myTurn == true){
-	    			p1.updateEOT(this);
+	    			p1.updateBOT(this);
 	    			while (p1.myTurn == true){
 	    				p1.update(this);
 	    				repaint();
@@ -94,6 +95,7 @@ public class JessMonster extends Applet implements Runnable{
 	    				repaint();
 	    			}
 	    			p1.cardOK = true;
+	    			p1.updateEOT(this);
 	    			p2.myTurn = true;
 	    		}
     		}

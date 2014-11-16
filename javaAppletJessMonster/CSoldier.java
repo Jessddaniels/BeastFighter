@@ -3,7 +3,7 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class CSoldier extends Monster {
+public class CSoldier extends Character {
 	private Image pic;
 
 	public CSoldier(JessMonster applet, Leader l) {
@@ -14,16 +14,12 @@ public class CSoldier extends Monster {
 		setSpirit(100);
 		setCombat(100);
 		setKnowledge(80);
-		getAttackList().add(new ATackle(this));
+		getAttackList().add(new ASwordStrike(this));
 		getAttackList().add(new AHeadbutt(this));
 		getAttackList().add(new ARest(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
-		paint(g, x, y, applet, pic);
-	}
-	public void paint(Graphics g, int x, int y, JessMonster applet, Image pic){
 		super.paint(g, x, y, applet, pic);
-		g.drawImage(applet.getImage(getURL(),"Pictures/Die.jpg"), x + 120,y + 455, applet);
 	}
 	String nameToString() {
 		return "Soldier";
@@ -37,6 +33,8 @@ public class CSoldier extends Monster {
 		g.drawString("Energetic:" , x, y + 30);
 		g.setFont(normalFont);
 		g.drawString("              + 5" , x, y + 50);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
+		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
 		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
 	}
 }

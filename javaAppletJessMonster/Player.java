@@ -11,6 +11,7 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	boolean endStatus = true;
 	private Image youWin;
 	private Image youLose;
+	private Boolean mousePressed = false;
 	public Player(JessMonster applet){
 		super(applet);
 		youWin = applet.getImage(getURL(),"Pictures/YouWin.jpg");
@@ -184,15 +185,41 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 						myTurn = false;
 					}
 				}
-			} else if (arg0.getX() > 360 && arg0.getX() < 385 && !tradeOK && getViewMon() == getActiveMon()){
+			} else if (arg0.getX() > 360 && arg0.getX() < 385 && !tradeOK && arg0.getY() > 550 && getViewMon() == getActiveMon()){
 				Monster mon = getActiveMon();
-				if (arg0.getY() > 550 && mon.getEnergy() >= 20) {
+				if (mon.getEnergy() >= 20) {
 					mon.setEnergy(mon.getEnergy() - 20);
 					tradeOK = true;
 					myTurn = true;
 					mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Switched", mon.lead));
 				}
-			}
+			} else if (arg0.getX() > 280 && arg0.getX() < 305 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
+				Character mon = (Character) getActiveMon();
+				if (arg0.getY() > 550 && mon.getDiceList().size() <  6) {
+					mon.roll(6 - mon.getDiceList().size());
+					mousePressed = true;
+				}
+			} else if (arg0.getX() > 345 && arg0.getX() < 370 && arg0.getY() > 300 && arg0.getY() < 540 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
+				Character mon = (Character) getActiveMon();
+				if (mon.RollNum < 3 && mousePressed == false){
+					mousePressed = true;
+					if (arg0.getY() > 500 && arg0.getY() < 540 && mon.getDiceList().size() > 5) {
+						mon.removeDie(5);
+					} else if (arg0.getY() > 460 && arg0.getY() < 500 && mon.getDiceList().size() > 4) {
+						mon.removeDie(4);
+					} else if (arg0.getY() > 420 && arg0.getY() < 460 && mon.getDiceList().size() > 3) {
+						mon.removeDie(3);
+					} else if (arg0.getY() > 380 && arg0.getY() < 420 && mon.getDiceList().size() > 2) {
+						mon.removeDie(2);
+					} else if (arg0.getY() > 340 && arg0.getY() < 380 && mon.getDiceList().size() > 1) {
+						mon.removeDie(1);
+					} else if (arg0.getY() > 300 && arg0.getY() < 340 && mon.getDiceList().size() > 0) {
+						mon.removeDie(0);
+					} else {
+						mousePressed = false;
+					}
+				}
+			} 
 		} else if (arg0.getX() < 150 && tradeOK && getActiveMon() == null){//trading active monster
 			if (arg0.getY() > 475){
 				setActiveMon(monsterList.get(2));
@@ -207,13 +234,15 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 			setViewMon(getActiveMon());
 		}
 	}
-	public void updateEOT(JessMonster applet){
-		super.updateEOT(applet);
+	public void updateBOT(JessMonster applet){
+		super.updateBOT(applet);
 		if (monsterList.size() == 0){
 			endStatus = false;
 		}
 	}
-	public void mouseReleased(MouseEvent arg0) {}
+	public void mouseReleased(MouseEvent arg0) {
+		mousePressed = false;
+	}
 	public void mouseDragged(MouseEvent arg0) {}
 	public void mouseMoved(MouseEvent arg0) {}
 }

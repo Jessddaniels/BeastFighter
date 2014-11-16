@@ -1,5 +1,6 @@
 package javaAppletJessMonster;
 
+
 public class TextUnit {
 	private String words;
 	private Leader player;
