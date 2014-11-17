@@ -46,9 +46,9 @@ public abstract class Monster {
 			g.drawString("     " + nameToString(), x + 5, y + 25);
 			g.setFont(normalFont);
 			paintPassive(g, x + 35, y + 150, applet);
-			paintA1(g, x + 20, y + 210, applet);
-			paintA2(g, x + 20, y + 280, applet);
-			paintA3(g, x + 20, y + 350, applet);
+			paintA1(g, x + 5, y + 210, applet);
+			paintA2(g, x + 5, y + 280, applet);
+			paintA3(g, x + 5, y + 350, applet);
 			//paintA4(g, x + 20, y + 420, applet);
 			//g.drawImage(statPage, x + 150, y, applet);
 			g.drawString(""+getHP(), x + 205, y + 50  );
@@ -84,37 +84,37 @@ public abstract class Monster {
 	abstract void passive();
 	abstract void paintPassive(Graphics g, int x, int y, JessMonster applet);
 	void attack1(Leader attacker, Leader defender) {
-		getAttackList().get(0).attack(defender);
+		getAttackList().get(getAttackList().size() -1).attack(defender);
 	}
 	void attack2(Leader attacker, Leader defender) {
-		getAttackList().get(1).attack(defender);
+		getAttackList().get(getAttackList().size() -2).attack(defender);
 	}
 	void attack3(Leader attacker, Leader defender) {
-		getAttackList().get(2).attack(defender);
+		getAttackList().get(getAttackList().size() -3).attack(defender);
 	}
 	/*void attack4(Leader attacker, Leader defender) {
 		getAttackList().get(3).attack(defender);
 	}*/
 	void paintA1(Graphics g, int x, int y, JessMonster applet) {
-		getAttackList().get(0).paint(g, x, y, applet);
+		getAttackList().get(getAttackList().size() -1).paint(g, x, y, applet);
 	}
 	void paintA2(Graphics g, int x, int y, JessMonster applet) {
-		getAttackList().get(1).paint(g, x, y, applet);
+		getAttackList().get(getAttackList().size() -2).paint(g, x, y, applet);
 	}
 	void paintA3(Graphics g, int x, int y, JessMonster applet) {
-		getAttackList().get(2).paint(g, x, y, applet);
+		getAttackList().get(getAttackList().size() -3).paint(g, x, y, applet);
 	}
 	/*void paintA4(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(3).paint(g, x, y, applet);
 	}*/
 	boolean reqA1(Leader attacker, Leader defender) {
-		return getAttackList().get(0).isMet(defender);
+		return getAttackList().get(getAttackList().size() -1).isMet(defender);
 	}
 	boolean reqA2(Leader attacker, Leader defender) {
-		return getAttackList().get(1).isMet(defender);
+		return getAttackList().get(getAttackList().size() -2).isMet(defender);
 	}
 	boolean reqA3(Leader attacker, Leader defender) {
-		return getAttackList().get(2).isMet(defender);
+		return getAttackList().get(getAttackList().size() -3).isMet(defender);
 	}
 	/*boolean reqA4(Leader attacker, Leader defender) {
 		return getAttackList().get(3).isMet(defender);

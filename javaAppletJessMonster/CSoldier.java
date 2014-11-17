@@ -14,9 +14,9 @@ public class CSoldier extends Character {
 		setSpirit(100);
 		setCombat(100);
 		setKnowledge(80);
+		getAttackList().add(new ANull(this));
+		getAttackList().add(new ANull(this));
 		getAttackList().add(new ASwordStrike(this));
-		getAttackList().add(new AHeadbutt(this));
-		getAttackList().add(new ARest(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
@@ -25,16 +25,14 @@ public class CSoldier extends Character {
 		return "Soldier";
 	}
 	void passive() {
-		setEnergy(getEnergy() + 5);
-		applet.textbox.getArray().add(new TextUnit("Energy + 5", lead));
+		if (getAttackList().size() < 4 && getExperience() >= 100){
+			getAttackList().add(new ABash(this));
+			applet.textbox.getArray().add(new TextUnit("Level 2", lead));
+		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);
-		g.drawString("Energetic:" , x, y + 30);
+		//g.drawString("Energetic:" , x, y + 30);
 		g.setFont(normalFont);
-		g.drawString("              + 5" , x, y + 50);
-		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
-		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
-		g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 20,y + 35, applet);
 	}
 }

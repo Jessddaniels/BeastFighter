@@ -111,13 +111,13 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	public void mouseExited(MouseEvent arg0) {}
 	public void mousePressed(MouseEvent arg0) {
 		if (myTurn == true){
-			if (arg0.getX() < 150 && cardOK && arg0.getY() < 225){
+			if (arg0.getX() < 150 && cardOK && arg0.getY() < 225){//use cards
 				if (arg0.getY() > 100){
 					if (getActiveCard().isMet()){
 						getActiveCard().activate();
 						cardOK = false;
 					}
-				} else if (arg0.getY() > 80){
+				} else if (arg0.getY() > 80){//set view cards
 					setActiveCard(cardList.get(4));
 				} else if (arg0.getY() > 60){
 					setActiveCard(cardList.get(3));
@@ -163,13 +163,8 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = false;
 				}
 				//monster attacks
-			} else if (arg0.getX() < 325 && arg0.getX() > 150 && arg0.getY() < 520 && !tradeOK && getViewMon() == getActiveMon()){
-				/*if (arg0.getY() > 520){
-					if(getActiveMon().reqA4(this,getO())) {
-						myTurn = false;
-						getActiveMon().attack4(this, getO());
-					}
-				} else*/ if (arg0.getY() > 450){
+			} else if (arg0.getX() < 395 && arg0.getX() > 155 && arg0.getY() < 520 && getViewMon() == getActiveMon()){
+				if (arg0.getY() > 450){
 					if(getActiveMon().reqA3(this,getO())) {
 						getActiveMon().attack3(this, getO());
 						myTurn = false;
@@ -184,7 +179,7 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 						getActiveMon().attack1(this, getO());
 						myTurn = false;
 					}
-				}
+				}//switch button
 			} else if (arg0.getX() > 360 && arg0.getX() < 385 && !tradeOK && arg0.getY() > 550 && getViewMon() == getActiveMon()){
 				Monster mon = getActiveMon();
 				if (mon.getEnergy() >= 20) {
@@ -192,28 +187,34 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = true;
 					myTurn = true;
 					mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Switched", mon.lead));
-				}
-			} else if (arg0.getX() > 280 && arg0.getX() < 305 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
+				}//rest button
+			} else if (arg0.getX() > 180 && arg0.getX() < 205 && arg0.getY() > 550 && getViewMon() == getActiveMon()){
+				Monster mon = getActiveMon();
+				mon.setEnergy(mon.getEnergy() + 20);
+				myTurn = false;
+				mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Rested", mon.lead));
+				//roll button
+			} else if (arg0.getX() > 250 && arg0.getX() < 305 && arg0.getY() > 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();
-				if (arg0.getY() > 550 && mon.getDiceList().size() <  6) {
+				if (mon.getDiceList().size() <  6) {
 					mon.roll(6 - mon.getDiceList().size());
 					mousePressed = true;
-				}
-			} else if (arg0.getX() > 345 && arg0.getX() < 370 && arg0.getY() > 300 && arg0.getY() < 540 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
+				}// reroll dice
+			} else if (arg0.getX() > 170 && arg0.getX() < 390 && arg0.getY() > 520 && arg0.getY() < 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();
 				if (mon.RollNum < 3 && mousePressed == false){
 					mousePressed = true;
-					if (arg0.getY() > 500 && arg0.getY() < 540 && mon.getDiceList().size() > 5) {
+					if (arg0.getX() > 370 && arg0.getX() < 390 && mon.getDiceList().size() > 5) {
 						mon.removeDie(5);
-					} else if (arg0.getY() > 460 && arg0.getY() < 500 && mon.getDiceList().size() > 4) {
+					} else if (arg0.getX() > 330 && arg0.getX() < 350 && mon.getDiceList().size() > 4) {
 						mon.removeDie(4);
-					} else if (arg0.getY() > 420 && arg0.getY() < 460 && mon.getDiceList().size() > 3) {
+					} else if (arg0.getX() > 290 && arg0.getX() < 310 && mon.getDiceList().size() > 3) {
 						mon.removeDie(3);
-					} else if (arg0.getY() > 380 && arg0.getY() < 420 && mon.getDiceList().size() > 2) {
+					} else if (arg0.getX() > 250 && arg0.getX() < 270 && mon.getDiceList().size() > 2) {
 						mon.removeDie(2);
-					} else if (arg0.getY() > 340 && arg0.getY() < 380 && mon.getDiceList().size() > 1) {
+					} else if (arg0.getX() > 210 && arg0.getX() < 230 && mon.getDiceList().size() > 1) {
 						mon.removeDie(1);
-					} else if (arg0.getY() > 300 && arg0.getY() < 340 && mon.getDiceList().size() > 0) {
+					} else if (arg0.getX() > 170 && arg0.getX() < 190 && mon.getDiceList().size() > 0) {
 						mon.removeDie(0);
 					} else {
 						mousePressed = false;
