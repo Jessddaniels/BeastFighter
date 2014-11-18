@@ -19,7 +19,7 @@ public abstract class Character extends Monster {
 		type = "character";
 	}
 	public void roll(int dice){
-		if (RollNum < 3){
+		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - KDice == dice){
 			for (int i = 0; i < dice; i++){
 				roll();
 			}
@@ -89,6 +89,13 @@ public abstract class Character extends Monster {
 	}
 	public void setDiceList(ArrayList<String> diceList) {
 		this.diceList = diceList;
+	}
+	public void run(){
+		diceList.clear();
+		setEnergy(getEnergy() - 20);
+		lead.tradeOK = true;
+		lead.myTurn = true;
+		applet.textbox.getArray().add(new TextUnit(nameToString() + " Switched", lead));
 	}
 
 }

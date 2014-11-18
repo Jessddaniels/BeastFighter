@@ -15,7 +15,6 @@ public class JMWolf extends Monster {
 		setCombat(100);
 		getAttackList().add(new ABite(this));
 		getAttackList().add(new ATakeDown(this));
-		getAttackList().add(new ARest(this));
 		getAttackList().add(new APackInstincts(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){

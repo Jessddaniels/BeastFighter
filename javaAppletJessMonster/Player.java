@@ -183,16 +183,12 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 			} else if (arg0.getX() > 360 && arg0.getX() < 385 && !tradeOK && arg0.getY() > 550 && getViewMon() == getActiveMon()){
 				Monster mon = getActiveMon();
 				if (mon.getEnergy() >= 20) {
-					mon.setEnergy(mon.getEnergy() - 20);
-					tradeOK = true;
-					myTurn = true;
-					mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Switched", mon.lead));
+					mon.run();
 				}//rest button
 			} else if (arg0.getX() > 180 && arg0.getX() < 205 && arg0.getY() > 550 && getViewMon() == getActiveMon()){
 				Monster mon = getActiveMon();
-				mon.setEnergy(mon.getEnergy() + 20);
+				mon.rest();
 				myTurn = false;
-				mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Rested", mon.lead));
 				//roll button
 			} else if (arg0.getX() > 250 && arg0.getX() < 305 && arg0.getY() > 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();

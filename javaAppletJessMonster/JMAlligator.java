@@ -13,10 +13,9 @@ public class JMAlligator extends Monster {
 		setEnergy(80);
 		setCombat(120);
 		setSpirit(100);
+		getAttackList().add(new ANull(this));
 		getAttackList().add(new ABite(this));
 		getAttackList().add(new ADeathRoll(this));
-		getAttackList().add(new ARest(this));
-		getAttackList().add(new AStealth(this));
 	}
 	String nameToString() {
 		return "Alligator";

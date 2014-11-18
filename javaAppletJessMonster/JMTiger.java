@@ -16,7 +16,6 @@ public class JMTiger extends Monster {
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new ABite(this));
 		getAttackList().add(new AAmbush(this));
-		getAttackList().add(new AStealth(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);

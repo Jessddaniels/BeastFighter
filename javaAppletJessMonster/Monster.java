@@ -161,4 +161,14 @@ public abstract class Monster {
 	public void setKnowledge(int knowledge) {
 		this.knowledge = knowledge;
 	}
+	public void rest(){
+		setEnergy(getEnergy() + 20);
+		applet.textbox.getArray().add(new TextUnit(nameToString() + " Rested", lead));
+	}
+	public void run(){
+		setEnergy(getEnergy() - 20);
+		lead.tradeOK = true;
+		lead.myTurn = true;
+		applet.textbox.getArray().add(new TextUnit(nameToString() + " Switched", lead));
+	}
 }

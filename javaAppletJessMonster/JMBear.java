@@ -16,7 +16,6 @@ public class JMBear extends Monster {
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new ABodySlam(this));
 		getAttackList().add(new AHybernate(this));
-		getAttackList().add(new ARun(this));
 	}
 	String nameToString() {
 		return "Bear";

@@ -13,10 +13,9 @@ public class JMBoar extends Monster {
 		setEnergy(100);
 		setSpirit(100);
 		setCombat(100);
+		getAttackList().add(new ANull(this));
 		getAttackList().add(new ATackle(this));
 		getAttackList().add(new AGore(this));
-		getAttackList().add(new ARest(this));
-		getAttackList().add(new ARun(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);

@@ -15,7 +15,6 @@ public class JMSkeletalCow extends Monster {
 		getAttackList().add(new AHeadbutt(this));
 		getAttackList().add(new ARestInPeace(this));
 		getAttackList().add(new ASpiritSink(this));
-		getAttackList().add(new ARun(this));
 	}
 	String nameToString() {
 		return "Skeletal Cow";

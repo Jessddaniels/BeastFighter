@@ -13,10 +13,9 @@ public class JMDragon extends Monster {
 		setEnergy(80);
 		setCombat(120);
 		setSpirit(100);
+		getAttackList().add(new ANull(this));
 		getAttackList().add(new AScratch(this));
 		getAttackList().add(new AFireball(this));
-		getAttackList().add(new ARest(this));
-		getAttackList().add(new ARun(this));
 	}
 	String nameToString() {
 		return "Dragon";

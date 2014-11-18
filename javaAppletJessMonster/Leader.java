@@ -23,7 +23,7 @@ public abstract class Leader{
 		url = applet.url;
 		player = applet.getImage(url,"Pictures/Ninja.png");
 		cardListBG = applet.getImage(url,"Pictures/CardList.jpg");
-		monsterList.add(new CSoldier(applet,this));
+		monsterList.add(new CRochelle(applet,this));
 		monsterList.add(applet.ranMonster(this));
 		monsterList.add(applet.ranMonster(this));
 		cardList.add(applet.ranCard(this));
@@ -71,12 +71,13 @@ public abstract class Leader{
 	public void updateEOT(JessMonster applet){
 		if (activeMon.type.equals("character")){
 			Character mon = (Character) activeMon;
-			mon.setHP(mon.getHP() + 5 * mon.HDice);
-			mon.setEnergy(mon.getEnergy() + 5 * mon.EnDice);
-			mon.setSpirit(mon.getSpirit() + 5 * mon.SDice);
-			mon.setCombat(mon.getCombat() + 5 * mon.CDice);
-			mon.setKnowledge(mon.getKnowledge() + 5 * mon.KDice);
-			mon.setExperience(mon.getExperience() + 5 * mon.ExDice);
+			int dieReward = (5 * mon.getKnowledge()) / 100 ;
+			mon.setHP(mon.getHP() + dieReward * mon.HDice);
+			mon.setEnergy(mon.getEnergy() + dieReward * mon.EnDice);
+			mon.setSpirit(mon.getSpirit() + dieReward * mon.SDice);
+			mon.setCombat(mon.getCombat() + dieReward * mon.CDice);
+			mon.setKnowledge(mon.getKnowledge() + dieReward * mon.KDice);
+			mon.setExperience(mon.getExperience() + dieReward * mon.ExDice);
 			mon.getDiceList().clear();
 			mon.HDice = 0;
 			mon.EnDice = 0;
