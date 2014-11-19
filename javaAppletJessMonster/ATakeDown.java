@@ -11,7 +11,7 @@ public class ATakeDown extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - 50);
 		mon.setEnergy(mon.getEnergy() - 20);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Take Down for 50 DMG",mon.lead));
+		toTextBox(mon.nameToString() + " used Take Down for 50 DMG");
 		
 	}
 	boolean isMet(Leader defender) {

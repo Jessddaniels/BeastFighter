@@ -11,7 +11,7 @@ public class ASpiritSink extends Attack {
 		mon.setEnergy(mon.getEnergy() - 25);
 		defender.getActiveMon().setHP(defender.getActiveMon().getHP() - calcDamage());
 		defender.getActiveMon().setSpirit(defender.getActiveMon().getSpirit() - 20);
-		mon.applet.textbox.getArray().add(new TextUnit( mon.nameToString() + " used Spirit Sink", mon.lead));
+		toTextBox( mon.nameToString() + " used Spirit Sink");
 		
 	}
 	public boolean isMet(Leader defender) {

@@ -10,7 +10,7 @@ public class LCHealthPack extends LeaderCard {
 		Monster mon = player.getActiveMon();
 		mon.setHP(mon.getHP() + 20);
 		mon.setSpirit(mon.getSpirit() - 20);
-		player.getApplet().textbox.getArray().add(new TextUnit("used Health Pack", player));
+		toTextBox("used Health Pack");
 	}
 	boolean isMet() {
 		if (player.getActiveMon().getSpirit() >= 20){
@@ -25,9 +25,7 @@ public class LCHealthPack extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Health.jpg"), x,y + 30, applet);
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
 	}
-	@Override
 	String nameToString() {
-		// TODO Auto-generated method stub
 		return "Health Pack";
 	}
 }

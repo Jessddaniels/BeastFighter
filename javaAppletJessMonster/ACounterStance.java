@@ -11,7 +11,7 @@ public class ACounterStance extends Attack {
 		defender.getActiveMon().setCombat(currentC - calcKDamage());
 		mon.setCombat(mon.getCombat() + 20);
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Counter Stance", mon.lead));
+		toTextBox(mon.nameToString() + " used Counter Stance");
 		
 	}
 	public boolean isMet(Leader defender) {

@@ -12,7 +12,7 @@ public class AHeadbutt extends Attack {
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setHP(mon.getHP() - 10);
 		mon.setEnergy(mon.getEnergy() - 15);
-		mon.applet.textbox.getArray().add(new TextUnit( mon.nameToString() + " used Headbutt for " + calcDamage()+ " DMG", mon.lead));
+		toTextBox( mon.nameToString() + " used Headbutt for " + calcDamage()+ " DMG");
 	}
 	public boolean isMet(Leader defender) {
 		if(mon.getEnergy() < 15) {

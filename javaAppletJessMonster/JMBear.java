@@ -25,7 +25,7 @@ public class JMBear extends Monster {
 	}
 	void passive() {
 		setHP(getHP() + 5);
-		applet.textbox.getArray().add(new TextUnit("HP + 5", lead));
+		toTextBox("HP + 5");
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

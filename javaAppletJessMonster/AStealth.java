@@ -11,7 +11,7 @@ public class AStealth extends Attack {
 		mon.setCombat(mon.getCombat() + 25);
 		mon.lead.tradeOK = true;
 		mon.lead.myTurn = true;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Stealth", mon.lead));
+		toTextBox(mon.nameToString() + " used Stealth");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 40){

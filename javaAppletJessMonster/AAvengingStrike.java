@@ -11,8 +11,7 @@ public class AAvengingStrike extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage()- calcKDamage());
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Avenging Strike for " 
-					+ (calcDamage() + calcKDamage())+" DMG", mon.lead));
+		toTextBox(mon.nameToString() + " used Avenging Strike for " + (calcDamage() + calcKDamage())+" DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

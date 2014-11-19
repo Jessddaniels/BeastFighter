@@ -13,7 +13,7 @@ public class APackInstincts extends Attack {
 		}
 		mon.lead.tradeOK = true;
 		mon.lead.myTurn = true;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Ran", mon.lead));
+		toTextBox(mon.nameToString() + " Ran");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() >= 15 || mon.getHP() < 40){

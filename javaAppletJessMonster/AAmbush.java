@@ -11,7 +11,7 @@ public class AAmbush extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setEnergy(mon.getEnergy() - 50);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Ambush for "+calcDamage()+" DMG",mon.lead));
+		toTextBox(mon.nameToString() + " used Ambush for "+calcDamage()+" DMG");
 		
 	}
 	boolean isMet(Leader defender) {

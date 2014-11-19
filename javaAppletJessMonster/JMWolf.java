@@ -25,7 +25,7 @@ public class JMWolf extends Monster {
 	}
 	void passive() {
 		setSpirit(getSpirit() + 5);
-		applet.textbox.getArray().add(new TextUnit("Spirit + 5", lead));
+		toTextBox("Spirit + 5");
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

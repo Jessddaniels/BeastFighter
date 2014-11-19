@@ -27,12 +27,11 @@ public class CSoldier extends Character {
 	void passive() {
 		if (getAttackList().size() < 4 && getExperience() >= 100){
 			getAttackList().add(new ABash(this));
-			applet.textbox.getArray().add(new TextUnit("Level 2", lead));
+			toTextBox("Level 2");
 		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);
-		//g.drawString("Energetic:" , x, y + 30);
 		g.setFont(normalFont);
 	}
 }

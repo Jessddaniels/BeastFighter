@@ -10,7 +10,7 @@ public class LCProtein extends LeaderCard {
 		Monster mon = player.getActiveMon();
 		mon.setCombat(mon.getCombat() + 10);
 		mon.setSpirit(mon.getSpirit() - 20);
-		player.getApplet().textbox.getArray().add(new TextUnit("used Protein", player));
+		toTextBox("used Protein");
 	}
 	boolean isMet() {
 		if (player.getActiveMon().getSpirit() >= 20){

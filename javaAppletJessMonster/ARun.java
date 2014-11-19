@@ -11,7 +11,7 @@ public class ARun extends Attack {
 		mon.setEnergy(mon.getEnergy() - 10);
 		mon.lead.tradeOK = true;
 		mon.lead.myTurn = true;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " Ran", mon.lead));
+		toTextBox(mon.nameToString() + " Ran");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 10 || mon.lead.tradeOK == true){

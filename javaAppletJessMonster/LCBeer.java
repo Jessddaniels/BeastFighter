@@ -9,7 +9,7 @@ public class LCBeer extends LeaderCard {
 	void activate() {
 		Monster mon = player.getActiveMon();
 		mon.setSpirit(mon.getSpirit() + 20);
-		player.getApplet().textbox.getArray().add(new TextUnit("used Beer", player));
+		toTextBox("used Beer");
 	}
 	boolean isMet() {
 		return true;
@@ -20,7 +20,6 @@ public class LCBeer extends LeaderCard {
 		g.drawString(" 20" , x, y + 25);
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x,y + 30, applet);
 	}
-	@Override
 	public String nameToString() {
 		return "Beer";
 		

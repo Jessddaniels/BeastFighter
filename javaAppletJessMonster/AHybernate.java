@@ -10,7 +10,7 @@ public class AHybernate extends Attack {
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 10);
 		mon.setHP(mon.getHP() + 10);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Hybernate", mon.lead));
+		toTextBox(mon.nameToString() + " used Hybernate");
 		
 	}
 	public boolean isMet(Leader defender) {

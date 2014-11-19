@@ -15,7 +15,7 @@ public class Computer extends Leader {
 		super.setActiveMon(newMon);
 	}
 	public void takeTurn(){
-		getApplet().sleeper(1000);//use cards
+		getApplet().match.sleeper(1000);//use cards
 		int i = 0;
 		while (cardOK && i < 3){
 			if (cardList.get(i).isMet()){
@@ -24,7 +24,7 @@ public class Computer extends Leader {
 			}
 			i++;
 		}
-		getApplet().sleeper(1000);
+		getApplet().match.sleeper(1000);
 		if (level == 0){
 			if (getActiveMon().type.equals("character")){
 				((Character) getActiveMon()).roll(6);

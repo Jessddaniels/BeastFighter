@@ -24,12 +24,14 @@ public abstract class Monster {
 	public Image attackPage;
 	public Image statPage;
 	public JessMonster applet;
+	public Match match;
 	public Font normalFont;
 	public Font nameFont = new Font("SansSerif", Font.BOLD, 20);
 	public Font passiveFont = new Font("Serif", Font.BOLD, 15);
 	public Monster(JessMonster applet, Leader p){
-		this.lead = p;
+		lead = p;
 		this.applet = applet;
+		match = applet.match;
 		url = applet.url;
 		goldFrame = applet.getImage(getURL(),"Pictures/FrameActive.png");
 		silverFrame = applet.getImage(getURL(),"Pictures/FrameInactive.png");
@@ -40,7 +42,10 @@ public abstract class Monster {
 	}
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
 	public void paint(Graphics g, int x, int y, JessMonster applet, Image pic){
-		if (applet.p1.getViewMon() == this || applet.p2.getViewMon() == this){
+		Leader p1 = applet.match.p1;
+		Leader p2 = applet.match.p2;
+		
+		if (p1.getViewMon() == this || p2.getViewMon() == this){
 			g.drawImage(attackPage, x, y, applet);
 			g.setFont(nameFont);
 			g.drawString("     " + nameToString(), x + 5, y + 25);
@@ -49,8 +54,6 @@ public abstract class Monster {
 			paintA1(g, x + 5, y + 210, applet);
 			paintA2(g, x + 5, y + 280, applet);
 			paintA3(g, x + 5, y + 350, applet);
-			//paintA4(g, x + 20, y + 420, applet);
-			//g.drawImage(statPage, x + 150, y, applet);
 			g.drawString(""+getHP(), x + 205, y + 50  );
 	    	g.drawString(""+getEnergy(), x + 205, y + 70);
 	    	g.drawString(""+getCombat(), x + 205, y + 90);
@@ -66,14 +69,14 @@ public abstract class Monster {
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 175, y + 135, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Runner.jpg"), x + 210, y + 455, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/RestButton.jpg"), x + 20, y + 455, applet);
-			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
+			if (p1.getActiveMon() == this || p2.getActiveMon() == this) {	
 				g.drawImage(goldFrame, x+ 20, y+ 35, applet);
 			} else {
 				g.drawImage(silverFrame, x+ 20, y+ 35, applet);
 			}
 		} else {
 			g.drawImage(pic, x, y, applet);
-			if (applet.p1.getActiveMon() == this || applet.p2.getActiveMon() == this) {	
+			if (p1.getActiveMon() == this || p2.getActiveMon() == this) {	
 				g.drawImage(goldFrame, x, y, applet);
 			} else {
 				g.drawImage(silverFrame, x, y, applet);
@@ -92,9 +95,6 @@ public abstract class Monster {
 	void attack3(Leader attacker, Leader defender) {
 		getAttackList().get(getAttackList().size() -3).attack(defender);
 	}
-	/*void attack4(Leader attacker, Leader defender) {
-		getAttackList().get(3).attack(defender);
-	}*/
 	void paintA1(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(getAttackList().size() -1).paint(g, x, y, applet);
 	}
@@ -104,9 +104,6 @@ public abstract class Monster {
 	void paintA3(Graphics g, int x, int y, JessMonster applet) {
 		getAttackList().get(getAttackList().size() -3).paint(g, x, y, applet);
 	}
-	/*void paintA4(Graphics g, int x, int y, JessMonster applet) {
-		getAttackList().get(3).paint(g, x, y, applet);
-	}*/
 	boolean reqA1(Leader attacker, Leader defender) {
 		return getAttackList().get(getAttackList().size() -1).isMet(defender);
 	}
@@ -116,9 +113,6 @@ public abstract class Monster {
 	boolean reqA3(Leader attacker, Leader defender) {
 		return getAttackList().get(getAttackList().size() -3).isMet(defender);
 	}
-	/*boolean reqA4(Leader attacker, Leader defender) {
-		return getAttackList().get(3).isMet(defender);
-	}*/
 	public URL getURL(){
 		return url;
 	}
@@ -163,12 +157,16 @@ public abstract class Monster {
 	}
 	public void rest(){
 		setEnergy(getEnergy() + 20);
-		applet.textbox.getArray().add(new TextUnit(nameToString() + " Rested", lead));
+		toTextBox(nameToString() + " Rested");
 	}
 	public void run(){
 		setEnergy(getEnergy() - 20);
 		lead.tradeOK = true;
 		lead.myTurn = true;
-		applet.textbox.getArray().add(new TextUnit(nameToString() + " Switched", lead));
+		toTextBox(nameToString() + " Switched");
+	}
+	//sends a string to be printed in the text box
+	public void toTextBox(String words){
+		match.textbox.toTextBox(words, lead);
 	}
 }

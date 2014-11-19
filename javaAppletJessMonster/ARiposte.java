@@ -11,7 +11,7 @@ public class ARiposte extends Attack {
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setHP(mon.getHP() + 20);
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Riposte for " + calcDamage()+ " DMG", mon.lead));
+		toTextBox(mon.nameToString() + " used Riposte for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

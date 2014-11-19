@@ -9,7 +9,7 @@ public class AScratch extends Attack {
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Scratch for " + calcDamage()+ " DMG", mon.lead));
+		toTextBox(mon.nameToString() + " used Scratch for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

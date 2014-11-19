@@ -17,21 +17,23 @@ public abstract class Leader{
 	public boolean cardOK = false;
 	private Monster viewMon;
 	public String playerNum;
+	public Match match;
 	
 	public Leader(JessMonster applet){
 		this.setApplet(applet);
 		url = applet.url;
 		player = applet.getImage(url,"Pictures/Ninja.png");
 		cardListBG = applet.getImage(url,"Pictures/CardList.jpg");
-		monsterList.add(new CRochelle(applet,this));
-		monsterList.add(applet.ranMonster(this));
-		monsterList.add(applet.ranMonster(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
+		monsterList.add(ranChar(this));
+		monsterList.add(ranMonster(this));
+		monsterList.add(ranMonster(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
 		activeCard = cardList.get(0);
+		match = applet.match;
 	}
 	public void paint(Graphics g, JessMonster applet){
 		g.drawImage(player, applet.getWidth() - 250, 0, applet);
@@ -90,13 +92,13 @@ public abstract class Leader{
 		
 	}
 	public void updateBOT(JessMonster applet){
-		getApplet().sleeper(1000);
+		getApplet().match.sleeper(1000);
 		cardList.clear();
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
-		cardList.add(applet.ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
+		cardList.add(ranCard(this));
 		boolean hasMon = true;
 		for (int i = 0; i < monsterList.size(); i++){
 			if (monsterList.get(i) != null && monsterList.get(i).getHP() <= 0 ){
@@ -109,7 +111,7 @@ public abstract class Leader{
 			} 
 		}
 		if (hasMon == false){
-			applet.stopRunning();
+			applet.match.stopRunning();
 		} else {
 			activeMon.passive();
 		}
@@ -136,4 +138,56 @@ public abstract class Leader{
 	public void setActiveCard(LeaderCard activeCard) {
 		this.activeCard = activeCard;
 	}
+	public LeaderCard ranCard(Leader l){
+    	LeaderCard card;
+    	int rand = (int) (Math.random() * 5);
+    	if (rand == 0){
+    		card = new LCEnergyDrink(l);
+    	} else if (rand == 1) {
+    		card = new LCSteroids( l);
+    	} else if (rand == 2) {
+    		card = new LCBeer(l);
+    	} else if (rand == 3) {
+    		card = new LCProtein(l);
+    	} else {
+    		card = new LCHealthPack(l);
+    	}
+    	return card;
+    }
+    public Character ranChar(Leader l){
+    	Character mon;
+    	int rand = (int) (Math.random() * 3);
+    	if (rand == 0) {
+    		mon = new CSoldier(applet, l);
+    	} else if (rand == 1) {
+    		mon = new CRochelle(applet, l);
+    	} else {
+    		mon = new CAdipedys(applet, l);
+    	} 
+    	return mon;
+    }
+	 public Monster ranMonster(Leader l){
+	    	Monster mon;
+	    	int rand = (int) (Math.random() * 9);
+	    	if (rand == 0) {
+	    		mon = new JMTiger(applet, l);
+	    	} else if (rand == 1) {
+	    		mon = new JMAlligator(applet, l);
+	    	} else if (rand == 2) {
+	    		mon = new JMBear(applet, l);
+	    	} else if (rand == 3) {
+	    		mon = new JMSkeletalCow(applet, l);
+	    	} else if (rand == 4) {
+	    		mon = new JMRam(applet, l);
+	    	} else if (rand == 5) {
+	    		mon = new JMWolf(applet, l);
+	    	} else if (rand == 6) {
+	    		mon = new JMMountainLion(applet, l);
+	    	} else if (rand == 7) {
+	    		mon = new JMBoar(applet, l);
+	    	} else {
+	    		mon = new JMDragon(applet, l);
+	    	} 
+	    	return mon;
+	    }
 }

@@ -11,7 +11,7 @@ public class AFireball extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setEnergy(mon.getEnergy() - 60);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Fireball for " + calcDamage()+ " DMG",mon.lead));
+		toTextBox(mon.nameToString() + " used Fireball for " + calcDamage()+ " DMG");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 60){

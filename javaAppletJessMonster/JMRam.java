@@ -25,7 +25,7 @@ public class JMRam extends Monster {
 	}
 	void passive() {
 		setEnergy(getEnergy() + 5);
-		applet.textbox.getArray().add(new TextUnit("Energy + 5", lead));
+		toTextBox("Energy + 5");
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

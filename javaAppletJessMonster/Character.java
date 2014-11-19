@@ -95,7 +95,7 @@ public abstract class Character extends Monster {
 		setEnergy(getEnergy() - 20);
 		lead.tradeOK = true;
 		lead.myTurn = true;
-		applet.textbox.getArray().add(new TextUnit(nameToString() + " Switched", lead));
+		toTextBox(nameToString() + " Switched");
 	}
 
 }

@@ -5,10 +5,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
 
-public class BattleText {
+public class TextBox {
 	private ArrayList<TextUnit> textbox = new ArrayList<TextUnit>();
 	public Image pic;
-	public BattleText(JessMonster applet){
+	public TextBox(JessMonster applet){
 		pic = applet.getImage(applet.url,"Pictures/TextBox.jpg");
 	}
 	public void paint(Graphics g, JessMonster applet){
@@ -25,5 +25,9 @@ public class BattleText {
 	}
 	public ArrayList<TextUnit> getArray(){
 		return textbox;
+	}
+	//sends a string to be printed in the text box
+	public void toTextBox(String words, Leader lead){
+		getArray().add(new TextUnit(words, lead));
 	}
 }

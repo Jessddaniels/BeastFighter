@@ -25,7 +25,7 @@ public class JMBoar extends Monster {
 	}
 	void passive() {
 		setHP(getHP() + 5);
-		applet.textbox.getArray().add(new TextUnit("Health + 5", lead));
+		toTextBox("Health + 5");
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

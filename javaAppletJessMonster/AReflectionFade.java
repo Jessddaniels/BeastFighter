@@ -9,7 +9,7 @@ public class AReflectionFade extends Attack {
 		mon.setKnowledge(mon.getKnowledge() + 30);
 		mon.setExperience(mon.getExperience() + 30);
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Reflection Fade", mon.lead));
+		toTextBox(mon.nameToString() + " used Reflection Fade");
 		
 	}
 	public boolean isMet(Leader defender) {

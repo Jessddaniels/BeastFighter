@@ -31,7 +31,7 @@ public class JMSkeletalCow extends Monster {
 				setHP(getHP() + getSpirit());
 				setSpirit(0);
 			}
-			applet.textbox.getArray().add(new TextUnit("Spirit Linked", lead));
+			toTextBox("Spirit Linked");
 		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {

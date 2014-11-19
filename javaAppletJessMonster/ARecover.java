@@ -11,7 +11,7 @@ public class ARecover extends Attack {
 		mon.setEnergy(mon.getEnergy() + 50);
 		((Character) mon).EnDice -= 3;
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Recover", mon.lead));
+		toTextBox(mon.nameToString() + " used Recover");
 	}
 	boolean isMet(Leader defender) {
 		if (!mon.type.equals("character") || ((Character) mon).EnDice < 3){

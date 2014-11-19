@@ -11,7 +11,7 @@ public class LCSteroids extends LeaderCard {
 		mon.setHP(mon.getHP() - 15);
 		mon.setCombat(mon.getCombat() + 20);
 		mon.setSpirit(mon.getSpirit() - 20);
-		player.getApplet().textbox.getArray().add(new TextUnit("used Steroids", player));
+		toTextBox("used Steroids");
 	}
 	boolean isMet() {
 		if (player.getActiveMon().getSpirit() >= 20){
@@ -27,9 +27,7 @@ public class LCSteroids extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Health.jpg"), x + 60,y + 30, applet);
 	}
-	@Override
 	String nameToString() {
-		// TODO Auto-generated method stub
 		return "Steroids";
 	}
 }

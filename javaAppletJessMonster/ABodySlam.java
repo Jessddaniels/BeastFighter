@@ -12,7 +12,7 @@ public class ABodySlam extends Attack {
 		setDamage(mon.getHP() / 3);
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setEnergy(mon.getEnergy() - 20);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Body Slam for " + calcDamage() + " dmg", mon.lead));
+		toTextBox(mon.nameToString() + " used Body Slam for " + calcDamage() + " dmg");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 20 || mon.getHP() < 0){

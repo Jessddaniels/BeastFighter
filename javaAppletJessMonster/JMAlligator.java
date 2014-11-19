@@ -25,7 +25,7 @@ public class JMAlligator extends Monster {
 	}
 	void passive() {
 		setSpirit(getHP() / 10 + getSpirit());
-		applet.textbox.getArray().add(new TextUnit("Spirit +" + getHP() / 10, lead) );
+		toTextBox("Spirit +" + getHP() / 10);
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);

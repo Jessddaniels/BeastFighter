@@ -10,7 +10,7 @@ public class ASwordStrike extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Sword Strike for " + calcDamage()+ " DMG", mon.lead));
+		toTextBox(mon.nameToString() + " used Sword Strike for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 
 public abstract class Attack {
-	Monster mon;
+	public Monster mon;
 	private int damage;
 	private int kDamage;
 	public Font normalFont;
@@ -34,5 +34,9 @@ public abstract class Attack {
 	}
 	public void setKDamage(int kDamage) {
 		this.kDamage = kDamage;
+	}
+	//sends a string to be printed in the text box
+	public void toTextBox(String words){
+		mon.toTextBox(words);
 	}
 }

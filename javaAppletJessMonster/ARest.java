@@ -9,7 +9,7 @@ public class ARest extends Attack {
 	}
 	void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 20);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Rest", mon.lead));
+		toTextBox(mon.nameToString() + " used Rest");
 	}
 	boolean isMet(Leader defender) {
 		return true;

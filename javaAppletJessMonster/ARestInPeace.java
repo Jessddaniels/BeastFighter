@@ -10,7 +10,7 @@ public class ARestInPeace extends Attack {
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 15);
 		mon.setSpirit(mon.getSpirit() + 5);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Rest In Peace", mon.lead));
+		toTextBox(mon.nameToString() + " used Rest In Peace");
 		
 	}
 	public boolean isMet(Leader defender) {

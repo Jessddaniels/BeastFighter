@@ -9,7 +9,7 @@ public class AGriefAndRage extends Attack {
 		mon.setSpirit(mon.getSpirit() + 50);
 		mon.setCombat(mon.getCombat() + 50);
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Grief and Rage", mon.lead));
+		toTextBox(mon.nameToString() + " used Grief and Rage");
 		
 	}
 	public boolean isMet(Leader defender) {

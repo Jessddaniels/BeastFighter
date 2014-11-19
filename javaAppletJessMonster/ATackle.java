@@ -11,7 +11,7 @@ public class ATackle extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setEnergy(mon.getEnergy() - 10);
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Tackle for " +calcDamage()+ " dmg", mon.lead));
+		toTextBox(mon.nameToString() + " used Tackle for " +calcDamage()+ " dmg");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 10){

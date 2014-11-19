@@ -11,7 +11,7 @@ public class AVengeance extends Attack {
 		defender.getActiveMon().setHP(currentHP - calcDamage());
 		mon.setSpirit(mon.getSpirit() + 40);
 		((Character) mon).RollNum = 3;
-		mon.applet.textbox.getArray().add(new TextUnit(mon.nameToString() + " used Vengeance for " + calcDamage()+" DMG", mon.lead));
+		toTextBox(mon.nameToString() + " used Vengeance for " + calcDamage()+" DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

@@ -3,35 +3,35 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class CRochelle extends Character {
+public class CAdipedys extends Character {
 	private Image pic;
 
-	public CRochelle(JessMonster applet, Leader l) {
+	public CAdipedys(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"Pictures/WomanWarrior.jpg");
-		setHP(200);
-		setEnergy(100);
-		setSpirit(100);
+		pic = applet.getImage(super.getURL(),"Pictures/King.jpg");
+		setHP(400);
+		setEnergy(0);
+		setSpirit(0);
 		setCombat(100);
 		setKnowledge(100);
-		getAttackList().add(new ASwordStrike(this));
-		getAttackList().add(new ACounterStance(this));
-		getAttackList().add(new AReflectionFade(this));
+		getAttackList().add(new AEat(this));
+		getAttackList().add(new ABash(this));
+		getAttackList().add(new AHeadSlap(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
 	}
 	public String nameToString() {
 		if (getExperience() < 100){
-			return "Rochelle";
+			return "King Adipedys";
 		} else if (getExperience() < 200){
-			return "Rochelle the Rising";
+			return "Adipedys the Hungry";
 		} else if (getExperience() < 300){
-			return "Rochelle the Avenger";
+			return "Adipedys the Glutton";
 		} else if (getExperience() < 400){
-			return "Rochelle of Grief";
+			return "Demon Adipedys";
 		} else {
-			return "Rochelle of Vengeance";
+			return "Lord of the Flies";
 		}
 	}
 	void passive() {

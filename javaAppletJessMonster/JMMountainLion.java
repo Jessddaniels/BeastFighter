@@ -25,7 +25,7 @@ public class JMMountainLion extends Monster {
 	}
 	void passive() {
 		setCombat(getCombat() + 5);
-		applet.textbox.getArray().add(new TextUnit("Combat + 5", lead));
+		toTextBox("Combat + 5");
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {
 		g.setFont(passiveFont);
