@@ -12,6 +12,7 @@ public class JessMonster extends Applet implements Runnable{
 	Thread thread = new Thread(this);
 	boolean running = true;
 	public URL url;
+	public Images images;
 	Image dbImage; //db for double buffered
 	Graphics dbg;
 	public Match match;
@@ -19,6 +20,7 @@ public class JessMonster extends Applet implements Runnable{
     	setSize(800,600);
     	url = this.getDocumentBase();
     	match = new Match(this);
+    	images = new Images(this);
     }
     public void start(){
     	thread.start();
@@ -38,4 +40,7 @@ public class JessMonster extends Applet implements Runnable{
     	match.paint(dbg);
     	g.drawImage(dbImage, 0, 0, this);
     }
+    public Image getImage(String image){
+		return images.getImage(image);
+	}
 }

@@ -29,7 +29,7 @@ public class AEat extends Attack {
 		g.drawString("Eat" , x + 90 , y + 15);
 		g.setFont(normalFont);
 		g.drawString("30          ADD ", x + 95, y + 30);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 115 ,y + 20, applet);
+		g.drawImage(applet.getImage(Images.Health), x + 115 ,y + 20, applet);
 		g.drawString("50" , x + 10, y + 20);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x ,y + 25, applet);

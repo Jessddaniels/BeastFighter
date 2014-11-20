@@ -33,7 +33,7 @@ public class AVengeance extends Attack {
 		g.setFont(normalFont);
 		g.drawString("40 DMG (" + calcDamage() +")" , x + 110, y + 30);
 		g.drawString("100" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
 		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 45 , applet);
