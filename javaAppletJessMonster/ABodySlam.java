@@ -21,9 +21,9 @@ public class ABodySlam extends Attack {
 		return true;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/BodySlam.jpg"), x,y, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 105,y + 15, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 135,y + 45, applet);
+		g.drawImage(applet.getImage(Images.BodySlam), x,y, applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 105,y + 15, applet);
+		g.drawImage(applet.getImage(Images.Health), x + 135,y + 45, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Body Slam" , x + 70, y + 13);

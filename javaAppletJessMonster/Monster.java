@@ -15,7 +15,7 @@ public abstract class Monster {
 	private int combat;
 	private int spirit;
 	private int experience;
-	private int knowledge;
+	private int damage;
 	public Image runner;
 	public Leader lead;
 	public Image pic;
@@ -58,14 +58,14 @@ public abstract class Monster {
 	    	g.drawString(""+getEnergy(), x + 205, y + 70);
 	    	g.drawString(""+getCombat(), x + 205, y + 90);
 	    	g.drawString(""+getSpirit(), x + 205, y + 110);
-	    	g.drawString(""+getKnowledge(), x + 205, y + 130);
+	    	g.drawString(""+getDamage(), x + 205, y + 130);
 	    	g.drawString(""+getExperience(), x + 205, y + 150);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 175, y + 55, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 175, y + 75, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 175, y + 95, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Knowledge.jpg"), x + 175, y + 115, applet);
+	    	g.drawImage(applet.getImage(getURL(),"Pictures/Damage.jpg"), x + 175, y + 115, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 175, y + 135, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Runner.jpg"), x + 210, y + 455, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/RestButton.jpg"), x + 20, y + 455, applet);
@@ -149,11 +149,11 @@ public abstract class Monster {
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
-	public int getKnowledge() {
-		return knowledge;
+	public int getDamage() {
+		return damage;
 	}
-	public void setKnowledge(int knowledge) {
-		this.knowledge = knowledge;
+	public void setDamage(int damage) {
+		this.damage = damage;
 	}
 	public void rest(){
 		setEnergy(getEnergy() + 20);

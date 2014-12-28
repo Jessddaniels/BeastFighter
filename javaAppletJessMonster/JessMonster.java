@@ -19,8 +19,8 @@ public class JessMonster extends Applet implements Runnable{
     public void init(){
     	setSize(800,600);
     	url = this.getDocumentBase();
-    	match = new Match(this);
     	images = new Images(this);
+    	match = new Match(this);
     }
     public void start(){
     	thread.start();

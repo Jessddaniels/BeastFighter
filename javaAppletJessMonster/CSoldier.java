@@ -13,7 +13,7 @@ public class CSoldier extends Character {
 		setEnergy(100);
 		setSpirit(100);
 		setCombat(100);
-		setKnowledge(80);
+		setDamage(80);
 		getAttackList().add(new ANull(this));
 		getAttackList().add(new ANull(this));
 		getAttackList().add(new ASwordStrike(this));

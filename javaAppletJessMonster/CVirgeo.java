@@ -3,35 +3,35 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class CAdipedys extends Character {
+public class CVirgeo extends Character {
 	private Image pic;
 
-	public CAdipedys(JessMonster applet, Leader l) {
+	public CVirgeo(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(Images.Adipedys);
-		setHP(400);
-		setEnergy(0);
-		setSpirit(0);
+		pic = applet.getImage(Images.Virgeo);
+		setHP(200);
+		setEnergy(100);
+		setSpirit(100);
 		setCombat(100);
 		setDamage(100);
-		getAttackList().add(new AEat(this));
-		getAttackList().add(new ABash(this));
-		getAttackList().add(new AHeadSlap(this));
+		getAttackList().add(new ASwordStrike(this));
+		getAttackList().add(new ACounterStance(this));
+		getAttackList().add(new AReflectionFade(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
 	}
 	public String nameToString() {
 		if (getExperience() < 100){
-			return "King Adipedys";
+			return "Virgeo";
 		} else if (getExperience() < 200){
-			return "Adipedys the Hungry";
+			return "Virgeo the Mountain";
 		} else if (getExperience() < 300){
-			return "Adipedys the Glutton";
+			return "Virgeo the Island";
 		} else if (getExperience() < 400){
-			return "Demon Adipedys";
+			return "Virgeo the Natural";
 		} else {
-			return "Lord of the Flies";
+			return "Virgeo the Greedy";
 		}
 	}
 	void passive() {

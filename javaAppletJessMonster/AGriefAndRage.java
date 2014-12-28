@@ -24,21 +24,21 @@ public class AGriefAndRage extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/SwordStrike.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(Images.SwordStrike), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Grief and Rage" , x + 90 , y + 15);
 		g.setFont(normalFont);
 		g.drawString("50          ADD ", x + 95, y + 30);
 		g.drawString("50          ADD", x + 95, y + 45);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 115 ,y + 20, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x + 115 ,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 20, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 115 ,y + 30, applet);
 		g.drawString("100" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20,y + 25 , applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20,y + 25 , applet);
 	}
 
 }

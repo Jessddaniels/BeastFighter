@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public abstract class Attack {
 	public Monster mon;
 	private int damage;
-	private int kDamage;
+	private int ExDamage;
 	public Font normalFont;
 	public Font nameFont = new Font("Serif", Font.BOLD, 16);
 	public Font reqFont = new Font("Serif", Font.ITALIC, 12);
@@ -26,14 +26,14 @@ public abstract class Attack {
 	public int calcDamage(){
 		return (int) (getDamage() * ( mon.getCombat() / 100.0));
 	}
-	public int calcKDamage(){
-		return (int) (getKDamage() * ( mon.getKnowledge() / 100.0));
+	public int calcExDamage(){
+		return (int) (getExDamage() * ( mon.getDamage() / 100.0));
 	}
-	public int getKDamage() {
-		return kDamage;
+	public int getExDamage() {
+		return ExDamage;
 	}
-	public void setKDamage(int kDamage) {
-		this.kDamage = kDamage;
+	public void setExDamage(int ExDamage) {
+		this.ExDamage = ExDamage;
 	}
 	//sends a string to be printed in the text box
 	public void toTextBox(String words){

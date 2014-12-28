@@ -11,7 +11,7 @@ public abstract class Character extends Monster {
 	public int SDice = 0;
 	public int CDice = 0;
 	public int ExDice = 0;
-	public int KDice = 0;
+	public int DDice = 0;
 	public int RollNum = 0;
 	private ArrayList<String> diceList = new ArrayList<String>();
 	public Character(JessMonster applet, Leader p) {
@@ -19,7 +19,7 @@ public abstract class Character extends Monster {
 		type = "character";
 	}
 	public void roll(int dice){
-		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - KDice == dice){
+		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - DDice == dice){
 			for (int i = 0; i < dice; i++){
 				roll();
 			}
@@ -40,8 +40,8 @@ public abstract class Character extends Monster {
 				g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x+ 20+ i * 40,y +430, applet);
 			} else if (getDiceList().get(i).equals("Experience")){
 				g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 20+ i * 40,y + 430, applet);
-			} else if (getDiceList().get(i).equals("Knowledge")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Knowledge.jpg"), x + 20+ i * 40,y + 430, applet);
+			} else if (getDiceList().get(i).equals("Damage")){
+				g.drawImage(applet.getImage(getURL(),"Pictures/Damage.jpg"), x + 20+ i * 40,y + 430, applet);
 			} 
 		}
 	}
@@ -55,8 +55,8 @@ public abstract class Character extends Monster {
 			SDice--;
 		} else if (die.equals("Combat")){
 			CDice--;
-		} else if (die.equals("Knowledge")){
-			KDice--;
+		} else if (die.equals("Damage")){
+			DDice--;
 		} else if (die.equals("Experience")){
 			ExDice--;
 		} 
@@ -80,8 +80,8 @@ public abstract class Character extends Monster {
 			ExDice++;
 			getDiceList().add("Experience");
 		} else {
-			KDice++;
-			getDiceList().add("Knowledge");
+			DDice++;
+			getDiceList().add("Damage");
 		}
 	}
 	public ArrayList<String> getDiceList() {

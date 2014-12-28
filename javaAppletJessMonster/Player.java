@@ -14,8 +14,8 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 	private Boolean mousePressed = false;
 	public Player(JessMonster applet){
 		super(applet);
-		youWin = applet.getImage(getURL(),"Pictures/YouWin.jpg");
-		youLose = applet.getImage(getURL(),"Pictures/YouLose.jpg");
+		youWin = applet.getImage(Images.YouWin);
+		youLose = applet.getImage(Images.YouLose);
 		tradeOK = true;
 	}
 	public void update(JessMonster applet){

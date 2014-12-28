@@ -21,7 +21,7 @@ public class AAmbush extends Attack {
 		return true;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/TakeDown.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(Images.TakeDown), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Ambush" , x + 20, y + 15);
@@ -29,8 +29,8 @@ public class AAmbush extends Attack {
 		g.drawString("opponent         >" + calcDamage() , x + 10, y + 30);
 		g.setFont(normalFont);
 		g.drawString("50           / 65 DMG (" + calcDamage() + ")" , x + 10, y + 50);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 60,y + 18, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30,y + 35, applet);
+		g.drawImage(applet.getImage(Images.Health), x + 60,y + 18, applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 30,y + 35, applet);
 	}
 
 }

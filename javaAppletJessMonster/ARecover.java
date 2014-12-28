@@ -20,16 +20,16 @@ public class ARecover extends Attack {
 		return true;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Rest.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(Images.Rest), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("          Recover" , x, y + 20);
 		g.setFont(normalFont);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 40,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 40,y + 25, applet);
 		g.drawString("                      + 50" , x, y +40);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x ,y , applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x ,y + 20, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x ,y + 40 , applet);
+		g.drawImage(applet.getImage(Images.Energy), x ,y , applet);
+		g.drawImage(applet.getImage(Images.Energy), x ,y + 20, applet);
+		g.drawImage(applet.getImage(Images.Energy), x ,y + 40 , applet);
 	}
 
 }

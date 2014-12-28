@@ -8,12 +8,12 @@ public class CRochelle extends Character {
 
 	public CRochelle(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(super.getURL(),"Pictures/WomanWarrior.jpg");
+		pic = applet.getImage(Images.Calumbra);
 		setHP(200);
 		setEnergy(100);
 		setSpirit(100);
 		setCombat(100);
-		setKnowledge(100);
+		setDamage(100);
 		getAttackList().add(new ASwordStrike(this));
 		getAttackList().add(new ACounterStance(this));
 		getAttackList().add(new AReflectionFade(this));
@@ -29,9 +29,9 @@ public class CRochelle extends Character {
 		} else if (getExperience() < 300){
 			return "Rochelle the Avenger";
 		} else if (getExperience() < 400){
-			return "Rochelle of Grief";
-		} else {
 			return "Rochelle of Vengeance";
+		} else {
+			return "Rochelle of Wrath";
 		}
 	}
 	void passive() {

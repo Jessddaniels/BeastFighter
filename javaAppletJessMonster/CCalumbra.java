@@ -3,35 +3,35 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class CAdipedys extends Character {
+public class CCalumbra extends Character {
 	private Image pic;
 
-	public CAdipedys(JessMonster applet, Leader l) {
+	public CCalumbra(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(Images.Adipedys);
-		setHP(400);
-		setEnergy(0);
-		setSpirit(0);
+		pic = applet.getImage(Images.Calumbra);
+		setHP(200);
+		setEnergy(100);
+		setSpirit(100);
 		setCombat(100);
 		setDamage(100);
-		getAttackList().add(new AEat(this));
-		getAttackList().add(new ABash(this));
-		getAttackList().add(new AHeadSlap(this));
+		getAttackList().add(new ASwordStrike(this));
+		getAttackList().add(new ACounterStance(this));
+		getAttackList().add(new AReflectionFade(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
 	}
 	public String nameToString() {
 		if (getExperience() < 100){
-			return "King Adipedys";
+			return "Calumbra";
 		} else if (getExperience() < 200){
-			return "Adipedys the Hungry";
+			return "Columbra the Jealous";
 		} else if (getExperience() < 300){
-			return "Adipedys the Glutton";
+			return "Columbra the Mad";
 		} else if (getExperience() < 400){
-			return "Demon Adipedys";
+			return "Columbra the Murderer";
 		} else {
-			return "Lord of the Flies";
+			return "Demon Sight Columbra";
 		}
 	}
 	void passive() {

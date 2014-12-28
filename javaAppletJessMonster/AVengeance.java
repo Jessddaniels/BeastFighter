@@ -26,7 +26,7 @@ public class AVengeance extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/SwordStrike.jpg"), x,y, applet);
+		g.drawImage(applet.getImage(Images.SwordStrike), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Vengeance" , x + 105 , y + 15);
@@ -34,12 +34,12 @@ public class AVengeance extends Attack {
 		g.drawString("40 DMG (" + calcDamage() +")" , x + 110, y + 30);
 		g.drawString("100" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20,y + 25 , applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x + 40,y + 25 , applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Spirit.jpg"), x + 40,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20,y + 25 , applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 40,y + 25 , applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 40,y + 45 , applet);
 	}
 
 }

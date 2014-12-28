@@ -73,19 +73,18 @@ public abstract class Leader{
 	public void updateEOT(JessMonster applet){
 		if (activeMon.type.equals("character")){
 			Character mon = (Character) activeMon;
-			int dieReward = (5 * mon.getKnowledge()) / 100 ;
-			mon.setHP(mon.getHP() + dieReward * mon.HDice);
-			mon.setEnergy(mon.getEnergy() + dieReward * mon.EnDice);
-			mon.setSpirit(mon.getSpirit() + dieReward * mon.SDice);
-			mon.setCombat(mon.getCombat() + dieReward * mon.CDice);
-			mon.setKnowledge(mon.getKnowledge() + dieReward * mon.KDice);
-			mon.setExperience(mon.getExperience() + dieReward * mon.ExDice);
+			mon.setHP(mon.getHP() + mon.HDice);
+			mon.setEnergy(mon.getEnergy() + mon.EnDice);
+			mon.setSpirit(mon.getSpirit() + mon.SDice);
+			mon.setCombat(mon.getCombat() + mon.CDice);
+			mon.setDamage(mon.DDice);
+			mon.setExperience(mon.getExperience() + mon.ExDice);
 			mon.getDiceList().clear();
 			mon.HDice = 0;
 			mon.EnDice = 0;
 			mon.SDice = 0;
 			mon.CDice = 0;
-			mon.KDice = 0;
+			mon.DDice = 0;
 			mon.ExDice = 0;
 			mon.RollNum = 0;
 		}
@@ -156,11 +155,13 @@ public abstract class Leader{
     }
     public Character ranChar(Leader l){
     	Character mon;
-    	int rand = (int) (Math.random() * 3);
+    	int rand = (int) (Math.random() * 4);
     	if (rand == 0) {
-    		mon = new CSoldier(applet, l);
+    		mon = new CCalumbra(applet, l);
     	} else if (rand == 1) {
     		mon = new CRochelle(applet, l);
+    	} else if (rand == 2) {
+    		mon = new CVirgeo(applet, l);
     	} else {
     		mon = new CAdipedys(applet, l);
     	} 
