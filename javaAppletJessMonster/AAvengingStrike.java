@@ -9,7 +9,7 @@ public class AAvengingStrike extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage()- calcExDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage()- calcExDamage());
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Avenging Strike for " + (calcDamage() + calcExDamage())+" DMG");
 		

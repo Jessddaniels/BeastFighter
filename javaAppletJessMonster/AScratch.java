@@ -8,7 +8,7 @@ public class AScratch extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		toTextBox(mon.nameToString() + " used Scratch for " + calcDamage()+ " DMG");
 		
 	}

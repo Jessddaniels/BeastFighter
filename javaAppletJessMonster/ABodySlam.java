@@ -10,7 +10,7 @@ public class ABodySlam extends Attack {
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		setDamage(mon.getHP() / 3);
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 20);
 		toTextBox(mon.nameToString() + " used Body Slam for " + calcDamage() + " dmg");
 	}

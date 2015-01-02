@@ -192,10 +192,10 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 				//roll button
 			} else if (arg0.getX() > 250 && arg0.getX() < 305 && arg0.getY() > 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();
-				if (mon.getDiceList().size() <  6) {
+				if (mousePressed == false) {
 					mon.roll(6 - mon.getDiceList().size());
 					mousePressed = true;
-				}// reroll dice
+				}// remove dice for reroll 
 			} else if (arg0.getX() > 170 && arg0.getX() < 390 && arg0.getY() > 520 && arg0.getY() < 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();
 				if (mon.RollNum < 3 && mousePressed == false){

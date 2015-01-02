@@ -22,8 +22,8 @@ public abstract class Leader{
 	public Leader(JessMonster applet){
 		this.setApplet(applet);
 		url = applet.url;
-		player = applet.getImage(url,"Pictures/Ninja.png");
-		cardListBG = applet.getImage(url,"Pictures/CardList.jpg");
+		player = applet.getImage(Images.Player);
+		cardListBG = applet.getImage(Images.CardListBG);
 		monsterList.add(ranChar(this));
 		monsterList.add(ranMonster(this));
 		monsterList.add(ranMonster(this));
@@ -73,12 +73,6 @@ public abstract class Leader{
 	public void updateEOT(JessMonster applet){
 		if (activeMon.type.equals("character")){
 			Character mon = (Character) activeMon;
-			mon.setHP(mon.getHP() + mon.HDice);
-			mon.setEnergy(mon.getEnergy() + mon.EnDice);
-			mon.setSpirit(mon.getSpirit() + mon.SDice);
-			mon.setCombat(mon.getCombat() + mon.CDice);
-			mon.setDamage(mon.DDice);
-			mon.setExperience(mon.getExperience() + mon.ExDice);
 			mon.getDiceList().clear();
 			mon.HDice = 0;
 			mon.EnDice = 0;
@@ -88,7 +82,6 @@ public abstract class Leader{
 			mon.ExDice = 0;
 			mon.RollNum = 0;
 		}
-		
 	}
 	public void updateBOT(JessMonster applet){
 		getApplet().match.sleeper(1000);

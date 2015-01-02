@@ -13,17 +13,23 @@ public abstract class Character extends Monster {
 	public int ExDice = 0;
 	public int DDice = 0;
 	public int RollNum = 0;
+	public int diceValue = 0;
+	
 	private ArrayList<String> diceList = new ArrayList<String>();
 	public Character(JessMonster applet, Leader p) {
 		super(applet, p);
 		type = "character";
+		diceValue = 5;
 	}
 	public void roll(int dice){
-		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - DDice == dice){
+		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - DDice == dice && (RollNum == 0 || dice > 0)){
 			for (int i = 0; i < dice; i++){
 				roll();
 			}
 			RollNum++;
+		} else if ( RollNum < 4){
+			resolveDice();
+			RollNum = 4;
 		}
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet, Image pic){
@@ -83,6 +89,14 @@ public abstract class Character extends Monster {
 			DDice++;
 			getDiceList().add("Damage");
 		}
+	}
+	public void resolveDice(){
+		setHP(getHP() + diceValue * HDice);
+		setEnergy(getEnergy() + diceValue * EnDice);
+		setSpirit(getSpirit() + diceValue * SDice);
+		setCombat(getCombat() + diceValue * CDice);
+		setDamage(getDamage() + diceValue * DDice);
+		setExperience(getExperience() + diceValue * ExDice);
 	}
 	public ArrayList<String> getDiceList() {
 		return diceList;

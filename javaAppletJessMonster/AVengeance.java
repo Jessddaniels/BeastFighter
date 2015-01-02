@@ -8,7 +8,7 @@ public class AVengeance extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setSpirit(mon.getSpirit() + 40);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Vengeance for " + calcDamage()+" DMG");

@@ -9,7 +9,7 @@ public class ASpiritSink extends Attack {
 	}
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() - 25);
-		defender.getActiveMon().setHP(defender.getActiveMon().getHP() - calcDamage());
+		defender.getActiveMon().setHP(defender.getActiveMon().getHP() - applyDamage());
 		defender.getActiveMon().setSpirit(defender.getActiveMon().getSpirit() - 20);
 		toTextBox( mon.nameToString() + " used Spirit Sink");
 		

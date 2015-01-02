@@ -9,7 +9,7 @@ public class ABash extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		int currentC = defender.getActiveMon().getCombat();
 		defender.getActiveMon().setCombat(currentC - calcExDamage());
 		((Character) mon).RollNum = 3;

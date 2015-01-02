@@ -9,7 +9,7 @@ public class AFireball extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 60);
 		toTextBox(mon.nameToString() + " used Fireball for " + calcDamage()+ " DMG");
 	}

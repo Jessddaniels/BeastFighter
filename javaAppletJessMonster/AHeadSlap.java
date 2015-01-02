@@ -9,7 +9,7 @@ public class AHeadSlap extends Attack {
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - calcDamage());
+		defender.getActiveMon().setHP(currentHP - applyDamage());
 		int currentEx = defender.getActiveMon().getDamage();
 		defender.getActiveMon().setExperience(currentEx - calcExDamage());
 		((Character) mon).RollNum = 3;

@@ -23,11 +23,16 @@ public abstract class Attack {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
+	public int applyDamage(){
+		int attackDamage = calcDamage();
+		mon.setDamage(0);
+		return attackDamage;
+	}
 	public int calcDamage(){
-		return (int) (getDamage() * ( mon.getCombat() / 100.0));
+		return (int) (mon.getDamage() + getDamage() * ( 1 + (mon.getCombat() / 500.0)));
 	}
 	public int calcExDamage(){
-		return (int) (getExDamage() * ( mon.getDamage() / 100.0));
+		return (int) (getExDamage() * ( 1 + (mon.getCombat() / 500.0)));
 	}
 	public int getExDamage() {
 		return ExDamage;

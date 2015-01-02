@@ -38,6 +38,9 @@ public class Images {
 	public static final String TextBox = "Pictures/TextBox.jpg";
 	public static final String YouWin = "Pictures/YouWin.jpg";
 	public static final String YouLose = "Pictures/YouLose.jpg";
+	public static final String Player = "Pictures/Ninja.png";
+	public static final String CardListBG = "Pictures/CardList.jpg";
+	
 	public Images(JessMonster applet){
 		this.url = applet.url;
 		this.applet = applet;
