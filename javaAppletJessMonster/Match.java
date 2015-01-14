@@ -15,7 +15,7 @@ public class Match {
 	public TextBox textbox;
 	public Match(JessMonster applet){
 		this.applet = applet;
-		bg = applet.getImage(applet.url,"Pictures/bgGraveyard.jpg");
+		bg = applet.getImage(Images.BGGraveyard);
     	textbox = new TextBox(applet);
 	}
 	public void loop(){

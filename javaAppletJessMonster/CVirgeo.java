@@ -9,14 +9,13 @@ public class CVirgeo extends Character {
 	public CVirgeo(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Virgeo);
-		setHP(200);
-		setEnergy(100);
-		setSpirit(100);
-		setCombat(100);
-		setDamage(100);
-		getAttackList().add(new ASwordStrike(this));
-		getAttackList().add(new ACounterStance(this));
-		getAttackList().add(new AReflectionFade(this));
+		setHP(250);
+		setEnergy(200);
+		setSpirit(350);
+		setCombat(200);
+		getAttackList().add(new ABearHug(this));
+		getAttackList().add(new AFellingChop(this));
+		getAttackList().add(new ATimber(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);

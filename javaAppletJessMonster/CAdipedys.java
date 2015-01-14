@@ -9,11 +9,10 @@ public class CAdipedys extends Character {
 	public CAdipedys(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Adipedys);
-		setHP(400);
+		setHP(800);
 		setEnergy(0);
 		setSpirit(0);
-		setCombat(100);
-		setDamage(100);
+		setCombat(200);
 		getAttackList().add(new AEat(this));
 		getAttackList().add(new ABash(this));
 		getAttackList().add(new AHeadSlap(this));

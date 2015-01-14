@@ -9,11 +9,10 @@ public class CCalumbra extends Character {
 	public CCalumbra(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Calumbra);
-		setHP(200);
+		setHP(300);
 		setEnergy(100);
-		setSpirit(100);
-		setCombat(100);
-		setDamage(100);
+		setSpirit(300);
+		setCombat(300);
 		getAttackList().add(new ASwordStrike(this));
 		getAttackList().add(new ACounterStance(this));
 		getAttackList().add(new AReflectionFade(this));

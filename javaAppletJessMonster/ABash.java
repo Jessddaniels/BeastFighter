@@ -17,10 +17,13 @@ public class ABash extends Attack {
 		
 	}
 	public boolean isMet(Leader defender) {
-		if (!mon.type.equals("character") || ((Character) mon).CDice < 2 || ((Character) mon).DDice < 1 || mon.getEnergy() < 30){
-			return false;
+		if (mon.type.equals("character") && ((Character) mon).CDice >= 2 && ((Character) mon).ExDice >= 1){
+			return true;
+		} else if (mon.getEnergy() >= 20){
+			mon.setEnergy(mon.getEnergy() - 20);
+			return true;
 		}
-		return true;
+		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Bash), x,y, applet);

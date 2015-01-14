@@ -8,12 +8,11 @@ public class CRochelle extends Character {
 
 	public CRochelle(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(Images.Calumbra);
+		pic = applet.getImage(Images.Rochelle);
 		setHP(200);
-		setEnergy(100);
-		setSpirit(100);
-		setCombat(100);
-		setDamage(100);
+		setEnergy(300);
+		setSpirit(300);
+		setCombat(200);
 		getAttackList().add(new ASwordStrike(this));
 		getAttackList().add(new ACounterStance(this));
 		getAttackList().add(new AReflectionFade(this));

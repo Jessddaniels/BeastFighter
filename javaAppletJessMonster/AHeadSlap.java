@@ -17,10 +17,13 @@ public class AHeadSlap extends Attack {
 		
 	}
 	public boolean isMet(Leader defender) {
-		if (!mon.type.equals("character") || ((Character) mon).CDice < 2 || ((Character) mon).ExDice < 1 || mon.getEnergy() < 30){
-			return false;
+		if (mon.type.equals("character") && ((Character) mon).CDice >= 2 && ((Character) mon).ExDice >= 1){
+			return true;
+		} else if (mon.getEnergy() >= 40){
+			mon.setEnergy(mon.getEnergy() - 40);
+			return true;
 		}
-		return true;
+		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.HeadSlap), x,y, applet);

@@ -34,12 +34,14 @@ public class Images {
 	public static final String SwordStrike = "Pictures/SwordStrike.jpg";
 	public static final String Rest = "Pictures/Rest.jpg";
 	public static final String TakeDown = "Pictures/TakeDown.jpg";
+	public static final String Virgeo1Attack = "Pictures/Virgeo1Attack.jpg";
 	//misc
 	public static final String TextBox = "Pictures/TextBox.jpg";
 	public static final String YouWin = "Pictures/YouWin.jpg";
 	public static final String YouLose = "Pictures/YouLose.jpg";
 	public static final String Player = "Pictures/Ninja.png";
 	public static final String CardListBG = "Pictures/CardList.jpg";
+	public static final String BGGraveyard = "Pictures/bgGraveyard.jpg";
 	
 	public Images(JessMonster applet){
 		this.url = applet.url;

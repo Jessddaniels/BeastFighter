@@ -25,8 +25,8 @@ public abstract class Leader{
 		player = applet.getImage(Images.Player);
 		cardListBG = applet.getImage(Images.CardListBG);
 		monsterList.add(ranChar(this));
-		monsterList.add(ranMonster(this));
-		monsterList.add(ranMonster(this));
+		//monsterList.add(ranMonster(this));
+		//monsterList.add(ranMonster(this));
 		cardList.add(ranCard(this));
 		cardList.add(ranCard(this));
 		cardList.add(ranCard(this));
