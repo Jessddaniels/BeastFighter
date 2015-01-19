@@ -13,9 +13,9 @@ public class CAdipedys extends Character {
 		setEnergy(0);
 		setSpirit(0);
 		setCombat(200);
-		getAttackList().add(new AEat(this));
-		getAttackList().add(new ABash(this));
-		getAttackList().add(new AHeadSlap(this));
+		getAttackList().add(new APommelStrike(this));
+		getAttackList().add(new AQuickThrust(this));
+		getAttackList().add(new AStunningThrow(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
@@ -23,29 +23,27 @@ public class CAdipedys extends Character {
 	public String nameToString() {
 		if (getExperience() < 100){
 			return "King Adipedys";
-		} else if (getExperience() < 200){
-			return "Adipedys the Hungry";
 		} else if (getExperience() < 300){
 			return "Adipedys the Glutton";
-		} else if (getExperience() < 400){
-			return "Demon Adipedys";
 		} else {
-			return "Lord of the Flies";
+			return "Adipedys of the Flies";
 		}
 	}
 	void passive() {
 		if (getAttackList().size() < 4 && getExperience() >= 100){
-			getAttackList().add(new ARiposte(this));
-			toTextBox("Level 2");
+			getAttackList().add(new AEat(this));
 		} else if (getAttackList().size() < 5 && getExperience() >= 200){
-			getAttackList().add(new AAvengingStrike(this));
-			toTextBox("Level 3");
+			getAttackList().add(new AHeadSlap(this));
 		} else if (getAttackList().size() < 6 && getExperience() >= 300){
-			getAttackList().add(new AGriefAndRage(this));
-			toTextBox("Level 4");
+			getAttackList().add(new AMomentum(this));
+			toTextBox("Level 2");
 		} else if (getAttackList().size() < 7 && getExperience() >= 400){
-			getAttackList().add(new AVengeance(this));
-			toTextBox("Level 5");
+			getAttackList().add(new AConsumption(this));
+		} else if (getAttackList().size() < 8 && getExperience() >= 400){
+			getAttackList().add(new ABile(this));
+		} else if (getAttackList().size() < 9 && getExperience() >= 400){
+			getAttackList().add(new AVileGenesis(this));
+			toTextBox("Level 3");
 		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {

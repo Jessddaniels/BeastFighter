@@ -3,46 +3,46 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class CCalumbra extends Character {
+public class CDebira extends Character {
 	private Image pic;
 
-	public CCalumbra(JessMonster applet, Leader l) {
+	public CDebira(JessMonster applet, Leader l) {
 		super(applet, l);
-		pic = applet.getImage(Images.Calumbra);
-		setHP(300);
-		setEnergy(100);
+		pic = applet.getImage(Images.Debira);
+		setHP(200);
+		setEnergy(300);
 		setSpirit(300);
-		setCombat(300);
-		getAttackList().add(new AMiracleTonic(this));
-		getAttackList().add(new AInfectingCuts(this));
-		getAttackList().add(new ABloodSplatter(this));
+		setCombat(200);
+		getAttackList().add(new ACounterStance(this));
+		getAttackList().add(new ARiposte(this));
+		getAttackList().add(new AReflectionFade(this));
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet){
 		super.paint(g, x, y, applet, pic);
 	}
 	public String nameToString() {
 		if (getExperience() < 150){
-			return "Calumbra the Jealous";
+			return "Debira the Rising";
 		} else if (getExperience() < 300){
-			return "Demon Sight Calumbra";
+			return "Debira of Vengeance";
 		} else {
-			return "Demonic Calumbra";
+			return "Debira of Wrath";
 		}
 	}
 	void passive() {
 		if (getAttackList().size() < 4 && getExperience() >= 50){
-			getAttackList().add(new ACausticPurgative(this));
+			getAttackList().add(new AVidensManus(this));
 		} else if (getAttackList().size() < 5 && getExperience() >= 100){
-			getAttackList().add(new AButcherHook(this));
+			getAttackList().add(new ASparkingStrike(this));
 		} else if (getAttackList().size() < 6 && getExperience() >= 150){
-			getAttackList().add(new AFuguToxin(this));
+			getAttackList().add(new AAvengingBlast(this));
 			toTextBox("Level 2");
 		} else if (getAttackList().size() < 7 && getExperience() >= 200){
-			getAttackList().add(new ALeechTrap(this));
+			getAttackList().add(new ARisingCuts(this));
 		} else if (getAttackList().size() < 8 && getExperience() >= 250){
-			getAttackList().add(new ADryHanging(this));
+			getAttackList().add(new AVengeance(this));
 		} else if (getAttackList().size() < 9 && getExperience() >= 300){
-			getAttackList().add(new ADemonicPull(this));
+			getAttackList().add(new AWrath(this));
 			toTextBox("Level 3");
 		}
 	}

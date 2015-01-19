@@ -1,8 +1,8 @@
 package javaAppletJessMonster;
 import java.awt.Graphics;
 
-public class ARiposte extends Attack {
-	public ARiposte(Monster mon){
+public class ALeechTrap extends Attack {
+	public ALeechTrap(Monster mon){
 		super(mon);
 		setDamage(20);
 	}
@@ -11,7 +11,7 @@ public class ARiposte extends Attack {
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setHP(mon.getHP() + 20);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Riposte for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Leech Trap for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -26,10 +26,10 @@ public class ARiposte extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.Debira1Attack), x,y, applet);
+		g.drawImage(applet.getImage(Images.Calumbra3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Riposte" , x + 105 , y + 15);
+		g.drawString("Leech Trap" , x + 105 , y + 15);
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
 		g.drawString("20          ADD", x + 95, y + 45);

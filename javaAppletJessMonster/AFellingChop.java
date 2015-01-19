@@ -4,20 +4,20 @@ import java.awt.Graphics;
 public class AFellingChop extends Attack {
 	public AFellingChop (Monster mon){
 		super(mon);
-		setDamage(50);
+		setDamage(25);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Timber for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Felling Chop for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character") && ((Character) mon).CDice >= 3 && ((Character) mon).ExDice >= 1){
+		if (mon.type.equals("character") && ((Character) mon).DDice >= 3 && ((Character) mon).ExDice >= 2){
 			return true;
-		} else if (mon.getEnergy() >= 60){
-			mon.setEnergy(mon.getEnergy() - 60);
+		} else if (mon.getEnergy() >= 25){
+			mon.setEnergy(mon.getEnergy() - 25);
 			return true;
 		}
 		return false;
@@ -28,13 +28,14 @@ public class AFellingChop extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Felling Chop" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("50 DMG (" + calcDamage() +")" , x + 110, y + 35);
-		g.drawString("80" , x + 10, y + 20);
+		g.drawString("25 DMG (" + calcDamage() +")" , x + 115, y + 45);
+		g.drawString("25" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Experience), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Damage), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Damage), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Damage), x + 20 ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 40 ,y + 25 , applet);
 	}
 
 }

@@ -152,7 +152,7 @@ public abstract class Leader{
     	if (rand == 0) {
     		mon = new CCalumbra(applet, l);
     	} else if (rand == 1) {
-    		mon = new CRochelle(applet, l);
+    		mon = new CDebira(applet, l);
     	} else if (rand == 2) {
     		mon = new CVirgeo(applet, l);
     	} else {

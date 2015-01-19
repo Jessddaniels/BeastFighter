@@ -1,8 +1,8 @@
 package javaAppletJessMonster;
 import java.awt.Graphics;
 
-public class AHeadSlap extends Attack {
-	public AHeadSlap (Monster mon){
+public class ABile extends Attack {
+	public ABile(Monster mon){
 		super(mon);
 		setDamage(20);
 		setExDamage(20);
@@ -13,7 +13,7 @@ public class AHeadSlap extends Attack {
 		int currentEx = defender.getActiveMon().getDamage();
 		defender.getActiveMon().setExperience(currentEx - calcExDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Head Slap for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Bile for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -26,10 +26,10 @@ public class AHeadSlap extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.Adipedys2Attack), x,y, applet);
+		g.drawImage(applet.getImage(Images.Adipedys3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Head Slap" , x + 70 , y + 15);
+		g.drawString("Bile" , x + 70 , y + 15);
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcDamage() +")" , x + 70, y + 35);
 		g.drawString("20          DMG (" + calcExDamage() +")" , x + 70, y + 55);

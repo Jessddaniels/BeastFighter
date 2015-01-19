@@ -9,10 +9,10 @@ public class CVirgeo extends Character {
 	public CVirgeo(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Virgeo);
-		setHP(250);
-		setEnergy(200);
-		setSpirit(350);
-		setCombat(200);
+		setHP(300);
+		setEnergy(50);
+		setSpirit(50);
+		setCombat(0);
 		getAttackList().add(new ABearHug(this));
 		getAttackList().add(new AFellingChop(this));
 		getAttackList().add(new ATimber(this));
@@ -21,31 +21,29 @@ public class CVirgeo extends Character {
 		super.paint(g, x, y, applet, pic);
 	}
 	public String nameToString() {
-		if (getExperience() < 100){
-			return "Virgeo";
-		} else if (getExperience() < 200){
-			return "Virgeo the Mountain";
+		if (getExperience() < 150){
+			return "Virgeo the Mountain Man";
 		} else if (getExperience() < 300){
-			return "Virgeo the Island";
-		} else if (getExperience() < 400){
-			return "Virgeo the Natural";
+			return "Virgeo the Naturalist";
 		} else {
 			return "Virgeo the Greedy";
 		}
 	}
 	void passive() {
-		if (getAttackList().size() < 4 && getExperience() >= 100){
-			getAttackList().add(new ARiposte(this));
+		if (getAttackList().size() < 4 && getExperience() >= 50){
+			getAttackList().add(new ABrambleSnare(this));
+		} else if (getAttackList().size() < 5 && getExperience() >= 100){
+			getAttackList().add(new AStampede(this));
+		} else if (getAttackList().size() < 6 && getExperience() >= 150){
+			getAttackList().add(new ABackToNature(this));
 			toTextBox("Level 2");
-		} else if (getAttackList().size() < 5 && getExperience() >= 200){
-			getAttackList().add(new AAvengingStrike(this));
+		} else if (getAttackList().size() < 7 && getExperience() >= 200){
+			getAttackList().add(new ABlightBolt(this));
+		} else if (getAttackList().size() < 8 && getExperience() >= 250){
+			getAttackList().add(new AToxicSpores(this));
+		} else if (getAttackList().size() < 9 && getExperience() >= 300){
+			getAttackList().add(new ALifeBloodBomb(this));
 			toTextBox("Level 3");
-		} else if (getAttackList().size() < 6 && getExperience() >= 300){
-			getAttackList().add(new AGriefAndRage(this));
-			toTextBox("Level 4");
-		} else if (getAttackList().size() < 7 && getExperience() >= 400){
-			getAttackList().add(new AVengeance(this));
-			toTextBox("Level 5");
 		}
 	}
 	void paintPassive(Graphics g, int x, int y, JessMonster applet) {

@@ -1,8 +1,8 @@
 package javaAppletJessMonster;
 import java.awt.Graphics;
 
-public class AAvengingStrike extends Attack {
-	public AAvengingStrike(Monster mon){
+public class AAvengingBlast extends Attack {
+	public AAvengingBlast(Monster mon){
 		super(mon);
 		setDamage(20);
 		setExDamage(20);
@@ -11,7 +11,7 @@ public class AAvengingStrike extends Attack {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage()- calcExDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Avenging Strike for " + (calcDamage() + calcExDamage())+" DMG");
+		toTextBox(mon.nameToString() + " used Avenging Blast for " + (calcDamage() + calcExDamage())+" DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -26,10 +26,10 @@ public class AAvengingStrike extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.SwordStrike), x,y, applet);
+		g.drawImage(applet.getImage(Images.Debira2Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Avenging Strike" , x + 105 , y + 15);
+		g.drawString("Avenging Blast" , x + 105 , y + 15);
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
 		g.drawString("20 DMG (" + calcExDamage() +")" , x + 110, y + 45);

@@ -26,7 +26,7 @@ public abstract class Monster {
 	public JessMonster applet;
 	public Match match;
 	public Font normalFont;
-	public Font nameFont = new Font("SansSerif", Font.BOLD, 20);
+	public Font nameFont = new Font("SansSerif", Font.BOLD, 18);
 	public Font passiveFont = new Font("Serif", Font.BOLD, 15);
 	public Monster(JessMonster applet, Leader p){
 		lead = p;
@@ -48,7 +48,7 @@ public abstract class Monster {
 		if (p1.getViewMon() == this || p2.getViewMon() == this){
 			g.drawImage(attackPage, x, y, applet);
 			g.setFont(nameFont);
-			g.drawString("     " + nameToString(), x + 5, y + 25);
+			g.drawString("     " + nameToString(), x - 10, y + 25);
 			g.setFont(normalFont);
 			paintPassive(g, x + 35, y + 150, applet);
 			paintA1(g, x + 5, y + 210, applet);
