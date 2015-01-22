@@ -4,22 +4,20 @@ import java.awt.Graphics;
 public class ADryHanging extends Attack {
 	public ADryHanging(Monster mon){
 		super(mon);
-		setDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setHP(mon.getHP() + 20);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Dry Hanging for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Dry Hanging" );
+		toTextBox(" and gained " + (30 + 30 * mon.getCombat() / 500) + " attack" );
+		mon.setDamage(mon.getDamage() + 30 + 30 * mon.getCombat() / 500);
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 2 && ((Character) mon).HDice >= 1 ){
+			if (((Character) mon).HDice >= 2 && ((Character) mon).ExDice >= 2 ){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 20){
+				mon.setEnergy(mon.getEnergy() - 20);
 				return true;
 			}
 		}
@@ -29,16 +27,18 @@ public class ADryHanging extends Attack {
 		g.drawImage(applet.getImage(Images.Calumbra3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Dry Hanging" , x + 105 , y + 15);
+		g.drawString("Dry Hanging" , x + 105 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
-		g.drawString("20          ADD", x + 95, y + 45);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 115 ,y + 35, applet);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x ,y + 45 , applet);
+		g.drawString("Gain 30          (" + (30 + 30 * mon.getCombat() / 500) +")" , x + 110, y + 40);
+		g.drawImage(applet.getImage(Images.Damage), x + 155 ,y + 25, applet);
+		//en cost
+		g.drawString("20" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		// die cost
+		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Health), x ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x +20 ,y + 47 , applet);
 	}
 
 }

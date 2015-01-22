@@ -9,23 +9,23 @@ public class AMiracleTonic extends Attack {
 		toTextBox(mon.nameToString() + " used Miracle Tonic" );
 		int rand = (int) (Math.random() * 6);
 		if (rand == 0){
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " health" );
-			mon.setHP(mon.getHP() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " health" );
+			mon.setHP(mon.getHP() + 25 + 25 * mon.getCombat() / 500);
 		} else if (rand ==1){
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " energy" );
-			mon.setEnergy(mon.getEnergy() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " energy" );
+			mon.setEnergy(mon.getEnergy() + 25 + 25 * mon.getCombat() / 500);
 		} else if (rand ==2){
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " combat" );
-			mon.setCombat(mon.getCombat() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " combat" );
+			mon.setCombat(mon.getCombat() + 25+ 25 * mon.getCombat() / 500);
 		} else if (rand ==3){
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " spirit" );
-			mon.setSpirit(mon.getSpirit() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " spirit" );
+			mon.setSpirit(mon.getSpirit() + 25 + 25 * mon.getCombat() / 500);
 		} else if (rand ==4){
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " attack" );
-			mon.setDamage(mon.getDamage() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " attack" );
+			mon.setDamage(mon.getDamage() + 25 + 25 * mon.getCombat() / 500);
 		} else {
-			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " experience" );
-			mon.setExperience(mon.getExperience() + 25 * mon.getCombat() / 20);
+			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " experience" );
+			mon.setExperience(mon.getExperience() + 25 + 25 * mon.getCombat() / 500);
 		}
 		((Character) mon).RollNum = 3;
 		
@@ -47,7 +47,7 @@ public class AMiracleTonic extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Miracle Tonic" , x + 105 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("ADD "+25 * mon.getCombat() / 20+" random die stat", x + 95, y + 45);
+		g.drawString("ADD "+ (25 + 25 * mon.getCombat() / 500)+" to random die stat", x + 80, y + 45);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

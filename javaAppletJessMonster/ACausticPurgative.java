@@ -33,9 +33,9 @@ public class ACausticPurgative extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Caustic Purgative" , x + 95 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("25 DMG (" + calcDamage() +")" , x + 110, y + 45);
-		g.drawString("10          DMG (" + calcSDamage() +")" , x + 95, y + 65);
-		g.drawImage(applet.getImage(Images.Spirit), x + 115 ,y + 52, applet);
+		g.drawString("10 DMG (" + calcDamage() +")" , x + 110, y + 40);
+		g.drawString("10          DMG (" + calcSDamage() +")" , x + 95, y + 60);
+		g.drawImage(applet.getImage(Images.Spirit), x + 115 ,y + 43, applet);
 		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

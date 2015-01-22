@@ -32,8 +32,8 @@ public class AFuguToxin extends Attack {
 		g.drawString("Fugu Toxin" , x + 105 , y + 25);
 		g.setFont(normalFont);
 		g.drawString("Enemy Loses 1/10" , x + 90, y + 40);
-		g.drawString("        &       " , x + 110, y + 60);
-		g.drawImage(applet.getImage(Images.Health), x + 110 ,y + 45, applet);
+		g.drawString("        &       " , x + 120, y + 60);
+		g.drawImage(applet.getImage(Images.Health), x + 120 ,y + 45, applet);
 		g.drawImage(applet.getImage(Images.Energy), x + 155 ,y + 45, applet);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);

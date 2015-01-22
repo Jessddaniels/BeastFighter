@@ -38,11 +38,11 @@ public class CCalumbra extends Character {
 			getAttackList().add(new AFuguToxin(this));
 			toTextBox("Level 2");
 		} else if (getAttackList().size() < 7 && getExperience() >= 200){
-			getAttackList().add(new ALeechTrap(this));
+			getAttackList().add(new ADemonicPull(this));
 		} else if (getAttackList().size() < 8 && getExperience() >= 250){
 			getAttackList().add(new ADryHanging(this));
 		} else if (getAttackList().size() < 9 && getExperience() >= 300){
-			getAttackList().add(new ADemonicPull(this));
+			getAttackList().add(new APurgatory(this));
 			toTextBox("Level 3");
 		}
 	}
