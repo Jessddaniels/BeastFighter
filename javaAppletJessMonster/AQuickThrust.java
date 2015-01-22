@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class AQuickThrust extends Attack {
 	public AQuickThrust (Monster mon){
 		super(mon);
-		setDamage(30);
+		setDamage(10);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
@@ -15,10 +15,10 @@ public class AQuickThrust extends Attack {
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 3){
+			if (((Character) mon).EnDice >= 2){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 10){
+				mon.setEnergy(mon.getEnergy() - 10);
 				return true;
 			}
 		}
@@ -28,14 +28,15 @@ public class AQuickThrust extends Attack {
 		g.drawImage(applet.getImage(Images.Adipedys1Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Quick Thrust " , x + 105 , y + 15);
+		g.drawString("Quick Thrust " , x + 100 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("30 DMG (" + calcDamage() +")" , x + 110, y + 35);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
+		g.drawString("10 DMG (" + calcDamage() +")" , x + 110, y + 40);
+		//en Cost
+		g.drawString("10" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Energy), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Energy), x ,y + 47 , applet);
 	}
 
 }

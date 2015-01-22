@@ -23,7 +23,9 @@ public class JessMonster extends Applet implements Runnable{
     	match = new Match(this);
     }
     public void start(){
-    	thread.start();
+    	if(thread.getState() == Thread.State.NEW){
+    		thread.start();
+    	}
     }
     public void destroy(){
     	running = false;

@@ -9,10 +9,10 @@ public class CDebira extends Character {
 	public CDebira(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Debira);
-		setHP(200);
-		setEnergy(300);
-		setSpirit(300);
-		setCombat(200);
+		setHP(300);
+		setEnergy(80);
+		setSpirit(20);
+		setCombat(0);
 		getAttackList().add(new ACounterStance(this));
 		getAttackList().add(new ARiposte(this));
 		getAttackList().add(new AReflectionFade(this));

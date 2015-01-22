@@ -4,22 +4,38 @@ import java.awt.Graphics;
 public class AMiracleTonic extends Attack {
 	public AMiracleTonic(Monster mon){
 		super(mon);
-		setDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setHP(mon.getHP() + 20);
+		toTextBox(mon.nameToString() + " used Miracle Tonic" );
+		int rand = (int) (Math.random() * 6);
+		if (rand == 0){
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " health" );
+			mon.setHP(mon.getHP() + 25 * mon.getCombat() / 20);
+		} else if (rand ==1){
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " energy" );
+			mon.setEnergy(mon.getEnergy() + 25 * mon.getCombat() / 20);
+		} else if (rand ==2){
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " combat" );
+			mon.setCombat(mon.getCombat() + 25 * mon.getCombat() / 20);
+		} else if (rand ==3){
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " spirit" );
+			mon.setSpirit(mon.getSpirit() + 25 * mon.getCombat() / 20);
+		} else if (rand ==4){
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " attack" );
+			mon.setDamage(mon.getDamage() + 25 * mon.getCombat() / 20);
+		} else {
+			toTextBox(" and gained " + 25 * mon.getCombat() / 20 + " experience" );
+			mon.setExperience(mon.getExperience() + 25 * mon.getCombat() / 20);
+		}
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Miracle Tonic for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 2 && ((Character) mon).HDice >= 1 ){
+			if (((Character) mon).ExDice >= 2 && ((Character) mon).HDice >= 2 ){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 20){
+				mon.setEnergy(mon.getEnergy() - 20);
 				return true;
 			}
 		}
@@ -29,16 +45,17 @@ public class AMiracleTonic extends Attack {
 		g.drawImage(applet.getImage(Images.Calumbra1Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Miracle Tonic" , x + 105 , y + 15);
+		g.drawString("Miracle Tonic" , x + 105 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
-		g.drawString("20          ADD", x + 95, y + 45);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 115 ,y + 35, applet);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x ,y + 45 , applet);
+		g.drawString("ADD "+25 * mon.getCombat() / 20+" random die stat", x + 95, y + 45);
+		//en cost
+		g.drawString("20" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Health), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 47 , applet);
 	}
 
 }

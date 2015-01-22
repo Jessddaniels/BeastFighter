@@ -33,8 +33,11 @@ public class AAvengingBlast extends Attack {
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
 		g.drawString("20 DMG (" + calcExDamage() +")" , x + 110, y + 45);
+		//en cost
 		g.drawString("60" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
+		//die cost
+		y += 2;
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
 		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 45, applet);
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);

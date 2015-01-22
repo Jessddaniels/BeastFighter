@@ -10,9 +10,9 @@ public class CCalumbra extends Character {
 		super(applet, l);
 		pic = applet.getImage(Images.Calumbra);
 		setHP(300);
-		setEnergy(100);
-		setSpirit(300);
-		setCombat(300);
+		setEnergy(0);
+		setSpirit(100);
+		setCombat(0);
 		getAttackList().add(new AMiracleTonic(this));
 		getAttackList().add(new AInfectingCuts(this));
 		getAttackList().add(new ABloodSplatter(this));

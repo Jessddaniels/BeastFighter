@@ -26,7 +26,7 @@ public class AVengeance extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.SwordStrike), x,y, applet);
+		g.drawImage(applet.getImage(Images.Debira3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Vengeance" , x + 105 , y + 15);

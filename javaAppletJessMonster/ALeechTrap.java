@@ -9,14 +9,14 @@ public class ALeechTrap extends Attack {
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setHP(mon.getHP() + 20);
+		mon.setSpirit(mon.getSpirit() + 5 * mon.getCombat() / 20);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Leech Trap for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 2 && ((Character) mon).HDice >= 1 ){
+			if (((Character) mon).DDice >= 2 && ((Character) mon).SDice >= 1 ){
 				return true;
 			} else if (mon.getEnergy() >= 50){
 				mon.setEnergy(mon.getEnergy() - 50);
@@ -29,16 +29,18 @@ public class ALeechTrap extends Attack {
 		g.drawImage(applet.getImage(Images.Calumbra3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Leech Trap" , x + 105 , y + 15);
+		g.drawString("Leech Trap" , x + 110 , y + 18);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
-		g.drawString("20          ADD", x + 95, y + 45);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 115 ,y + 35, applet);
+		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("5          ADD (" + 5 * mon.getCombat() / 20 +")", x + 110, y + 55);
+		g.drawImage(applet.getImage(Images.Spirit), x + 130 ,y + 40, applet);
+		//en cost
 		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Damage), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Damage), x  ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 20,y + 27 , applet);
 	}
 
 }

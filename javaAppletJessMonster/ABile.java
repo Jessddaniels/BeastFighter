@@ -5,22 +5,20 @@ public class ABile extends Attack {
 	public ABile(Monster mon){
 		super(mon);
 		setDamage(20);
-		setExDamage(20);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentEx = defender.getActiveMon().getDamage();
-		defender.getActiveMon().setExperience(currentEx - calcExDamage());
+		mon.setDamage(mon.getDamage() + mon.getSpirit() / 10);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bile for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character") && ((Character) mon).CDice >= 2 && ((Character) mon).ExDice >= 1){
+		if (mon.type.equals("character") && ((Character) mon).CDice >= 2 && ((Character) mon).SDice >= 2){
 			return true;
-		} else if (mon.getEnergy() >= 40){
-			mon.setEnergy(mon.getEnergy() - 40);
+		} else if (mon.getEnergy() >= 20){
+			mon.setEnergy(mon.getEnergy() - 20);
 			return true;
 		}
 		return false;
@@ -29,17 +27,19 @@ public class ABile extends Attack {
 		g.drawImage(applet.getImage(Images.Adipedys3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Bile" , x + 70 , y + 15);
+		g.drawString("Bile" , x + 130 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 70, y + 35);
-		g.drawString("20          DMG (" + calcExDamage() +")" , x + 70, y + 55);
-		g.drawImage(applet.getImage(Images.Experience), x + 90 ,y + 40, applet);
-		g.drawString("40" , x + 10, y + 20);
-		//dice
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Experience), x ,y + 45 , applet);
+		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("Add Spirit / 10" , x + 100, y + 55);
+		g.drawImage(applet.getImage(Images.Damage), x + 175 ,y + 40, applet);
+		//en cost
+		g.drawString("20" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 47 , applet);
 	}
 
 }

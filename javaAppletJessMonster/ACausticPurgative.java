@@ -4,22 +4,24 @@ import java.awt.Graphics;
 public class ACausticPurgative extends Attack {
 	public ACausticPurgative(Monster mon){
 		super(mon);
-		setDamage(20);
+		setSDamage(10);
+		setDamage(10);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setHP(mon.getHP() + 20);
+		int currentS = defender.getActiveMon().getSpirit();
+		defender.getActiveMon().setSpirit(currentS - calcSDamage());
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Caustic Purgative for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 2 && ((Character) mon).HDice >= 1 ){
+			if (((Character) mon).SDice >= 2 && ((Character) mon).ExDice >= 1 ){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 15){
+				mon.setEnergy(mon.getEnergy() - 15);
 				return true;
 			}
 		}
@@ -29,16 +31,18 @@ public class ACausticPurgative extends Attack {
 		g.drawImage(applet.getImage(Images.Calumbra2Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Caustic Purgative" , x + 105 , y + 15);
+		g.drawString("Caustic Purgative" , x + 95 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 30);
-		g.drawString("20          ADD", x + 95, y + 45);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x + 115 ,y + 35, applet);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Energy.jpg"), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x ,y + 25, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Combat.jpg"), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(mon.getURL(),"Pictures/Health.jpg"), x ,y + 45 , applet);
+		g.drawString("25 DMG (" + calcDamage() +")" , x + 110, y + 45);
+		g.drawString("10          DMG (" + calcSDamage() +")" , x + 95, y + 65);
+		g.drawImage(applet.getImage(Images.Spirit), x + 115 ,y + 52, applet);
+		//en cost
+		g.drawString("15" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
 	}
 
 }

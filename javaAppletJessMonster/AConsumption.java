@@ -4,38 +4,38 @@ import java.awt.Graphics;
 public class AConsumption extends Attack {
 	public AConsumption  (Monster mon){
 		super(mon);
-		setDamage(30);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		mon.setHP(mon.getHP() + 25);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Consumption  for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Consumption");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 3){
+			if (((Character) mon).HDice >= 2 && ((Character) mon).SDice >= 1 ){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 15){
+				mon.setEnergy(mon.getEnergy() - 15);
 				return true;
 			}
 		}
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.Adipedys2Attack), x,y, applet);
+		g.drawImage(applet.getImage(Images.Adipedys3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Consumption  " , x + 105 , y + 15);
+		g.drawString("Consumption  " , x + 105 , y + 22);
 		g.setFont(normalFont);
-		g.drawString("30 DMG (" + calcDamage() +")" , x + 110, y + 35);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
+		g.drawString("Heal 25" , x + 120, y + 40);
+		//en cost
+		g.drawString("15" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Health), x ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 20 ,y + 27 , applet);
 	}
 
 }

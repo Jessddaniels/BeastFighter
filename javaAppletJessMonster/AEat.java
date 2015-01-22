@@ -6,17 +6,17 @@ public class AEat extends Attack {
 		super(mon);
 	}
 	public void attack( Leader defender) {
-		mon.setHP(mon.getHP() + 30);
-		((Character) mon).RollNum = 3;
+		mon.setHP(mon.getHP() + 15);
+		((Character) mon).RollNum = 2;
 		toTextBox(mon.nameToString() + " used Eat");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).HDice >= 3){
+			if (((Character) mon).HDice >= 2){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 10){
+				mon.setEnergy(mon.getEnergy() - 10);
 				return true;
 			}
 		}
@@ -26,15 +26,16 @@ public class AEat extends Attack {
 		g.drawImage(applet.getImage(Images.Adipedys2Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Eat" , x + 90 , y + 15);
+		g.drawString("Eat" , x + 125 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("30          ADD ", x + 95, y + 30);
-		g.drawImage(applet.getImage(Images.Health), x + 115 ,y + 20, applet);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Health), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Health), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Health), x ,y + 45 , applet);
+		g.drawString("15          ADD ", x + 110, y + 40);
+		g.drawImage(applet.getImage(Images.Health), x + 125 ,y + 25, applet);
+		//en cost
+		g.drawString("10" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Health), x ,y + 47 , applet);
 	}
 
 }

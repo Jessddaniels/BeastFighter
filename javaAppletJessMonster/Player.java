@@ -17,10 +17,12 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 		youWin = applet.getImage(Images.YouWin);
 		youLose = applet.getImage(Images.YouLose);
 		tradeOK = true;
+		applet.addMouseListener(this);
+		applet.addKeyListener(this);
 	}
 	public void update(JessMonster applet){
-		applet.addKeyListener(this);
-		applet.addMouseListener(this);
+		//applet.addKeyListener(this);
+		//applet.addMouseListener(this);
 	}
 	public void paint(Graphics g, JessMonster applet){
 		g.drawImage(getPlayer(), 150, 0, applet);
@@ -141,10 +143,10 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = false;
 				}
 			} else if (arg0.getX() < 150 && !tradeOK) {//set own view monster
-				if (arg0.getY() > 475){
+				if (arg0.getY() > 475  && monsterList.size() > 2){
 					setViewMon(monsterList.get(2));
 					tradeOK = false;
-				} else if (arg0.getY() > 350){
+				} else if (arg0.getY() > 350 && monsterList.size() > 1){
 					setViewMon(monsterList.get(1));
 					tradeOK = false;
 				} else if (arg0.getY() > 225){
@@ -152,10 +154,10 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					tradeOK = false;
 				}
 			} else if (arg0.getX() > 650) {//set opponent view monster
-				if (arg0.getY() > 475){
+				if (arg0.getY() > 475 && getO().monsterList.size() > 2){
 					getO().setViewMon(getO().monsterList.get(2));
 					tradeOK = false;
-				} else if (arg0.getY() > 350){
+				} else if (arg0.getY() > 350 && getO().monsterList.size() > 1){
 					getO().setViewMon(getO().monsterList.get(1));
 					tradeOK = false;
 				} else if (arg0.getY() > 225){
@@ -218,10 +220,10 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 				}
 			} 
 		} else if (arg0.getX() < 150 && tradeOK && getActiveMon() == null){//trading active monster
-			if (arg0.getY() > 475){
+			if (arg0.getY() > 475 && monsterList.size() > 2){
 				setActiveMon(monsterList.get(2));
 				tradeOK = false;
-			} else if (arg0.getY() > 350){
+			} else if (arg0.getY() > 350 && monsterList.size() > 1){
 				setActiveMon(monsterList.get(1));
 				tradeOK = false;
 			} else if (arg0.getY() > 225){

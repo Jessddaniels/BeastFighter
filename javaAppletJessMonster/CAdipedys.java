@@ -9,10 +9,10 @@ public class CAdipedys extends Character {
 	public CAdipedys(JessMonster applet, Leader l) {
 		super(applet, l);
 		pic = applet.getImage(Images.Adipedys);
-		setHP(800);
+		setHP(300);
 		setEnergy(0);
 		setSpirit(0);
-		setCombat(200);
+		setCombat(100);
 		getAttackList().add(new APommelStrike(this));
 		getAttackList().add(new AQuickThrust(this));
 		getAttackList().add(new AStunningThrow(this));
@@ -30,18 +30,18 @@ public class CAdipedys extends Character {
 		}
 	}
 	void passive() {
-		if (getAttackList().size() < 4 && getExperience() >= 100){
+		if (getAttackList().size() < 4 && getExperience() >= 50){
 			getAttackList().add(new AEat(this));
-		} else if (getAttackList().size() < 5 && getExperience() >= 200){
+		} else if (getAttackList().size() < 5 && getExperience() >= 100){
 			getAttackList().add(new AHeadSlap(this));
-		} else if (getAttackList().size() < 6 && getExperience() >= 300){
+		} else if (getAttackList().size() < 6 && getExperience() >= 150){
 			getAttackList().add(new AMomentum(this));
 			toTextBox("Level 2");
-		} else if (getAttackList().size() < 7 && getExperience() >= 400){
+		} else if (getAttackList().size() < 7 && getExperience() >= 200){
 			getAttackList().add(new AConsumption(this));
-		} else if (getAttackList().size() < 8 && getExperience() >= 400){
+		} else if (getAttackList().size() < 8 && getExperience() >= 250){
 			getAttackList().add(new ABile(this));
-		} else if (getAttackList().size() < 9 && getExperience() >= 400){
+		} else if (getAttackList().size() < 9 && getExperience() >= 300){
 			getAttackList().add(new AVileGenesis(this));
 			toTextBox("Level 3");
 		}

@@ -9,6 +9,7 @@ public class LCBeer extends LeaderCard {
 	void activate() {
 		Monster mon = player.getActiveMon();
 		mon.setSpirit(mon.getSpirit() + 20);
+		mon.setExperience(mon.getExperience() + 50);
 		toTextBox("used Beer");
 	}
 	boolean isMet() {

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class ASparkingStrike extends Attack {
 	public ASparkingStrike(Monster mon){
 		super(mon);
-		setDamage(30);
+		setDamage(20);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
@@ -17,8 +17,8 @@ public class ASparkingStrike extends Attack {
 		if (mon.type.equals("character")){
 			if (((Character) mon).CDice >= 3){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 15){
+				mon.setEnergy(mon.getEnergy() - 15);
 				return true;
 			}
 		}
@@ -30,12 +30,14 @@ public class ASparkingStrike extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Sparking Strike" , x + 105 , y + 15);
 		g.setFont(normalFont);
-		g.drawString("30 DMG (" + calcDamage() +")" , x + 110, y + 35);
-		g.drawString("50" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
+		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		//en cost
+		g.drawString("15" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x  ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20,y + 27 , applet);
 	}
 
 }

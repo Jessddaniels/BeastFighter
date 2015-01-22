@@ -4,22 +4,22 @@ import java.awt.Graphics;
 public class ACounterStance extends Attack {
 	public ACounterStance(Monster mon){
 		super(mon);
-		setExDamage(20);
+		setCDamage(10);
 	}
 	public void attack( Leader defender) {
 		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcExDamage());
-		mon.setCombat(mon.getCombat() + 20);
+		defender.getActiveMon().setCombat(currentC - calcCDamage());
+		mon.setCombat(mon.getCombat() + 10);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Counter Stance");
 		
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).DDice >= 2 && ((Character) mon).CDice >= 1){
+			if (((Character) mon).ExDice >= 2 && ((Character) mon).CDice >= 2){
 				return true;
-			} else if (mon.getEnergy() >= 60){
-				mon.setEnergy(mon.getEnergy() - 60);
+			} else if (mon.getEnergy() >= 20){
+				mon.setEnergy(mon.getEnergy() - 20);
 				return true;
 			}
 		}
@@ -29,17 +29,21 @@ public class ACounterStance extends Attack {
 		g.drawImage(applet.getImage(Images.Debira1Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Counter Stance" , x + 90 , y + 15);
+		g.drawString("Counter Stance" , x + 102 , y + 22);
 		g.setFont(normalFont);
-		g.drawString("20          DMG (" + calcExDamage() +")" , x + 95, y + 30);
-		g.drawString("20          ADD (" + calcExDamage() +")" , x + 95, y + 45);
-		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 20, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 30, applet);
-		g.drawString("60" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Damage), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Damage), x ,y + 45 , applet);
+		g.drawString("10          DMG (" + calcCDamage() +")" , x + 95, y + 35);
+		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 25, applet);
+		g.drawString("10          ADD (" + calcCDamage() +")" , x + 95, y + 55);
+		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 45, applet);
+		//en cost
+		g.drawString("20" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		//die cost
+		y += 2;
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 45 , applet);
 	}
 
 }

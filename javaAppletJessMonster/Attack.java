@@ -13,6 +13,7 @@ public abstract class Attack {
 	public Font normalFont;
 	public Font nameFont = new Font("Serif", Font.BOLD, 16);
 	public Font reqFont = new Font("Serif", Font.ITALIC, 12);
+	public Font smallFont = new Font("SansSerif",Font.PLAIN, 10);
 	public Attack(Monster mon){
 		this.mon = mon;
 		normalFont = mon.applet.getFont();
