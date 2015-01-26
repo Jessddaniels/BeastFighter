@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class AButcherHook extends Attack {
 	public AButcherHook(Monster mon){
 		super(mon);
-		setDamage(25);
+		setHDamage(25);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Butcher Hook for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Butcher Hook for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -30,7 +30,7 @@ public class AButcherHook extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Butcher Hook" , x + 105 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("25 DMG (" + calcDamage() +")" , x + 110, y + 45);
+		g.drawString("25 DMG (" + calcHDamage() +")" , x + 110, y + 45);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

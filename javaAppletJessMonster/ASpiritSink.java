@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ASpiritSink extends Attack {
 	public ASpiritSink(Monster mon){
 		super(mon);
-		setDamage(20);
+		setHDamage(20);
 	}
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() - 25);
@@ -27,7 +27,7 @@ public class ASpiritSink extends Attack {
 		g.drawString("Spirit Sink" , x, y + 15);
 		g.setFont(normalFont);
 		g.drawString("25           /           -20" , x, y + 35);
-		g.drawString("20 DMG ( " + calcDamage()+ ")" , x, y + 50);
+		g.drawString("20 DMG ( " + calcHDamage()+ ")" , x, y + 50);
 		g.drawImage(applet.getImage(Images.Energy), x + 22,y + 18, applet);
 		g.drawImage(applet.getImage(Images.Spirit), x + 57,y + 18, applet);
 	}

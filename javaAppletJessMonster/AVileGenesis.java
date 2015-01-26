@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class AVileGenesis extends Attack {
 	public AVileGenesis(Monster mon){
 		super(mon);
-		setDamage(15);
+		setHDamage(15);
 		setSDamage(20);
 	}
 	public void attack( Leader defender) {
@@ -13,7 +13,7 @@ public class AVileGenesis extends Attack {
 		int currentS = defender.getActiveMon().getSpirit();
 		defender.getActiveMon().setSpirit(currentS - calcSDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Vile Genesis for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Vile Genesis for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class AVileGenesis extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Vile Genesis" , x + 110 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("15 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("15 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		g.drawString("20          DMG (" + calcSDamage() +")" , x + 100, y + 55);
 		g.drawImage(applet.getImage(Images.Spirit), x + 120 ,y + 40, applet);
 		//en Cost

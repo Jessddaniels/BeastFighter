@@ -11,7 +11,7 @@ public class AFuguToxin extends Attack {
 		int currentEn = defender.getActiveMon().getEnergy();
 		defender.getActiveMon().setEnergy(currentEn * 9 / 10);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Fugu Toxin for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Fugu Toxin for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class ABash extends Attack {
 	public ABash (Monster mon){
 		super(mon);
-		setDamage(20);
+		setHDamage(20);
 		setExDamage(20);
 	}
 	public void attack( Leader defender) {
@@ -13,7 +13,7 @@ public class ABash extends Attack {
 		int currentC = defender.getActiveMon().getCombat();
 		defender.getActiveMon().setCombat(currentC - calcExDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Bash for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Bash for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class ABash extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Bash" , x + 175 , y + 15);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 150, y + 35);
+		g.drawString("20 DMG (" + calcHDamage() +")" , x + 150, y + 35);
 		g.drawString("20          DMG (" + calcExDamage() +")" , x + 130, y + 55);
 		g.drawImage(applet.getImage(Images.Combat), x + 150 ,y + 40, applet);
 		g.drawString("20" , x + 10, y + 20);

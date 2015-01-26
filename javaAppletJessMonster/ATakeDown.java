@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ATakeDown extends Attack {
 	public ATakeDown(Monster mon){
 		super(mon);
-		setDamage(50);
+		setHDamage(50);
 	}
 	void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();

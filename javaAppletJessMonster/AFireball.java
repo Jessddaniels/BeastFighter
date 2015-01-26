@@ -5,13 +5,13 @@ import java.awt.Graphics;
 public class AFireball extends Attack {
 	public AFireball(Monster mon){
 		super(mon);
-		setDamage(65);
+		setHDamage(65);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 60);
-		toTextBox(mon.nameToString() + " used Fireball for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Fireball for " + calcHDamage()+ " DMG");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 60){
@@ -26,7 +26,7 @@ public class AFireball extends Attack {
 		g.drawString("           Fireball" , x, y + 20 );
 		g.setFont(normalFont);
 		g.drawImage(applet.getImage(Images.Energy), x + 35,y + 25, applet);
-		g.drawString("60            / 65 DMG (" + calcDamage() + ")" , x + 15, y + 40);
+		g.drawString("60            / 65 DMG (" + calcHDamage() + ")" , x + 15, y + 40);
 	}
 
 }

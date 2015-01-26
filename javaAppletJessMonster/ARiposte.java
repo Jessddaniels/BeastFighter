@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class ARiposte extends Attack {
 	public ARiposte(Monster mon){
 		super(mon);
-		setDamage(15);
+		setHDamage(15);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Riposte for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Riposte for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -30,7 +30,7 @@ public class ARiposte extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Riposte" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("15 DMG (" + calcDamage() +")" , x + 110, y + 40);
+		g.drawString("15 DMG (" + calcHDamage() +")" , x + 110, y + 40);
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost

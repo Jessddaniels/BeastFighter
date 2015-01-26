@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class ASparkingStrike extends Attack {
 	public ASparkingStrike(Monster mon){
 		super(mon);
-		setDamage(20);
+		setHDamage(20);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Sparking Strike for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Sparking Strike for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -30,7 +30,7 @@ public class ASparkingStrike extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Sparking Strike" , x + 105 , y + 15);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

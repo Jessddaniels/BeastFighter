@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ARestInPeace extends Attack {
 	public ARestInPeace(Monster mon){
 		super(mon);
-		setDamage(0);
+		setHDamage(0);
 	}
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 15);

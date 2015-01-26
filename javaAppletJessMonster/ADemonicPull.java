@@ -4,14 +4,14 @@ import java.awt.Graphics;
 public class ADemonicPull extends Attack {
 	public ADemonicPull(Monster mon){
 		super(mon);
-		setDamage(20);
+		setHDamage(20);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setHP(mon.getHP() + 20);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Demonic Pull for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Demonic Pull for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {

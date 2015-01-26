@@ -4,16 +4,14 @@ import java.awt.Graphics;
 public class ABackToNature extends Attack {
 	public ABackToNature(Monster mon){
 		super(mon);
-		setSDamage(15);
+		setCDamage(10);
+		setSGain(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
 		int currentC= defender.getActiveMon().getCombat();
 		defender.getActiveMon().setCombat(currentC - calcCDamage());
-		mon.setSpirit(mon.getSpirit() + 10);
+		mon.setSpirit(mon.getSpirit() + getSGain());
 		((Character) mon).RollNum = 3;
-		//toTextBox(mon.nameToString() + " used Back To Nature for " + calcDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -29,17 +27,19 @@ public class ABackToNature extends Attack {
 		g.drawImage(applet.getImage(Images.Virgeo2Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Back To Nature" , x + 115 , y + 20);
+		g.drawString("Back To Nature" , x + 110 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("10          Add (" + calcDamage() +")" , x + 90, y + 35);
+		g.drawString("10          Add (" + adj4Combat(getSGain()) +")" , x + 90, y + 35);
 		g.drawImage(applet.getImage(Images.Spirit), x + 110 ,y + 20, applet);
-		g.drawString("15          DMG (" + calcCDamage() +")" , x + 90, y + 55);
+		g.drawString("10         DMG (" + calcCDamage() +")" , x + 90, y + 55);
 		g.drawImage(applet.getImage(Images.Combat), x + 110 ,y + 40, applet);
-		g.drawString("60" , x + 10, y + 20);
+		//en cost
+		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 45 , applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 20 ,y + 27, applet);
 	}
 
 }

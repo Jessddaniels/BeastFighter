@@ -4,14 +4,14 @@ import java.awt.Graphics;
 public class AMomentum extends Attack {
 	public AMomentum (Monster mon){
 		super(mon);
-		setDamage(15);
+		setHDamage(15);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Momentum for " + calcDamage()+ " DMG");
-		setDamage(getDamage() + 5);
+		toTextBox(mon.nameToString() + " used Momentum for " + calcHDamage()+ " DMG");
+		setHDamage(getHDamage() + 5);
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -29,7 +29,7 @@ public class AMomentum extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Momentum" , x + 105 , y + 20);
 		g.setFont(normalFont);
-		g.drawString(getDamage() + "  DMG (" + calcDamage() +")" , x + 105, y + 35);
+		g.drawString(getHDamage() + "  DMG (" + calcHDamage() +")" , x + 105, y + 35);
 		g.setFont(smallFont);
 		g.drawString(" Momentum Base Damage + 5" , x + 75, y + 45);
 		g.setFont(normalFont);

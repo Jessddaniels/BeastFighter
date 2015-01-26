@@ -4,14 +4,14 @@ import java.awt.Graphics;
 public class AVengeance extends Attack {
 	public AVengeance(Monster mon){
 		super(mon);
-		setDamage(40);
+		setHDamage(40);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setSpirit(mon.getSpirit() + 40);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Vengeance for " + calcDamage()+" DMG");
+		toTextBox(mon.nameToString() + " used Vengeance for " + calcHDamage()+" DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class AVengeance extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Vengeance" , x + 105 , y + 15);
 		g.setFont(normalFont);
-		g.drawString("40 DMG (" + calcDamage() +")" , x + 110, y + 30);
+		g.drawString("40 DMG (" + calcHDamage() +")" , x + 110, y + 30);
 		g.drawString("100" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);

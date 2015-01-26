@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ARun extends Attack {
 	public ARun(Monster mon){
 		super(mon);
-		setDamage(0);
+		setHDamage(0);
 	}
 	public void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() - 10);

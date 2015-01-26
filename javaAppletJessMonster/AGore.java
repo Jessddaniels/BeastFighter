@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class AGore extends Attack {
 	public AGore(Monster mon){
 		super(mon);
-		setDamage(40);
+		setHDamage(40);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
@@ -33,9 +33,9 @@ public class AGore extends Attack {
 	}
 	public int calcDamage(){
 		if (mon.getHP() < 40){
-			return (int) (super.calcDamage() * 1.5);
+			return (int) (super.calcHDamage() * 1.5);
 		} else {
-			return super.calcDamage();
+			return super.calcHDamage();
 		}
 	}
 }

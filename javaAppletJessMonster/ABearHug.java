@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class ABearHug extends Attack {
 	public ABearHug(Monster mon){
 		super(mon);
-		setDamage(10);
+		setHDamage(10);
 		setEnDamage(10);
 	}
 	public void attack( Leader defender) {
@@ -13,7 +13,7 @@ public class ABearHug extends Attack {
 		int currentEn = defender.getActiveMon().getEnergy();
 		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Bear Hug for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Bear Hug for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class ABearHug extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Bear Hug" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("10 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("10 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		g.drawString("10          DMG (" + calcEnDamage() +")" , x + 95, y + 55);
 		g.drawImage(applet.getImage(Images.Energy), x + 115 ,y + 40, applet);
 		g.drawString("20" , x + 10, y + 20);

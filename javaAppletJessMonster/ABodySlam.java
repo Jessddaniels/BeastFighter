@@ -5,14 +5,14 @@ import java.awt.Graphics;
 public class ABodySlam extends Attack {
 	public ABodySlam(Monster mon){
 		super(mon);
-		setDamage(mon.getHP() / 3);
+		setHDamage(mon.getHP() / 3);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
-		setDamage(mon.getHP() / 3);
+		setHDamage(mon.getHP() / 3);
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 20);
-		toTextBox(mon.nameToString() + " used Body Slam for " + calcDamage() + " dmg");
+		toTextBox(mon.nameToString() + " used Body Slam for " + calcHDamage() + " dmg");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 20 || mon.getHP() < 0){
@@ -29,8 +29,8 @@ public class ABodySlam extends Attack {
 		g.drawString("Body Slam" , x + 70, y + 13);
 		g.setFont(normalFont);
 		g.drawString("20         /", x + 85, y + 30);
-		g.drawString("DMG " + mon.getHP() / 3 + " (" +calcDamage() + ")", x + 65, y + 45);
-		setDamage(mon.getHP() / 3);
+		g.drawString("DMG " + mon.getHP() / 3 + " (" +calcHDamage() + ")", x + 65, y + 45);
+		setHDamage(mon.getHP() / 3);
 		g.drawString("DMG = 1/3 own", x + 50, y + 60);	
 	}
 

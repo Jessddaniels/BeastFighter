@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class AFellingChop extends Attack {
 	public AFellingChop (Monster mon){
 		super(mon);
-		setDamage(25);
+		setHDamage(25);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Felling Chop for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Felling Chop for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -28,7 +28,7 @@ public class AFellingChop extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Felling Chop" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("25 DMG (" + calcDamage() +")" , x + 115, y + 45);
+		g.drawString("25 DMG (" + calcHDamage() +")" , x + 115, y + 45);
 		g.drawString("25" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		g.drawImage(applet.getImage(Images.Damage), x ,y + 25, applet);

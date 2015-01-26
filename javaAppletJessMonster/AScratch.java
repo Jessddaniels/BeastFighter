@@ -4,12 +4,12 @@ import java.awt.Graphics;
 public class AScratch extends Attack {
 	public AScratch(Monster mon){
 		super(mon);
-		setDamage(15);
+		setHDamage(15);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
-		toTextBox(mon.nameToString() + " used Scratch for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Scratch for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -21,7 +21,7 @@ public class AScratch extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Scratch" , x + 45 , y + 15);
 		g.setFont(normalFont);
-		g.drawString("15 DMG (" + calcDamage() +")" , x + 85, y + 25);
+		g.drawString("15 DMG (" + calcHDamage() +")" , x + 85, y + 25);
 	}
 
 }

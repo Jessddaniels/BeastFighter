@@ -5,7 +5,7 @@ public class ACausticPurgative extends Attack {
 	public ACausticPurgative(Monster mon){
 		super(mon);
 		setSDamage(10);
-		setDamage(10);
+		setHDamage(10);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
@@ -13,7 +13,7 @@ public class ACausticPurgative extends Attack {
 		int currentS = defender.getActiveMon().getSpirit();
 		defender.getActiveMon().setSpirit(currentS - calcSDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Caustic Purgative for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Caustic Purgative for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -33,7 +33,7 @@ public class ACausticPurgative extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Caustic Purgative" , x + 95 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("10 DMG (" + calcDamage() +")" , x + 110, y + 40);
+		g.drawString("10 DMG (" + calcHDamage() +")" , x + 110, y + 40);
 		g.drawString("10          DMG (" + calcSDamage() +")" , x + 95, y + 60);
 		g.drawImage(applet.getImage(Images.Spirit), x + 115 ,y + 43, applet);
 		//en cost

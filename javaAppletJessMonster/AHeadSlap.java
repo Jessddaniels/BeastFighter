@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class AHeadSlap extends Attack {
 	public AHeadSlap (Monster mon){
 		super(mon);
-		setDamage(10);
+		setHDamage(10);
 		setExDamage(10);
 	}
 	public void attack( Leader defender) {
@@ -13,7 +13,7 @@ public class AHeadSlap extends Attack {
 		int currentEx = defender.getActiveMon().getExperience();
 		defender.getActiveMon().setExperience(currentEx - calcExDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Head Slap for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Head Slap for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class AHeadSlap extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Head Slap" , x + 110 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("10 DMG (" + calcDamage() +")" , x + 105, y + 35);
+		g.drawString("10 DMG (" + calcHDamage() +")" , x + 105, y + 35);
 		g.drawString("10          DMG (" + calcExDamage() +")" , x + 105, y + 55);
 		g.drawImage(applet.getImage(Images.Experience), x + 120 ,y + 40, applet);
 		//en cost

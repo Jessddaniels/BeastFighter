@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class AStampede extends Attack {
 	public AStampede (Monster mon){
 		super(mon);
-		setDamage(30);
+		setHDamage(30);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Stampede for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Stampede for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -28,7 +28,7 @@ public class AStampede extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Stampede " , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("30 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("30 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		//en cost
 		g.drawString("25" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

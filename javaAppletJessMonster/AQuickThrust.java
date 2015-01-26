@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class AQuickThrust extends Attack {
 	public AQuickThrust (Monster mon){
 		super(mon);
-		setDamage(10);
+		setHDamage(10);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Quick Thrust for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Quick Thrust for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -30,7 +30,7 @@ public class AQuickThrust extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Quick Thrust " , x + 100 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("10 DMG (" + calcDamage() +")" , x + 110, y + 40);
+		g.drawString("10 DMG (" + calcHDamage() +")" , x + 110, y + 40);
 		//en Cost
 		g.drawString("10" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

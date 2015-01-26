@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class APackInstincts extends Attack {
 	public APackInstincts(Monster mon){
 		super(mon);
-		setDamage(0);
+		setHDamage(0);
 	}
 	public void attack( Leader defender) {
 		if (mon.getHP() >= 40) {

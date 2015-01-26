@@ -5,13 +5,13 @@ import java.awt.Graphics;
 public class ADeathRoll extends Attack {
 	public ADeathRoll(Monster mon){
 		super(mon);
-		setDamage(40);
+		setHDamage(40);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 10);
-		toTextBox(mon.nameToString() + " used Death Roll for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Death Roll for " + calcHDamage()+ " DMG");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 10 || defender.getActiveMon().getEnergy() >= mon.getEnergy()){
@@ -27,7 +27,7 @@ public class ADeathRoll extends Attack {
 		g.setFont(reqFont);
 		g.drawString("         own          > opp",x , y + 35);
 		g.setFont(normalFont);
-		g.drawString("     10         / 40 DMG (" + calcDamage()+")" , x, y + 60);
+		g.drawString("     10         / 40 DMG (" + calcHDamage()+")" , x, y + 60);
 		g.drawImage(applet.getImage(Images.Energy), x + 55,y + 25, applet);
 		g.drawImage(applet.getImage(Images.Energy), x + 110,y + 25, applet);
 		g.drawImage(applet.getImage(Images.Energy), x + 30,y + 45, applet);

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 public class ABlightBolt extends Attack {
 	public ABlightBolt(Monster mon){
 		super(mon);
-		setDamage(20);
+		setHDamage(20);
 		setEnDamage(40);
 	}
 	public void attack( Leader defender) {
@@ -13,7 +13,7 @@ public class ABlightBolt extends Attack {
 		int currentEn = defender.getActiveMon().getEnergy();
 		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Blight Bolt for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Blight Bolt for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -31,7 +31,7 @@ public class ABlightBolt extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Blight Bolt" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		g.drawString("40          DMG (" + calcEnDamage() +")" , x + 90, y + 55);
 		g.drawImage(applet.getImage(Images.Energy), x + 110 ,y + 40, applet);
 		g.drawString("60" , x + 10, y + 20);

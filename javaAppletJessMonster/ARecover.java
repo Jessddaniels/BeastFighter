@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ARecover extends Attack {
 	public ARecover(Monster mon){
 		super(mon);
-		setDamage(0);
+		setHDamage(0);
 	}
 	void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 50);

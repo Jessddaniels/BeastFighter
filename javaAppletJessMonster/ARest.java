@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class ARest extends Attack {
 	public ARest(Monster mon){
 		super(mon);
-		setDamage(0);
+		setHDamage(0);
 	}
 	void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 20);

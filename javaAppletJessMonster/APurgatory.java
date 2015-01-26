@@ -4,13 +4,13 @@ import java.awt.Graphics;
 public class APurgatory extends Attack {
 	public APurgatory (Monster mon){
 		super(mon);
-		setDamage(35);
+		setHDamage(35);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Purgatory for " + calcDamage()+ " DMG");
+		toTextBox(mon.nameToString() + " used Purgatory for " + calcHDamage()+ " DMG");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -30,7 +30,7 @@ public class APurgatory extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Purgatory" , x + 110 , y + 18);
 		g.setFont(normalFont);
-		g.drawString("35 DMG (" + calcDamage() +")" , x + 110, y + 35);
+		g.drawString("35 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		//en cost
 		g.drawString("25" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

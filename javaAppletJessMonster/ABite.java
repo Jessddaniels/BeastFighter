@@ -5,13 +5,13 @@ import java.awt.Graphics;
 public class ABite extends Attack {
 	public ABite(Monster mon){
 		super(mon);
-		setDamage(30);
+		setHDamage(30);
 	}
 	public void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - applyDamage());
 		mon.setEnergy(mon.getEnergy() - 15);
-		toTextBox(mon.nameToString() + " used Bite for " +calcDamage()+ " dmg");
+		toTextBox(mon.nameToString() + " used Bite for " +calcHDamage()+ " dmg");
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.getEnergy() < 20){
@@ -26,6 +26,6 @@ public class ABite extends Attack {
 		g.drawString("             Bite" , x, y + 20);
 		g.setFont(normalFont);
 		g.drawImage(applet.getImage(Images.Energy), x + 35,y + 25, applet);
-		g.drawString("15          / 30 DMG (" + calcDamage() + ")" , x + 15, y + 40);
+		g.drawString("15          / 30 DMG (" + calcHDamage() + ")" , x + 15, y + 40);
 	}
 }
