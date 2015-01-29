@@ -8,8 +8,7 @@ public class AAmbush extends Attack {
 		setHDamage(65);
 	}
 	void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setEnergy(mon.getEnergy() - 50);
 		toTextBox(mon.nameToString() + " used Ambush for "+calcHDamage()+" DMG");
 		

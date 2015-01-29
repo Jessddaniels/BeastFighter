@@ -5,12 +5,10 @@ import java.awt.Graphics;
 public class ABodySlam extends Attack {
 	public ABodySlam(Monster mon){
 		super(mon);
-		setHDamage(mon.getHP() / 3);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
 		setHDamage(mon.getHP() / 3);
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setEnergy(mon.getEnergy() - 20);
 		toTextBox(mon.nameToString() + " used Body Slam for " + calcHDamage() + " dmg");
 	}

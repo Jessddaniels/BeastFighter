@@ -4,9 +4,10 @@ import java.awt.Graphics;
 public class AConsumption extends Attack {
 	public AConsumption  (Monster mon){
 		super(mon);
+		setHGain(25);
 	}
 	public void attack( Leader defender) {
-		mon.setHP(mon.getHP() + 25);
+		getHGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Consumption");
 		

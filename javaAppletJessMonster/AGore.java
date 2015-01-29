@@ -8,8 +8,7 @@ public class AGore extends Attack {
 		setHDamage(40);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setEnergy(mon.getEnergy() - 30);
 		toTextBox(mon.nameToString() + " used Gore for " + calcDamage()+ " DMG");
 	}

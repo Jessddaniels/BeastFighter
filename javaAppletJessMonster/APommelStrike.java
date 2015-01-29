@@ -7,8 +7,7 @@ public class APommelStrike extends Attack {
 		setExDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentEx = defender.getActiveMon().getExperience();
-		defender.getActiveMon().setExperience(currentEx - calcExDamage());
+		exAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Pommel Strike");
 		

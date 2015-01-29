@@ -5,11 +5,12 @@ import java.awt.Graphics;
 public class ARestInPeace extends Attack {
 	public ARestInPeace(Monster mon){
 		super(mon);
-		setHDamage(0);
+		setEnGain(15);
+		setSGain(5);
 	}
 	public void attack( Leader defender) {
-		mon.setEnergy(mon.getEnergy() + 15);
-		mon.setSpirit(mon.getSpirit() + 5);
+		enGain();
+		sGain();
 		toTextBox(mon.nameToString() + " used Rest In Peace");
 		
 	}

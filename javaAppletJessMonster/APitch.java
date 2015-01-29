@@ -1,15 +1,15 @@
 package javaAppletJessMonster;
 import java.awt.Graphics;
 
-public class ATimber extends Attack {
-	public ATimber(Monster mon){
+public class APitch extends Attack {
+	public APitch(Monster mon){
 		super(mon);
-		setCDamage(15);
+		setCDamage(30);
 	}
 	public void attack( Leader defender) {
-		cAttack(defender);
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
-		toTextBox(mon.nameToString() + " used Timber");
+		toTextBox(mon.nameToString() + " used Pitch");
 		
 	}
 	public boolean isMet(Leader defender) {
@@ -24,20 +24,20 @@ public class ATimber extends Attack {
 		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
-		g.drawImage(applet.getImage(Images.Virgeo1Attack), x,y, applet);
+		g.drawImage(applet.getImage(Images.Debira3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Timber" , x + 115 , y + 20);
+		g.drawString("Pitch" , x + 110 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("15          DMG (" + calcCDamage() +")" , x + 90, y + 45);
-		g.drawImage(applet.getImage(Images.Combat), x + 110 ,y + 30, applet);
-		//en Cost
+		g.drawString("30              DMG (" + calcHDamage() +")" , x + 120, y + 40);
+		g.drawImage(applet.getImage(Images.Combat), x+ 110 ,y + 40, applet);
+		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
-		g.drawImage(applet.getImage(Images.Energy), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 27, applet);
 	}
 
 }

@@ -7,8 +7,7 @@ public class ABloodSplatter extends Attack {
 		setCDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcCDamage());
+		cAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Blood Splatter");
 		

@@ -8,10 +8,8 @@ public class AToxicSpores extends Attack {
 		setEnDamage(40);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
+		hAttack(defender);
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Toxic Spores for " + calcHDamage()+ " DMG");
 		

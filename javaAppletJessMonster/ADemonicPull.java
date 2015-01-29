@@ -5,11 +5,11 @@ public class ADemonicPull extends Attack {
 	public ADemonicPull(Monster mon){
 		super(mon);
 		setHDamage(20);
+		setHGain(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setHP(mon.getHP() + 20);
+		hAttack(defender);
+		hGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Demonic Pull for " + calcHDamage()+ " DMG");
 		

@@ -5,11 +5,11 @@ public class ACounterStance extends Attack {
 	public ACounterStance(Monster mon){
 		super(mon);
 		setCDamage(10);
+		setCGain(10);
 	}
 	public void attack( Leader defender) {
-		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcCDamage());
-		mon.setCombat(mon.getCombat() + 10);
+		cAttack(defender);
+		cGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Counter Stance");
 		

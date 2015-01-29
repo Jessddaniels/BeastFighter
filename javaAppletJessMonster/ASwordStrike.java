@@ -7,8 +7,7 @@ public class ASwordStrike extends Attack {
 		setHDamage(30);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Sword Strike for " + calcHDamage()+ " DMG");
 		

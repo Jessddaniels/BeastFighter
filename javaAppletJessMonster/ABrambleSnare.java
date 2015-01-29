@@ -8,10 +8,8 @@ public class ABrambleSnare extends Attack {
 		setEnDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcCDamage());
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
+		cAttack(defender);
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bramble Snare");
 		

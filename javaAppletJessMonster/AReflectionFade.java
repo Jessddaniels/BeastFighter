@@ -4,9 +4,10 @@ import java.awt.Graphics;
 public class AReflectionFade extends Attack {
 	public AReflectionFade(Monster mon){
 		super(mon);
+		setExGain(10);
 	}
 	public void attack( Leader defender) {
-		mon.setExperience(mon.getExperience() + 10);
+		exGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Reflection Fade");
 		

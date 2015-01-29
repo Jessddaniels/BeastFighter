@@ -7,8 +7,7 @@ public class AButcherHook extends Attack {
 		setHDamage(25);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Butcher Hook for " + calcHDamage()+ " DMG");
 		
@@ -17,8 +16,8 @@ public class AButcherHook extends Attack {
 		if (mon.type.equals("character")){
 			if (((Character) mon).CDice >= 3 && ((Character) mon).ExDice >= 1 ){
 				return true;
-			} else if (mon.getEnergy() >= 50){
-				mon.setEnergy(mon.getEnergy() - 50);
+			} else if (mon.getEnergy() >= 20){
+				mon.setEnergy(mon.getEnergy() - 20);
 				return true;
 			}
 		}

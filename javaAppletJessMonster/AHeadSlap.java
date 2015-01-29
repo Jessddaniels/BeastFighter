@@ -8,10 +8,8 @@ public class AHeadSlap extends Attack {
 		setExDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentEx = defender.getActiveMon().getExperience();
-		defender.getActiveMon().setExperience(currentEx - calcExDamage());
+		hAttack(defender);
+		exAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Head Slap for " + calcHDamage()+ " DMG");
 		

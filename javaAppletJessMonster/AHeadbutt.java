@@ -8,8 +8,7 @@ public class AHeadbutt extends Attack {
 		setHDamage(40);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setHP(mon.getHP() - 10);
 		mon.setEnergy(mon.getEnergy() - 15);
 		toTextBox( mon.nameToString() + " used Headbutt for " + calcHDamage()+ " DMG");

@@ -8,8 +8,7 @@ public class ABite extends Attack {
 		setHDamage(30);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setEnergy(mon.getEnergy() - 15);
 		toTextBox(mon.nameToString() + " used Bite for " +calcHDamage()+ " dmg");
 	}

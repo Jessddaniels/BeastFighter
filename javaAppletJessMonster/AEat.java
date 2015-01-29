@@ -4,9 +4,10 @@ import java.awt.Graphics;
 public class AEat extends Attack {
 	public AEat(Monster mon){
 		super(mon);
+		setHGain(15);
 	}
 	public void attack( Leader defender) {
-		mon.setHP(mon.getHP() + 15);
+		hGain();
 		((Character) mon).RollNum = 2;
 		toTextBox(mon.nameToString() + " used Eat");
 		

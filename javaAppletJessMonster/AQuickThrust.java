@@ -7,8 +7,7 @@ public class AQuickThrust extends Attack {
 		setHDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Quick Thrust for " + calcHDamage()+ " DMG");
 		

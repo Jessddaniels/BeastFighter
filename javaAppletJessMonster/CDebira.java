@@ -38,7 +38,7 @@ public class CDebira extends Character {
 			getAttackList().add(new AAvengingBlast(this));
 			toTextBox("Level 2");
 		} else if (getAttackList().size() < 7 && getExperience() >= 200){
-			getAttackList().add(new ARisingCuts(this));
+			getAttackList().add(new APitch(this));
 		} else if (getAttackList().size() < 8 && getExperience() >= 250){
 			getAttackList().add(new AVengeance(this));
 		} else if (getAttackList().size() < 9 && getExperience() >= 300){

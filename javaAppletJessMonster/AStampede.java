@@ -7,8 +7,7 @@ public class AStampede extends Attack {
 		setHDamage(30);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Stampede for " + calcHDamage()+ " DMG");
 		
@@ -16,8 +15,8 @@ public class AStampede extends Attack {
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character") && ((Character) mon).HDice >= 2 && ((Character) mon).EnDice >= 2){
 			return true;
-		} else if (mon.getEnergy() >= 60){
-			mon.setEnergy(mon.getEnergy() - 60);
+		} else if (mon.getEnergy() >= 25){
+			mon.setEnergy(mon.getEnergy() - 25);
 			return true;
 		}
 		return false;

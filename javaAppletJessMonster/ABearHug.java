@@ -8,10 +8,8 @@ public class ABearHug extends Attack {
 		setEnDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
+		hAttack(defender);
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bear Hug for " + calcHDamage()+ " DMG");
 		

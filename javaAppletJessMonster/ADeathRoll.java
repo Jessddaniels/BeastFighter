@@ -8,8 +8,7 @@ public class ADeathRoll extends Attack {
 		setHDamage(40);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		mon.setEnergy(mon.getEnergy() - 10);
 		toTextBox(mon.nameToString() + " used Death Roll for " + calcHDamage()+ " DMG");
 	}

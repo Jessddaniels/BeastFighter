@@ -7,8 +7,7 @@ public class AStunningThrow extends Attack {
 		setCDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcCDamage());
+		cAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Stunning Throw");
 		

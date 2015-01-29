@@ -8,10 +8,8 @@ public class AVileGenesis extends Attack {
 		setSDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentS = defender.getActiveMon().getSpirit();
-		defender.getActiveMon().setSpirit(currentS - calcSDamage());
+		hAttack(defender);
+		sAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Vile Genesis for " + calcHDamage()+ " DMG");
 		

@@ -6,10 +6,10 @@ public class AFuguToxin extends Attack {
 		super(mon);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP * 9 / 10);
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn * 9 / 10);
+		setHDamage(defender.getActiveMon().getHP() / 10);
+		hAttack(defender);
+		setEnDamage(defender.getActiveMon().getEnergy() / 10);
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Fugu Toxin for " + calcHDamage()+ " DMG");
 		

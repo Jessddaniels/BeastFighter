@@ -5,13 +5,11 @@ public class ABlightBolt extends Attack {
 	public ABlightBolt(Monster mon){
 		super(mon);
 		setHDamage(20);
-		setEnDamage(40);
+		setEnDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
+		hAttack(defender);
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Blight Bolt for " + calcHDamage()+ " DMG");
 		
@@ -19,8 +17,8 @@ public class ABlightBolt extends Attack {
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character") && ((Character) mon).HDice >= 2 && ((Character) mon).EnDice >= 2){
 			return true;
-		} else if (mon.getEnergy() >= 60){
-			mon.setEnergy(mon.getEnergy() - 60);
+		} else if (mon.getEnergy() >= 20){
+			mon.setEnergy(mon.getEnergy() - 20);
 			return true;
 		}
 		return false;
@@ -32,9 +30,9 @@ public class ABlightBolt extends Attack {
 		g.drawString("Blight Bolt" , x + 115 , y + 20);
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 35);
-		g.drawString("40          DMG (" + calcEnDamage() +")" , x + 90, y + 55);
+		g.drawString("10          DMG (" + calcEnDamage() +")" , x + 90, y + 55);
 		g.drawImage(applet.getImage(Images.Energy), x + 110 ,y + 40, applet);
-		g.drawString("60" , x + 10, y + 20);
+		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		g.drawImage(applet.getImage(Images.Energy), x ,y + 25, applet);
 		g.drawImage(applet.getImage(Images.Energy), x + 20 ,y + 45, applet);

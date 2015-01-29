@@ -10,22 +10,28 @@ public class AMiracleTonic extends Attack {
 		int rand = (int) (Math.random() * 6);
 		if (rand == 0){
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " health" );
-			mon.setHP(mon.getHP() + 25 + 25 * mon.getCombat() / 500);
+			setHGain(25);
+			hGain();
 		} else if (rand ==1){
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " energy" );
-			mon.setEnergy(mon.getEnergy() + 25 + 25 * mon.getCombat() / 500);
+			setEnGain(25);
+			enGain();
 		} else if (rand ==2){
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " combat" );
-			mon.setCombat(mon.getCombat() + 25+ 25 * mon.getCombat() / 500);
+			setCGain(25);
+			cGain();
 		} else if (rand ==3){
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " spirit" );
-			mon.setSpirit(mon.getSpirit() + 25 + 25 * mon.getCombat() / 500);
+			setSGain(25);
+			sGain();
 		} else if (rand ==4){
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " attack" );
-			mon.setDamage(mon.getDamage() + 25 + 25 * mon.getCombat() / 500);
+			setDGain(25);
+			dGain();
 		} else {
 			toTextBox(" and gained " + (25 + 25 * mon.getCombat() / 500) + " experience" );
-			mon.setExperience(mon.getExperience() + 25 + 25 * mon.getCombat() / 500);
+			setExGain(25);
+			exGain();
 		}
 		((Character) mon).RollNum = 3;
 		

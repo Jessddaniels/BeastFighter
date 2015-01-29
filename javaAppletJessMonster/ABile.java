@@ -7,9 +7,9 @@ public class ABile extends Attack {
 		setHDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		mon.setDamage(mon.getDamage() + mon.getSpirit() / 10);
+		hAttack(defender);
+		setDGain((int) (mon.getDamage() + mon.getSpirit() / 10));
+		dGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bile for " + calcHDamage()+ " DMG");
 		

@@ -8,9 +8,8 @@ public class ABackToNature extends Attack {
 		setSGain(10);
 	}
 	public void attack( Leader defender) {
-		int currentC= defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcCDamage());
-		mon.setSpirit(mon.getSpirit() + getSGain());
+		cAttack(defender);
+		getSGain();
 		((Character) mon).RollNum = 3;
 		
 	}

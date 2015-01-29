@@ -7,8 +7,7 @@ public class AInfectingCuts extends Attack {
 		setEnDamage(15);
 	}
 	public void attack( Leader defender) {
-		int currentEn = defender.getActiveMon().getEnergy();
-		defender.getActiveMon().setEnergy(currentEn - calcEnDamage());
+		enAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Infecting Cuts" );
 		

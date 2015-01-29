@@ -8,10 +8,8 @@ public class ACausticPurgative extends Attack {
 		setHDamage(10);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentS = defender.getActiveMon().getSpirit();
-		defender.getActiveMon().setSpirit(currentS - calcSDamage());
+		hAttack(defender);
+		sAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Caustic Purgative for " + calcHDamage()+ " DMG");
 		

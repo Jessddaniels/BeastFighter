@@ -4,12 +4,13 @@ import java.awt.Graphics;
 public class ADryHanging extends Attack {
 	public ADryHanging(Monster mon){
 		super(mon);
+		setDGain(30);
 	}
 	public void attack( Leader defender) {
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Dry Hanging" );
 		toTextBox(" and gained " + (30 + 30 * mon.getCombat() / 500) + " attack" );
-		mon.setDamage(mon.getDamage() + 30 + 30 * mon.getCombat() / 500);
+		dGain();
 		
 	}
 	public boolean isMet(Leader defender) {

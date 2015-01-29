@@ -5,11 +5,12 @@ import java.awt.Graphics;
 public class AHybernate extends Attack {
 	public AHybernate(Monster mon){
 		super(mon);
-		setHDamage(0);
+		setHGain(10);
+		setEnGain(10);
 	}
 	public void attack( Leader defender) {
-		mon.setEnergy(mon.getEnergy() + 10);
-		mon.setHP(mon.getHP() + 10);
+		hGain();
+		enGain();
 		toTextBox(mon.nameToString() + " used Hybernate");
 		
 	}

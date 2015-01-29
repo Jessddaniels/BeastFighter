@@ -4,12 +4,11 @@ import java.awt.Graphics;
 public class AAvengingBlast extends Attack {
 	public AAvengingBlast(Monster mon){
 		super(mon);
-		setHDamage(20);
-		setExDamage(20);
+		setHDamage(15);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage()- calcExDamage());
+		exAttack(defender);
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Avenging Blast for " + (calcHDamage() + calcExDamage())+" DMG");
 		
@@ -18,8 +17,8 @@ public class AAvengingBlast extends Attack {
 		if (mon.type.equals("character")){
 			if (((Character) mon).CDice >= 2 && ((Character) mon).DDice >= 2){
 				return true;
-			} else if (mon.getEnergy() >= 60){
-				mon.setEnergy(mon.getEnergy() - 60);
+			} else if (mon.getEnergy() >= 20){
+				mon.setEnergy(mon.getEnergy() - 20);
 				return true;
 			}
 		}
@@ -29,19 +28,20 @@ public class AAvengingBlast extends Attack {
 		g.drawImage(applet.getImage(Images.Debira2Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Avenging Blast" , x + 105 , y + 15);
+		g.drawString("Avenging Blast" , x + 100 , y + 22);
 		g.setFont(normalFont);
-		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 30);
-		g.drawString("20 DMG (" + calcExDamage() +")" , x + 110, y + 45);
+		g.drawString("15 DMG (" + calcHDamage() +")" , x + 110, y + 35);
+		g.drawString("10           DMG (" + calcExDamage() +")" , x + 100, y + 55);
+		g.drawImage(applet.getImage(Images.Experience), x + 120 ,y + 40, applet);
 		//en cost
-		g.drawString("60" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
+		g.drawString("20" , x + 10, y + 20);
+		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		y += 2;
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 25 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 47, applet);
 	}
 
 }

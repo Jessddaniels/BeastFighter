@@ -8,10 +8,8 @@ public class ABash extends Attack {
 		setExDamage(20);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
-		int currentC = defender.getActiveMon().getCombat();
-		defender.getActiveMon().setCombat(currentC - calcExDamage());
+		hAttack(defender);
+		exAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bash for " + calcHDamage()+ " DMG");
 		

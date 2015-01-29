@@ -7,8 +7,7 @@ public class AMomentum extends Attack {
 		setHDamage(15);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Momentum for " + calcHDamage()+ " DMG");
 		setHDamage(getHDamage() + 5);

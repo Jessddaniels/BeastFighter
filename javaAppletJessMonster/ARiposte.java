@@ -7,8 +7,7 @@ public class ARiposte extends Attack {
 		setHDamage(15);
 	}
 	public void attack( Leader defender) {
-		int currentHP = defender.getActiveMon().getHP();
-		defender.getActiveMon().setHP(currentHP - applyDamage());
+		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Riposte for " + calcHDamage()+ " DMG");
 		
@@ -31,12 +30,13 @@ public class ARiposte extends Attack {
 		g.drawString("Riposte" , x + 115 , y + 20);
 		g.setFont(normalFont);
 		g.drawString("15 DMG (" + calcHDamage() +")" , x + 110, y + 40);
+		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Damage), x + 20 ,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Damage), x + 20 ,y + 27, applet);
 	}
 
 }
