@@ -82,7 +82,7 @@ public abstract class Attack {
 		mon.setCombat(mon.getCombat() + getCGain());
 	}
 	public void dGain(){
-		mon.setDamage(mon.getCombat() + getDGain());
+		mon.setDamage(mon.getDamage() + getDGain());
 	}
 	public void enGain(){
 		mon.setEnergy(mon.getEnergy() + getEnGain());

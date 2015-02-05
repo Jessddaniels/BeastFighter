@@ -8,6 +8,12 @@ public class ASparkingStrike extends Attack {
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);
+		for (int i = defender.getActiveMon().getStatusList().size() - 1; i >= 0; i--){
+			if (defender.getActiveMon().getStatusList().get(i).getType().equals("StFlammable")){
+				defender.getActiveMon().getStatusList().get(i).trigger();
+				defender.getActiveMon().getStatusList().remove(i);
+			}
+		}
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Sparking Strike for " + calcHDamage()+ " DMG");
 		

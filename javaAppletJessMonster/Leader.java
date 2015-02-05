@@ -24,7 +24,8 @@ public abstract class Leader{
 		url = applet.url;
 		player = applet.getImage(Images.Player);
 		cardListBG = applet.getImage(Images.CardListBG);
-		monsterList.add(ranChar(this));
+		//monsterList.add(ranChar(this));
+		monsterList.add(new CDebira(applet,this));
 		//monsterList.add(ranMonster(this));
 		//monsterList.add(ranMonster(this));
 		cardList.add(ranCard(this));

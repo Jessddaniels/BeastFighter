@@ -4,10 +4,12 @@ import java.awt.Graphics;
 public class APitch extends Attack {
 	public APitch(Monster mon){
 		super(mon);
-		setCDamage(30);
+		setCDamage(20);
 	}
 	public void attack( Leader defender) {
-		hAttack(defender);
+		cAttack(defender);
+		StFlammable flame = new StFlammable(defender.getActiveMon(), 15);
+		defender.getActiveMon().getStatusList().add(flame);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Pitch");
 		

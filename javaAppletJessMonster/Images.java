@@ -39,6 +39,8 @@ public class Images {
 	public static final String HeadSlap = "Pictures/HeadSlap.jpg";
 	public static final String Hybernate = "Pictures/Hybernate.jpg";
 	public static final String PackInstincts = "Pictures/PackInstincts.jpg";
+	public static final String RestButton = "Pictures/RestButton.jpg";
+	public static final String Runner = "Pictures/Runner.jpg";
 	public static final String SpiritSink = "Pictures/SpiritSink.jpg";
 	public static final String SwordStrike = "Pictures/SwordStrike.jpg";
 	public static final String Rest = "Pictures/Rest.jpg";

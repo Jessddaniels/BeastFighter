@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public abstract class Monster {
 	private ArrayList<Attack> attackList = new ArrayList<Attack>();
+	private ArrayList<Status> statusList = new ArrayList<Status>();
 	private URL url;
 	public String type = "monster";
 	private int hp;
@@ -38,7 +39,6 @@ public abstract class Monster {
 		silverFrame = applet.getImage(getURL(),"Pictures/FrameInactive.png");
 		attackPage = applet.getImage(getURL(),"Pictures/AttackPage.jpg");
 		statPage = applet.getImage(getURL(),"Pictures/StatPage.jpg");
-		runner = applet.getImage(getURL(),"Pictures/Runner.jpg");
 		normalFont = applet.getFont();
 	}
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
@@ -62,14 +62,17 @@ public abstract class Monster {
 	    	g.drawString(""+getDamage(), x + 195, y + 130);
 	    	g.drawString(""+getExperience(), x + 195, y + 150);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 175, y + 55, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x + 175, y + 75, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 175, y + 95, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Damage.jpg"), x + 175, y + 115, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 175, y + 135, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/Runner.jpg"), x + 210, y + 455, applet);
-	    	g.drawImage(applet.getImage(getURL(),"Pictures/RestButton.jpg"), x + 20, y + 455, applet);
+	    	g.drawImage(applet.getImage(Images.Health), x + 175, y + 35, applet);
+	    	g.drawImage(applet.getImage(Images.Energy), x + 175, y + 55, applet);
+	    	g.drawImage(applet.getImage(Images.Combat), x + 175, y + 75, applet);
+	    	g.drawImage(applet.getImage(Images.Spirit), x + 175, y + 95, applet);
+	    	g.drawImage(applet.getImage(Images.Damage), x + 175, y + 115, applet);
+	    	g.drawImage(applet.getImage(Images.Experience), x + 175, y + 135, applet);
+	    	g.drawImage(applet.getImage(Images.Runner), x + 210, y + 455, applet);
+	    	g.drawImage(applet.getImage(Images.RestButton), x + 20, y + 455, applet);
+	    	for (int i = 0; i < statusList.size(); i++){
+	    		statusList.get(i).paint(g,x,y, i, applet);
+	    	}
 			if (p1.getActiveMon() == this || p2.getActiveMon() == this) {	
 				g.drawImage(goldFrame, x+ 20, y+ 35, applet);
 			} else {
@@ -131,6 +134,9 @@ public abstract class Monster {
 	}
 	public ArrayList<Attack> getAttackList() {
 		return attackList;
+	}
+	public ArrayList<Status> getStatusList() {
+		return statusList;
 	}
 	public int getCombat() {
 		return combat;

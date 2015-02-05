@@ -37,17 +37,17 @@ public abstract class Character extends Monster {
 		g.drawImage(applet.getImage(getURL(),"Pictures/Die.jpg"), x + 120,y + 455, applet);
 		for (int i = 0; i < getDiceList().size(); i++){
 			if (getDiceList().get(i).equals("Health")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 20 + i * 40,y + 430, applet);
+				g.drawImage(applet.getImage(Images.Health), x + 20 + i * 40,y + 430, applet);
 			} else if (getDiceList().get(i).equals("Energy")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x+ 20+ i * 40,y + 430, applet);
+				g.drawImage(applet.getImage(Images.Energy), x+ 20+ i * 40,y + 430, applet);
 			} else if (getDiceList().get(i).equals("Spirit")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Spirit.jpg"), x + 20+ i * 40,y + 430, applet);
+				g.drawImage(applet.getImage(Images.Spirit), x + 20+ i * 40,y + 430, applet);
 			} else if (getDiceList().get(i).equals("Combat")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Combat.jpg"), x+ 20+ i * 40,y +430, applet);
+				g.drawImage(applet.getImage(Images.Combat), x+ 20+ i * 40,y +430, applet);
 			} else if (getDiceList().get(i).equals("Experience")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Experience.jpg"), x + 20+ i * 40,y + 430, applet);
+				g.drawImage(applet.getImage(Images.Experience), x + 20+ i * 40,y + 430, applet);
 			} else if (getDiceList().get(i).equals("Damage")){
-				g.drawImage(applet.getImage(getURL(),"Pictures/Damage.jpg"), x + 20+ i * 40,y + 430, applet);
+				g.drawImage(applet.getImage(Images.Damage), x + 20+ i * 40,y + 430, applet);
 			} 
 		}
 	}
