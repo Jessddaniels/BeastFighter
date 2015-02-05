@@ -10,6 +10,7 @@ public class CAdipedys extends Character {
 		super(applet, l);
 		pic = applet.getImage(Images.Adipedys);
 		setHP(300);
+		setMaxHealth(300);
 		setEnergy(0);
 		setSpirit(0);
 		setCombat(100);

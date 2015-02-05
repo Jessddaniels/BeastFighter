@@ -8,7 +8,7 @@ public class ABile extends Attack {
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);
-		setDGain((int) (mon.getDamage() + mon.getSpirit() / 10));
+		setDGain((int) (mon.getSpirit() / 10));
 		dGain();
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bile for " + calcHDamage()+ " DMG");
@@ -30,7 +30,7 @@ public class ABile extends Attack {
 		g.drawString("Bile" , x + 130 , y + 20);
 		g.setFont(normalFont);
 		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 35);
-		g.drawString("Add Spirit / 10" , x + 100, y + 55);
+		g.drawString("GAIN Spirit / 10" , x + 100, y + 55);
 		g.drawImage(applet.getImage(Images.Damage), x + 175 ,y + 40, applet);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);

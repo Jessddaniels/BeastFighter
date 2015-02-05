@@ -93,6 +93,9 @@ public abstract class Leader{
 		cardList.add(ranCard(this));
 		boolean hasMon = true;
 		for (int i = 0; i < monsterList.size(); i++){
+			if (monsterList.get(i) != null && monsterList.get(i).getHP() > monsterList.get(i).getMaxHealth() ){
+				monsterList.get(i).setHP(monsterList.get(i).getMaxHealth());
+			}
 			if (monsterList.get(i) != null && monsterList.get(i).getHP() <= 0 ){
 				monsterList.remove(i);
 				if (monsterList.size() == 0){

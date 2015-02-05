@@ -31,10 +31,10 @@ public class ACounterStance extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Counter Stance" , x + 102 , y + 22);
 		g.setFont(normalFont);
-		g.drawString("10          DMG (" + calcCDamage() +")" , x + 95, y + 35);
-		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 25, applet);
-		g.drawString("10          ADD (" + calcCDamage() +")" , x + 95, y + 55);
-		g.drawImage(applet.getImage(Images.Combat), x + 115 ,y + 45, applet);
+		g.drawString("10          DMG (" + calcCDamage() +")" , x + 100, y + 37);
+		g.drawImage(applet.getImage(Images.Combat), x + 120 ,y + 25, applet);
+		g.drawString("10          ADD (" + calcCDamage() +")" , x + 100, y + 57);
+		g.drawImage(applet.getImage(Images.Combat), x + 120 ,y + 45, applet);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

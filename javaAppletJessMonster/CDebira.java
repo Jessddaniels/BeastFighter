@@ -10,6 +10,7 @@ public class CDebira extends Character {
 		super(applet, l);
 		pic = applet.getImage(Images.Debira);
 		setHP(300);
+		setMaxHealth(300);
 		setEnergy(80);
 		setSpirit(20);
 		setCombat(0);

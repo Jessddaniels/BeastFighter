@@ -53,7 +53,7 @@ public class AMiracleTonic extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Miracle Tonic" , x + 105 , y + 25);
 		g.setFont(normalFont);
-		g.drawString("ADD "+ (25 + 25 * mon.getCombat() / 500)+" to random die stat", x + 80, y + 45);
+		g.drawString("GAIN "+ (25 + 25 * mon.getCombat() / 500)+" to random die stat", x + 80, y + 45);
 		//en cost
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

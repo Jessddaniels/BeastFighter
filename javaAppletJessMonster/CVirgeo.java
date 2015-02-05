@@ -10,6 +10,7 @@ public class CVirgeo extends Character {
 		super(applet, l);
 		pic = applet.getImage(Images.Virgeo);
 		setHP(300);
+		setMaxHealth(300);
 		setEnergy(50);
 		setSpirit(50);
 		setCombat(0);

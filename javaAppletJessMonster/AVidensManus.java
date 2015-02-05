@@ -14,7 +14,7 @@ public class AVidensManus extends Attack {
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).SDice >= 2 && ((Character) mon).ExDice >= 2){
+			if (((Character) mon).CDice >= 2 && ((Character) mon).ExDice >= 2){
 				return true;
 			} else if (mon.getEnergy() >= 20){
 				mon.setEnergy(mon.getEnergy() - 20);
@@ -35,8 +35,8 @@ public class AVidensManus extends Attack {
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
 		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
 		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 47 , applet);
 	}

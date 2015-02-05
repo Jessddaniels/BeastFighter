@@ -32,12 +32,14 @@ public class ABlightBolt extends Attack {
 		g.drawString("20 DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		g.drawString("10          DMG (" + calcEnDamage() +")" , x + 90, y + 55);
 		g.drawImage(applet.getImage(Images.Energy), x + 110 ,y + 40, applet);
+		//en cost
 		g.drawString("20" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
-		g.drawImage(applet.getImage(Images.Energy), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Energy), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Health), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Health), x + 20 ,y + 25 , applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Health), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 20 ,y + 27 , applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 20 ,y + 47, applet);
 	}
 
 }

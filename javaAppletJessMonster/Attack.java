@@ -12,6 +12,8 @@ public abstract class Attack {
 	private int cDamage;
 	private int sDamage;
 	private int exDamage;
+	//die max stat dmg
+	private int maxHDamage;
 	//die stat gains
 	private int hGain;
 	private int dGain;
@@ -40,9 +42,9 @@ public abstract class Attack {
 	}
 	//applies damage stat to hDamage for final attack. Consumes Damage dice. Used within hAttack()
 	public int applyDamage(){
-		int attackDamage = calcDDamage();
+		int attackDamage = mon.getDamage();
 		mon.setDamage(0);
-		attackDamage += hDamage;
+		attackDamage += calcHDamage();
 		return attackDamage;
 	}
 	
@@ -71,7 +73,10 @@ public abstract class Attack {
 	public int calcSDamage(){
 		return adj4Combat(getSDamage());
 	}
-	
+	//calculate combat adjusted attack values for max attacks
+	public int calcMaxHDamage(){
+		return adj4Combat(getMaxHDamage());
+	}
 	//gaining stats
 	public void cGain(){
 		mon.setCombat(mon.getCombat() + getCGain());
@@ -116,6 +121,12 @@ public abstract class Attack {
 		int currentS = defender.getActiveMon().getSpirit();
 		defender.getActiveMon().setSpirit(currentS - calcSDamage());
 	}
+	//damaging max stats
+	public void maxHAttack( Leader defender) {
+		int currentmaxHP = defender.getActiveMon().getMaxHealth();
+		defender.getActiveMon().setMaxHealth(currentmaxHP - calcMaxHDamage());
+	}
+	
 	//GETTERS
 	
 	//return attack damage values
@@ -137,7 +148,10 @@ public abstract class Attack {
 	public int getSDamage() {
 		return sDamage;
 	}
-	
+	//return attaxk damage values for max attacks
+	public int getMaxHDamage(){
+		return maxHDamage;
+	}
 	//return attack gain values
 	
 	public int getCGain() {
@@ -179,6 +193,10 @@ public abstract class Attack {
 	}
 	public void setSDamage(int damage) {
 		this.sDamage = damage;
+	}
+	//set attack damage stats for max values
+	public void setMaxHDamage(int damage){
+		this.maxHDamage = damage;
 	}
 	//set attack gain stats
 	public void setCGain(int cGain) {

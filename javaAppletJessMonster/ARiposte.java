@@ -4,9 +4,10 @@ import java.awt.Graphics;
 public class ARiposte extends Attack {
 	public ARiposte(Monster mon){
 		super(mon);
-		setHDamage(15);
 	}
 	public void attack( Leader defender) {
+		setHDamage(defender.getActiveMon().getDamage());
+		defender.getActiveMon().setDamage(0);
 		hAttack(defender);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Riposte for " + calcHDamage()+ " DMG");
@@ -27,9 +28,12 @@ public class ARiposte extends Attack {
 		g.drawImage(applet.getImage(Images.Debira1Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Riposte" , x + 115 , y + 20);
+		g.drawString("Riposte" , x + 120 , y + 20);
+		g.setFont(smallFont);
+		g.drawString("Opponent's Damage Stat DMG." , x + 80, y + 35);
+		g.drawString("Set Opponent's Damage Stat" , x + 75, y + 45);
+		g.drawString("to 0." , x + 130, y + 55);
 		g.setFont(normalFont);
-		g.drawString("15 DMG (" + calcHDamage() +")" , x + 110, y + 40);
 		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

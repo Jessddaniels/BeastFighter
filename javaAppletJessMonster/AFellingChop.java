@@ -28,13 +28,15 @@ public class AFellingChop extends Attack {
 		g.drawString("Felling Chop" , x + 115 , y + 20);
 		g.setFont(normalFont);
 		g.drawString("25 DMG (" + calcHDamage() +")" , x + 115, y + 45);
+		//en cost
 		g.drawString("25" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
-		g.drawImage(applet.getImage(Images.Damage), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Damage), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Damage), x + 20 ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 40 ,y + 25 , applet);
+		//die cost
+		g.drawImage(applet.getImage(Images.Damage), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Damage), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Damage), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 40 ,y + 27 , applet);
 	}
 
 }

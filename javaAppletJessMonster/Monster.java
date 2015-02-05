@@ -11,6 +11,7 @@ public abstract class Monster {
 	private URL url;
 	public String type = "monster";
 	private int hp;
+	private int maxHealth;
 	private int energy;
 	private int combat;
 	private int spirit;
@@ -54,12 +55,12 @@ public abstract class Monster {
 			paintA1(g, x + 5, y + 210, applet);
 			paintA2(g, x + 5, y + 280, applet);
 			paintA3(g, x + 5, y + 350, applet);
-			g.drawString(""+getHP(), x + 205, y + 50  );
-	    	g.drawString(""+getEnergy(), x + 205, y + 70);
-	    	g.drawString(""+getCombat(), x + 205, y + 90);
-	    	g.drawString(""+getSpirit(), x + 205, y + 110);
-	    	g.drawString(""+getDamage(), x + 205, y + 130);
-	    	g.drawString(""+getExperience(), x + 205, y + 150);
+			g.drawString(""+getHP() + "/" + getMaxHealth(), x + 195, y + 50  );
+	    	g.drawString(""+getEnergy(), x + 195, y + 70);
+	    	g.drawString(""+getCombat(), x + 195, y + 90);
+	    	g.drawString(""+getSpirit(), x + 195, y + 110);
+	    	g.drawString(""+getDamage(), x + 195, y + 130);
+	    	g.drawString(""+getExperience(), x + 195, y + 150);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Health.jpg"), x + 175, y + 35, applet);
 	    	g.drawImage(applet.getImage(getURL(),"Pictures/Energy.jpg"), x + 175, y + 55, applet);
@@ -168,5 +169,11 @@ public abstract class Monster {
 	//sends a string to be printed in the text box
 	public void toTextBox(String words){
 		match.textbox.toTextBox(words, lead);
+	}
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+	public void setMaxHealth(int maxHealth) {
+		this.maxHealth = maxHealth;
 	}
 }

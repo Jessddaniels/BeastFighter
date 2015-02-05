@@ -35,9 +35,9 @@ public class ATimber extends Attack {
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
-		g.drawImage(applet.getImage(Images.Energy), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 27, applet);
 	}
 
 }

@@ -9,6 +9,7 @@ public class AWrath extends Attack {
 	public void attack( Leader defender) {
 		setHDamage(getHDamage() + mon.getDamage());
 		hAttack(defender);
+		setHDamage(15);
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Wrath for " + calcHDamage()+ " DMG");
 		
@@ -31,7 +32,7 @@ public class AWrath extends Attack {
 		g.drawString("Wrath" , x + 125 , y + 20);
 		g.setFont(normalFont);
 		g.drawString("15 DMG (" + calcHDamage() +")" , x + 115, y + 35);
-		g.drawString("2x Damage from" , x + 85, y + 50);
+		g.drawString("2x Damage from" , x + 85, y + 55);
 		g.drawImage(applet.getImage(Images.Damage), x + 180,y + 40 , applet);
 		//en cost
 		g.drawString("30" , x + 10, y + 20);

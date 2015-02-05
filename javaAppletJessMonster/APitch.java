@@ -14,10 +14,10 @@ public class APitch extends Attack {
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 3){
+			if (((Character) mon).CDice >= 1 && ((Character) mon).ExDice >= 1 ){
 				return true;
-			} else if (mon.getEnergy() >= 15){
-				mon.setEnergy(mon.getEnergy() - 15);
+			} else if (mon.getEnergy() >= 10){
+				mon.setEnergy(mon.getEnergy() - 10);
 				return true;
 			}
 		}
@@ -27,17 +27,17 @@ public class APitch extends Attack {
 		g.drawImage(applet.getImage(Images.Debira3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Pitch" , x + 110 , y + 25);
+		g.drawString("Pitch" , x + 135 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("30              DMG (" + calcHDamage() +")" , x + 120, y + 40);
-		g.drawImage(applet.getImage(Images.Combat), x+ 110 ,y + 40, applet);
+		g.drawString("20         DMG (" + calcCDamage() +")" , x + 115, y +38);
+		g.drawImage(applet.getImage(Images.Combat), x+ 130 ,y + 23, applet);
+		g.drawString("Gives 15 Combustible." , x + 90, y + 55);
 		//en cost
-		g.drawString("15" , x + 10, y + 20);
+		g.drawString("10" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Experience), x ,y + 47 , applet);
 	}
 
 }
