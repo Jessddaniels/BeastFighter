@@ -25,7 +25,7 @@ public abstract class Leader{
 		player = applet.getImage(Images.Player);
 		cardListBG = applet.getImage(Images.CardListBG);
 		//monsterList.add(ranChar(this));
-		monsterList.add(new CDebira(applet,this));
+		monsterList.add(new CVirgeo(applet,this));
 		//monsterList.add(ranMonster(this));
 		//monsterList.add(ranMonster(this));
 		cardList.add(ranCard(this));
@@ -83,6 +83,33 @@ public abstract class Leader{
 			mon.ExDice = 0;
 			mon.RollNum = 0;
 		}
+		maxMinClean(monsterList);
+	}
+	public void maxMinClean(ArrayList<Monster> monsterList){//change values so that max and min rules are followed
+		for (int i = 0; i < monsterList.size(); i++){
+			Monster mon = monsterList.get(i);
+			if (mon == null) {
+				continue;
+			}
+			if (mon.getHP() > mon.getMaxHealth() ){
+				mon.setHP(mon.getMaxHealth());
+			}
+			if (mon.getEnergy() < 0){
+				mon.setEnergy(0);
+			}
+			if (mon.getCombat() < 0){
+				mon.setCombat(0);
+			}
+			if (mon.getSpirit() < 0){
+				mon.setSpirit(0);
+			}
+			if (mon.getDamage() < 0){
+				mon.setDamage(0);
+			}
+			if (mon.getExperience() < 0){
+				mon.setExperience(0);
+			}
+		}
 	}
 	public void updateBOT(JessMonster applet){
 		getApplet().match.sleeper(1000);
@@ -93,15 +120,13 @@ public abstract class Leader{
 		cardList.add(ranCard(this));
 		cardList.add(ranCard(this));
 		boolean hasMon = true;
+		maxMinClean(monsterList);
 		for (int i = 0; i < monsterList.size(); i++){
-			if (monsterList.get(i) != null && monsterList.get(i).getHP() > monsterList.get(i).getMaxHealth() ){
-				monsterList.get(i).setHP(monsterList.get(i).getMaxHealth());
-			}
 			if (monsterList.get(i) != null && monsterList.get(i).getHP() <= 0 ){
 				monsterList.remove(i);
 				if (monsterList.size() == 0){
 					hasMon = false;
-				} else {
+				} else if (getActiveMon() == null){
 					knockedOut();
 				}
 			} 

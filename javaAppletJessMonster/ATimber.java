@@ -14,7 +14,7 @@ public class ATimber extends Attack {
 	}
 	public boolean isMet(Leader defender) {
 		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 3){
+			if (((Character) mon).EnDice >= 1 && ((Character) mon).ExDice >= 2){
 				return true;
 			} else if (mon.getEnergy() >= 15){
 				mon.setEnergy(mon.getEnergy() - 15);
@@ -36,8 +36,8 @@ public class ATimber extends Attack {
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Energy), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Experience), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 27, applet);
 	}
 
 }

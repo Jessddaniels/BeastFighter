@@ -29,6 +29,7 @@ public abstract class Status {
 	public void setMon(Monster mon) {
 		this.mon = mon;
 	}
+	abstract void passive();
 	abstract void trigger();
 	abstract void paint(Graphics g, int x, int y, int index, JessMonster applet);
 }
