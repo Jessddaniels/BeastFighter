@@ -3,13 +3,9 @@ import java.awt.Graphics;
 
 public class ABrambleSnare extends Attack {
 	public ABrambleSnare(Monster mon){
-		super(mon);
-		setCDamage(10);
-		setEnDamage(10);
+		super(mon);;
 	}
 	public void attack( Leader defender) {
-		cAttack(defender);
-		enAttack(defender);
 		StEnsnared snare = new StEnsnared(defender.getActiveMon(), 5);
 		defender.getActiveMon().getStatusList().add(snare);
 		((Character) mon).RollNum = 3;
@@ -31,10 +27,10 @@ public class ABrambleSnare extends Attack {
 		g.setFont(nameFont);
 		g.drawString("Bramble Snare" , x + 110 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("10          DMG (" + calcCDamage() +")", x + 110, y + 40);
-		g.drawImage(applet.getImage(Images.Combat), x + 130 ,y + 25, applet);
-		g.drawString("10          DMG (" + calcEnDamage() +")" , x + 110, y + 60);
-		g.drawImage(applet.getImage(Images.Energy), x + 130 ,y + 45, applet);
+		g.drawString("Gives Ensnare:" , x + 112, y + 35);
+		g.drawString("-5         , Saving Roll: 3" , x + 75, y + 50);
+		g.drawImage(applet.getImage(Images.Combat), x + 90 ,y + 36, applet);
+		g.drawImage(applet.getImage(Images.Combat), x + 200 ,y + 36, applet);
 		//en cost
 		g.drawString("15" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

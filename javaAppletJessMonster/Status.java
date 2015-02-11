@@ -3,6 +3,7 @@ package javaAppletJessMonster;
 import java.awt.Graphics;
 
 public abstract class Status {
+	private DieSet savingsRoll;
 	private String type;
 	private int value;
 	private Monster mon;
@@ -32,4 +33,10 @@ public abstract class Status {
 	abstract void passive();
 	abstract void trigger();
 	abstract void paint(Graphics g, int x, int y, int index, JessMonster applet);
+	public DieSet getSavingsRoll() {
+		return savingsRoll;
+	}
+	public void setSavingsRoll(DieSet savingsRoll) {
+		this.savingsRoll = savingsRoll;
+	}
 }

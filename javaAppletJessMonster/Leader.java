@@ -74,6 +74,36 @@ public abstract class Leader{
 	public void updateEOT(JessMonster applet){
 		if (activeMon.type.equals("character")){
 			Character mon = (Character) activeMon;
+			if (activeMon.getStatusList().size() > 0){
+				for (int i = activeMon.getStatusList().size() - 1; i >= 0; i--){
+					if (activeMon.getStatusList().get(i).getSavingsRoll() != null){
+						boolean successRoll = true;
+						if (mon.HDice < activeMon.getStatusList().get(i).getSavingsRoll().getHealthDice()){
+							successRoll = false;
+						}
+						if (mon.EnDice < activeMon.getStatusList().get(i).getSavingsRoll().getEnergyDice()){
+							successRoll = false;
+						}
+						if (mon.CDice < activeMon.getStatusList().get(i).getSavingsRoll().getCombatDice()){
+							successRoll = false;
+						}
+						if (mon.SDice < activeMon.getStatusList().get(i).getSavingsRoll().getSpiritDice()){
+							successRoll = false;
+						}
+						if (mon.DDice < activeMon.getStatusList().get(i).getSavingsRoll().getDamageDice()){
+							successRoll = false;
+						}
+						if (mon.ExDice < activeMon.getStatusList().get(i).getSavingsRoll().getExperienceDice()){
+							successRoll = false;
+						}
+						if (successRoll == true){
+							activeMon.getStatusList().remove(i);
+						} else {
+							activeMon.getStatusList().get(i).trigger();
+						}
+					}
+				}
+			}
 			mon.getDiceList().clear();
 			mon.HDice = 0;
 			mon.EnDice = 0;
