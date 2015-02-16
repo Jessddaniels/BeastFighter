@@ -4,6 +4,8 @@ import java.awt.Graphics;
 public class ARiposte extends Attack {
 	public ARiposte(Monster mon){
 		super(mon);
+		setEnergyCost(15);
+		setReqDice(new DieSet(0,0,2,0,1,0));
 	}
 	public void attack( Leader defender) {
 		setHDamage(defender.getActiveMon().getDamage());
@@ -12,17 +14,6 @@ public class ARiposte extends Attack {
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Riposte for " + calcHDamage()+ " DMG");
 		
-	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character")){
-			if (((Character) mon).CDice >= 2 && ((Character) mon).DDice >= 1 ){
-				return true;
-			} else if (mon.getEnergy() >= 15){
-				mon.setEnergy(mon.getEnergy() - 15);
-				return true;
-			}
-		}
-		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Debira1Attack), x,y, applet);
@@ -35,7 +26,7 @@ public class ARiposte extends Attack {
 		g.drawString("to 0." , x + 130, y + 55);
 		g.setFont(normalFont);
 		//en cost
-		g.drawString("15" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);

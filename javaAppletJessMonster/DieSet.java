@@ -18,6 +18,38 @@ public class DieSet {
 	public DieSet(){
 		
 	}
+	public void clearDice(){
+		healthDice = 0;
+		energyDice = 0;
+		combatDice = 0;
+		spiritDice = 0;
+		damageDice = 0;
+		experienceDice = 0;
+	}
+	public boolean reqMet(DieSet dice){
+		if (healthDice > dice.getHealthDice()){
+			return false;
+		}
+		if (energyDice > dice.getEnergyDice()){
+			return false;
+		}
+		if (combatDice > dice.getCombatDice()){
+			return false;
+		}
+		if (spiritDice > dice.getSpiritDice()){
+			return false;
+		}
+		if (damageDice > dice.getDamageDice()){
+			return false;
+		}
+		if (experienceDice > dice.getExperienceDice()){
+			return false;
+		}
+		return true;
+	}
+	public int totalDice(){
+		return healthDice + energyDice + combatDice + spiritDice + damageDice + experienceDice;
+	}
 	public int getSpiritDice() {
 		return spiritDice;
 	}

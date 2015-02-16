@@ -6,13 +6,11 @@ public class ARest extends Attack {
 	public ARest(Monster mon){
 		super(mon);
 		setHDamage(0);
+		setEnergyCost(0);
 	}
 	void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 20);
 		toTextBox(mon.nameToString() + " used Rest");
-	}
-	boolean isMet(Leader defender) {
-		return true;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Rest), x,y, applet);

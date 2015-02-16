@@ -5,6 +5,8 @@ public class APurgatory extends Attack {
 	public APurgatory (Monster mon){
 		super(mon);
 		setHDamage(35);
+		setEnergyCost(25);
+		setReqDice(new DieSet(0,0,0,3,2,0));
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);
@@ -12,26 +14,15 @@ public class APurgatory extends Attack {
 		toTextBox(mon.nameToString() + " used Purgatory for " + calcHDamage()+ " DMG");
 		
 	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character")){
-			if (((Character) mon).DDice >= 2 && ((Character) mon).SDice >= 3 ){
-				return true;
-			} else if (mon.getEnergy() >= 25){
-				mon.setEnergy(mon.getEnergy() - 25);
-				return true;
-			}
-		}
-		return false;
-	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Calumbra3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Purgatory" , x + 110 , y + 18);
 		g.setFont(normalFont);
-		g.drawString("35 DMG (" + calcHDamage() +")" , x + 110, y + 35);
+		g.drawString(getHDamage() + " DMG (" + calcHDamage() +")" , x + 110, y + 35);
 		//en cost
-		g.drawString("25" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Damage), x ,y + 27, applet);

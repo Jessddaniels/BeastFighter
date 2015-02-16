@@ -5,6 +5,8 @@ import java.awt.Graphics;
 
 public abstract class Attack {
 	public Monster mon;
+	private DieSet reqDice;
+	private int energyCost;
 	//die stat dmg
 	private int hDamage;
 	private int dDamage;
@@ -33,7 +35,6 @@ public abstract class Attack {
 	}
 	
 	abstract void attack(Leader defender);
-	abstract boolean isMet(Leader defender);
 	abstract void paint(Graphics g, int x, int y, JessMonster applet);
 	
 	//adjusts values with the combat stat.
@@ -216,5 +217,30 @@ public abstract class Attack {
 	}
 	public void setSGain(int sGain) {
 		this.sGain = sGain;
+	}
+
+	public int getEnergyCost() {
+		return energyCost;
+	}
+
+	public void setEnergyCost(int energyCost) {
+		this.energyCost = energyCost;
+	}
+
+	public DieSet getReqDice() {
+		return reqDice;
+	}
+
+	public void setReqDice(DieSet reqDice) {
+		this.reqDice = reqDice;
+	}
+	public boolean isMet(Leader defender) {
+		if (mon.type.equals("character") && (reqDice.reqMet(((Character) mon).dieSet))){
+			return true;
+		} else if (mon.getEnergy() >= energyCost){
+			mon.setEnergy(mon.getEnergy() - energyCost);
+			return true;
+		}
+		return false;
 	}
 }

@@ -6,12 +6,7 @@ import java.util.ArrayList;
 
 
 public abstract class Character extends Monster {
-	public int HDice = 0;
-	public int EnDice = 0;
-	public int SDice = 0;
-	public int CDice = 0;
-	public int ExDice = 0;
-	public int DDice = 0;
+	public DieSet dieSet = new DieSet(0,0,0,0,0,0);
 	public int RollNum = 0;
 	public int diceValue = 0;
 	
@@ -22,7 +17,7 @@ public abstract class Character extends Monster {
 		diceValue = 5;
 	}
 	public void roll(int dice){
-		if (RollNum < 3 && 6 - HDice - EnDice - SDice - CDice - ExDice - DDice == dice && (RollNum == 0 || dice > 0)){
+		if (RollNum < 3 && 6 - dieSet.totalDice() == dice && (RollNum == 0 || dice > 0)){
 			for (int i = 0; i < dice; i++){
 				roll();
 			}
@@ -54,49 +49,49 @@ public abstract class Character extends Monster {
 	public void removeDie(int position){
 		String die = getDiceList().get(position);
 		if (die.equals("Health")){
-			HDice--;
+			dieSet.setHealthDice(dieSet.getHealthDice() - 1);
 		} else if (die.equals("Energy")){
-			EnDice--;
+			dieSet.setEnergyDice(dieSet.getEnergyDice() - 1);
 		} else if (die.equals("Spirit")){
-			SDice--;
+			dieSet.setSpiritDice(dieSet.getSpiritDice() - 1);
 		} else if (die.equals("Combat")){
-			CDice--;
+			dieSet.setCombatDice(dieSet.getCombatDice() - 1);
 		} else if (die.equals("Damage")){
-			DDice--;
+			dieSet.setDamageDice(dieSet.getDamageDice() - 1);
 		} else if (die.equals("Experience")){
-			ExDice--;
+			dieSet.setExperienceDice(dieSet.getExperienceDice() - 1);
 		} 
 		getDiceList().remove(position);
 	}
 	public void roll(){
 		int rand = (int) (Math.random() * 6);
 		if (rand == 0){
-			HDice++;
+			dieSet.setHealthDice(dieSet.getHealthDice() + 1);
 			getDiceList().add("Health");
 		} else if (rand == 1){
-			EnDice++;
+			dieSet.setEnergyDice(dieSet.getEnergyDice()+ 1);
 			getDiceList().add("Energy");
 		}else if (rand == 2){
-			SDice++;
+			dieSet.setSpiritDice(dieSet.getSpiritDice() + 1);
 			getDiceList().add("Spirit");
 		}else if (rand == 3){
-			CDice++;
+			dieSet.setCombatDice(dieSet.getCombatDice() + 1);
 			getDiceList().add("Combat");
 		}else if (rand == 4){
-			ExDice++;
+			dieSet.setExperienceDice(dieSet.getExperienceDice() + 1);
 			getDiceList().add("Experience");
 		} else {
-			DDice++;
+			dieSet.setDamageDice(dieSet.getDamageDice() + 1);
 			getDiceList().add("Damage");
 		}
 	}
 	public void resolveDice(){
-		setHP(getHP() + diceValue * HDice);
-		setEnergy(getEnergy() + diceValue * EnDice);
-		setSpirit(getSpirit() + diceValue * SDice);
-		setCombat(getCombat() + diceValue * CDice);
-		setDamage(getDamage() + diceValue * DDice);
-		setExperience(getExperience() + diceValue * ExDice);
+		setHP(getHP() + diceValue * dieSet.getHealthDice());
+		setEnergy(getEnergy() + diceValue * dieSet.getEnergyDice());
+		setSpirit(getSpirit() + diceValue * dieSet.getSpiritDice());
+		setCombat(getCombat() + diceValue * dieSet.getCombatDice());
+		setDamage(getDamage() + diceValue * dieSet.getDamageDice());
+		setExperience(getExperience() + diceValue * dieSet.getExperienceDice());
 	}
 	public ArrayList<String> getDiceList() {
 		return diceList;

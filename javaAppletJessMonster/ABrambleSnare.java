@@ -3,7 +3,9 @@ import java.awt.Graphics;
 
 public class ABrambleSnare extends Attack {
 	public ABrambleSnare(Monster mon){
-		super(mon);;
+		super(mon);
+		setEnergyCost(15);
+		setReqDice(new DieSet(0,0,0,0,0,2));
 	}
 	public void attack( Leader defender) {
 		StEnsnared snare = new StEnsnared(defender.getActiveMon(), 5);
@@ -11,15 +13,6 @@ public class ABrambleSnare extends Attack {
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Bramble Snare");
 		
-	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character") && ((Character) mon).ExDice >= 2){
-			return true;
-		} else if (mon.getEnergy() >= 15){
-			mon.setEnergy(mon.getEnergy() - 15);
-			return true;
-		}
-		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Virgeo2Attack), x,y, applet);
@@ -32,7 +25,7 @@ public class ABrambleSnare extends Attack {
 		g.drawImage(applet.getImage(Images.Combat), x + 90 ,y + 36, applet);
 		g.drawImage(applet.getImage(Images.Combat), x + 200 ,y + 36, applet);
 		//en cost
-		g.drawString("15" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Spirit), x ,y + 27, applet);

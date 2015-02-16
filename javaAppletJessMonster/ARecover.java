@@ -6,18 +6,13 @@ public class ARecover extends Attack {
 	public ARecover(Monster mon){
 		super(mon);
 		setHDamage(0);
+		setEnergyCost(999999);
+		setReqDice(new DieSet(0,0,3,0,0,0));
 	}
 	void attack( Leader defender) {
 		mon.setEnergy(mon.getEnergy() + 50);
-		((Character) mon).EnDice -= 3;
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Recover");
-	}
-	boolean isMet(Leader defender) {
-		if (!mon.type.equals("character") || ((Character) mon).EnDice < 3){
-			return false;
-		}
-		return true;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Rest), x,y, applet);

@@ -4,6 +4,8 @@ import java.awt.Graphics;
 public class AMiracleTonic extends Attack {
 	public AMiracleTonic(Monster mon){
 		super(mon);
+		setEnergyCost(20);
+		setReqDice(new DieSet(2,0,0,0,0,2));
 	}
 	public void attack( Leader defender) {
 		toTextBox(mon.nameToString() + " used Miracle Tonic" );
@@ -36,17 +38,6 @@ public class AMiracleTonic extends Attack {
 		((Character) mon).RollNum = 3;
 		
 	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character")){
-			if (((Character) mon).ExDice >= 2 && ((Character) mon).HDice >= 2 ){
-				return true;
-			} else if (mon.getEnergy() >= 20){
-				mon.setEnergy(mon.getEnergy() - 20);
-				return true;
-			}
-		}
-		return false;
-	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Calumbra1Attack), x,y, applet);
 		x = x + 5;
@@ -55,7 +46,7 @@ public class AMiracleTonic extends Attack {
 		g.setFont(normalFont);
 		g.drawString("GAIN "+ (25 + 25 * mon.getCombat() / 500)+" to random die stat", x + 80, y + 45);
 		//en cost
-		g.drawString("20" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Health), x ,y + 27, applet);

@@ -6,19 +6,21 @@ public class ATakeDown extends Attack {
 	public ATakeDown(Monster mon){
 		super(mon);
 		setHDamage(50);
+		setEnergyCost(20);
 	}
 	void attack( Leader defender) {
 		int currentHP = defender.getActiveMon().getHP();
 		defender.getActiveMon().setHP(currentHP - 50);
-		mon.setEnergy(mon.getEnergy() - 20);
 		toTextBox(mon.nameToString() + " used Take Down for 50 DMG");
 		
 	}
-	boolean isMet(Leader defender) {
-		if (mon.getEnergy() < 20 || defender.getActiveMon().getHP() > 50){
-			return false;
+	public boolean isMet(Leader defender) {
+		if (super.isMet(defender)){
+			if (defender.getActiveMon().getHP() <= 50){
+				return true;
+			}
 		}
-		return true;
+		return false;
 	}
 	void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.TakeDown), x,y, applet);

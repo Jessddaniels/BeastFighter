@@ -5,6 +5,8 @@ public class AFellingChop extends Attack {
 	public AFellingChop (Monster mon){
 		super(mon);
 		setHDamage(25);
+		setEnergyCost(25);
+		setReqDice(new DieSet(0,0,0,0,3,2));
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);
@@ -12,24 +14,15 @@ public class AFellingChop extends Attack {
 		toTextBox(mon.nameToString() + " used Felling Chop for " + calcHDamage()+ " DMG");
 		
 	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character") && ((Character) mon).DDice >= 3 && ((Character) mon).ExDice >= 2){
-			return true;
-		} else if (mon.getEnergy() >= 25){
-			mon.setEnergy(mon.getEnergy() - 25);
-			return true;
-		}
-		return false;
-	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Virgeo1Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
 		g.drawString("Felling Chop" , x + 115 , y + 20);
 		g.setFont(normalFont);
-		g.drawString("25 DMG (" + calcHDamage() +")" , x + 115, y + 45);
+		g.drawString(getHDamage() + " DMG (" + calcHDamage() +")" , x + 115, y + 45);
 		//en cost
-		g.drawString("25" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Damage), x ,y + 27, applet);

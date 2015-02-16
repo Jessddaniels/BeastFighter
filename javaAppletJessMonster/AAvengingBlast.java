@@ -6,6 +6,8 @@ public class AAvengingBlast extends Attack {
 		super(mon);
 		setHDamage(15);
 		setMaxHDamage(10);
+		setEnergyCost(20);
+		setReqDice(new DieSet(0,0,0,0,2,2));
 	}
 	public void attack( Leader defender) {
 		maxHAttack(defender);
@@ -13,17 +15,6 @@ public class AAvengingBlast extends Attack {
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Avenging Blast for " + (calcHDamage() + calcExDamage())+" DMG");
 		
-	}
-	public boolean isMet(Leader defender) {
-		if (mon.type.equals("character")){
-			if (((Character) mon).DDice >= 2 && ((Character) mon).DDice >= 2){
-				return true;
-			} else if (mon.getEnergy() >= 20){
-				mon.setEnergy(mon.getEnergy() - 20);
-				return true;
-			}
-		}
-		return false;
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet) {
 		g.drawImage(applet.getImage(Images.Debira2Attack), x,y, applet);
@@ -35,7 +26,7 @@ public class AAvengingBlast extends Attack {
 		g.drawString("10 Max        DMG (" + calcMaxHDamage() +")" , x + 90, y + 55);
 		g.drawImage(applet.getImage(Images.Health), x + 130 ,y + 40, applet);
 		//en cost
-		g.drawString("20" , x + 10, y + 20);
+		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		y += 2;
