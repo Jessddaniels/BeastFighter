@@ -6,7 +6,7 @@ public class AStunningThrow extends Attack {
 		super(mon);
 		setCDamage(20);
 		setEnergyCost(20);
-		setReqDice(new DieSet(2,0,0,2,0,0));
+		setReqDice(new DieSet(2,2,0,0,0,0));
 	}
 	public void attack( Leader defender) {
 		cAttack(defender);
@@ -29,8 +29,8 @@ public class AStunningThrow extends Attack {
 		y += 2;
 		g.drawImage(applet.getImage(Images.Health), x ,y + 25, applet);
 		g.drawImage(applet.getImage(Images.Health), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Spirit), x + 20, y + 25, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x +20, y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Energy), x + 20, y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy), x +20, y + 45 , applet);
 	}
 
 }

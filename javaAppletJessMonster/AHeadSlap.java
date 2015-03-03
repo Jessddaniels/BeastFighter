@@ -5,9 +5,9 @@ public class AHeadSlap extends Attack {
 	public AHeadSlap (Monster mon){
 		super(mon);
 		setHDamage(10);
-		setExDamage(10);
+		setExDamage(5);
 		setEnergyCost(15);
-		setReqDice(new DieSet(0,0,2,0,0,1));
+		setReqDice(new DieSet(0,0,2,0,0,0));
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);

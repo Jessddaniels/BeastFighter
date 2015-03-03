@@ -23,16 +23,16 @@ public class ABile extends Attack {
 		g.drawString("Bile" , x + 130 , y + 20);
 		g.setFont(normalFont);
 		g.drawString(getHDamage() + " DMG (" + calcHDamage() +")" , x + 110, y + 35);
-		g.drawString("GAIN Spirit / 10" , x + 100, y + 55);
-		g.drawImage(applet.getImage(Images.Damage), x + 175 ,y + 40, applet);
+		g.drawString("GAIN Spirit / 10" , x + 95, y + 55);
+		g.drawImage(applet.getImage(Images.Damage), x + 180 ,y + 40, applet);
 		//en cost
 		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
 		//die cost
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
 		g.drawImage(applet.getImage(Images.Combat), x ,y + 47, applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 27 , applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 20,y + 27 , applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 20,y + 47 , applet);
 	}
 
 }

@@ -4,9 +4,9 @@ import java.awt.Graphics;
 public class APommelStrike extends Attack {
 	public APommelStrike(Monster mon){
 		super(mon);
-		setExDamage(20);
-		setEnergyCost(30);
-		setReqDice(new DieSet(0,0,3,0,0,1));
+		setExDamage(15);
+		setEnergyCost(15);
+		setReqDice(new DieSet(0,0,2,0,0,1));
 	}
 	public void attack( Leader defender) {
 		exAttack(defender);

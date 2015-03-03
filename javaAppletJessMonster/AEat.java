@@ -4,9 +4,9 @@ import java.awt.Graphics;
 public class AEat extends Attack {
 	public AEat(Monster mon){
 		super(mon);
-		setHGain(15);
-		setEnergyCost(10);
-		setReqDice(new DieSet(2,0,0,0,0,0));
+		setHGain(20);
+		setEnergyCost(15);
+		setReqDice(new DieSet(3,0,0,0,0,0));
 	}
 	public void attack( Leader defender) {
 		hGain();
