@@ -4,14 +4,15 @@ import java.awt.Graphics;
 public class ALifeBloodBomb extends Attack {
 	public ALifeBloodBomb(Monster mon){
 		super(mon);
-		setHDamage(20);
-		setEnDamage(40);
-		setEnergyCost(60);
-		setReqDice(new DieSet(2,2,0,0,0,0));
+		setHDamage(50);
+		setEnergyCost(25);
+		setReqDice(new DieSet(0,0,2,3,0,0));
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);
-		enAttack(defender);
+		for (int i = 0; i < mon.lead.monsterList.size(); i++ ){
+			mon.lead.monsterList.get(i).setHP(mon.lead.monsterList.get(i).getHP() - 10);
+		}
 		((Character) mon).RollNum = 3;
 		toTextBox(mon.nameToString() + " used Life Blood Bomb for " + calcHDamage()+ " DMG");
 		
@@ -20,11 +21,10 @@ public class ALifeBloodBomb extends Attack {
 		g.drawImage(applet.getImage(Images.Virgeo3Attack), x,y, applet);
 		x = x + 5;
 		g.setFont(nameFont);
-		g.drawString("Life Blood Bomb" , x + 115 , y + 20);
+		g.drawString("Life Blood Bomb" , x + 100 , y + 25);
 		g.setFont(normalFont);
-		g.drawString(getHDamage() + " DMG (" + calcHDamage() +")" , x + 110, y + 35);
-		g.drawString(getEnDamage() + "         DMG (" + calcEnDamage() +")" , x + 90, y + 55);
-		g.drawImage(applet.getImage(Images.Energy), x + 110 ,y + 40, applet);
+		g.drawString(getHDamage() + " DMG (" + calcHDamage() +")" , x + 110, y + 40);
+		g.drawString("10 DMG to allies (" + adj4Combat(10) +")" , x + 90, y + 55);
 		//en cost
 		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
 		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);

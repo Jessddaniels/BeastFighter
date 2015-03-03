@@ -167,7 +167,7 @@ public abstract class Leader{
 	}
 	public LeaderCard ranCard(Leader l){
     	LeaderCard card;
-    	int rand = (int) (Math.random() * 5);
+    	int rand = (int) (Math.random() * 6);
     	if (rand == 0){
     		card = new LCEnergyDrink(l);
     	} else if (rand == 1) {
@@ -176,6 +176,8 @@ public abstract class Leader{
     		card = new LCBeer(l);
     	} else if (rand == 3) {
     		card = new LCProtein(l);
+    	} else if (rand == 4) {
+    		card = new LCBoar(l);
     	} else {
     		card = new LCHealthPack(l);
     	}

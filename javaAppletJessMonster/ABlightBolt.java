@@ -4,10 +4,10 @@ import java.awt.Graphics;
 public class ABlightBolt extends Attack {
 	public ABlightBolt(Monster mon){
 		super(mon);
-		setHDamage(20);
-		setEnDamage(10);
-		setEnergyCost(20);
-		setReqDice(new DieSet(2,2,0,0,0,0));
+		setHDamage(10);
+		setEnDamage(15);
+		setEnergyCost(15);
+		setReqDice(new DieSet(1,0,0,2,0,0));
 	}
 	public void attack( Leader defender) {
 		hAttack(defender);

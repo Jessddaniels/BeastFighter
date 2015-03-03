@@ -36,7 +36,7 @@ public class CVirgeo extends Character {
 		} else if (getAttackList().size() < 5 && getExperience() >= 100){
 			getAttackList().add(new AStampede(this));
 		} else if (getAttackList().size() < 6 && getExperience() >= 150){
-			getAttackList().add(new ABackToNature(this));
+			getAttackList().add(new ACallToNature(this));
 			toTextBox("Level 2");
 		} else if (getAttackList().size() < 7 && getExperience() >= 200){
 			getAttackList().add(new ABlightBolt(this));

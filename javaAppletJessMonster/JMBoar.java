@@ -10,6 +10,7 @@ public class JMBoar extends Monster {
 		super(applet, l);
 		pic = applet.getImage(super.getURL(),"Pictures/Boar.jpg");
 		setHP(100);
+		setMaxHealth(100);
 		setEnergy(100);
 		setSpirit(100);
 		setCombat(100);

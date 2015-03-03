@@ -5,7 +5,7 @@ public class ABrambleSnare extends Attack {
 	public ABrambleSnare(Monster mon){
 		super(mon);
 		setEnergyCost(15);
-		setReqDice(new DieSet(0,0,0,0,0,2));
+		setReqDice(new DieSet(0,0,0,2,0,2));
 	}
 	public void attack( Leader defender) {
 		StEnsnared snare = new StEnsnared(defender.getActiveMon(), 5);
