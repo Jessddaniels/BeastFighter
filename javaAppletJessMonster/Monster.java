@@ -62,12 +62,12 @@ public abstract class Monster {
 	    	g.drawString(""+getDamage(), x + 195, y + 130);
 	    	g.drawString(""+getExperience(), x + 195, y + 150);
 	    	g.drawImage(pic, x + 20, y + 35, applet);
-	    	g.drawImage(applet.getImage(Images.Health), x + 175, y + 35, applet);
-	    	g.drawImage(applet.getImage(Images.Energy), x + 175, y + 55, applet);
-	    	g.drawImage(applet.getImage(Images.Combat), x + 175, y + 75, applet);
-	    	g.drawImage(applet.getImage(Images.Spirit), x + 175, y + 95, applet);
-	    	g.drawImage(applet.getImage(Images.Damage), x + 175, y + 115, applet);
-	    	g.drawImage(applet.getImage(Images.Experience), x + 175, y + 135, applet);
+	    	g.drawImage(applet.getImage(Images.Health20), x + 175, y + 35, applet);
+	    	g.drawImage(applet.getImage(Images.Energy20), x + 175, y + 55, applet);
+	    	g.drawImage(applet.getImage(Images.Combat20), x + 175, y + 75, applet);
+	    	g.drawImage(applet.getImage(Images.Spirit20), x + 175, y + 95, applet);
+	    	g.drawImage(applet.getImage(Images.Damage20), x + 175, y + 115, applet);
+	    	g.drawImage(applet.getImage(Images.Experience20), x + 175, y + 135, applet);
 	    	g.drawImage(applet.getImage(Images.Runner), x + 210, y + 455, applet);
 	    	g.drawImage(applet.getImage(Images.RestButton), x + 20, y + 455, applet);
 	    	for (int i = 0; i < statusList.size(); i++){

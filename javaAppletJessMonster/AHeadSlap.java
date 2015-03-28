@@ -27,11 +27,11 @@ public class AHeadSlap extends Attack {
 		g.drawImage(applet.getImage(Images.Experience), x + 120 ,y + 40, applet);
 		//en cost
 		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 40 ,y + 3, applet);
 		//die cost
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 47 , applet);
-		g.drawImage(applet.getImage(Images.Experience), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat20), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Combat20), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Experience20), x + 20 ,y + 27, applet);
 	}
 
 }

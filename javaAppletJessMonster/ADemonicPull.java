@@ -26,10 +26,10 @@ public class ADemonicPull extends Attack {
 		g.drawImage(applet.getImage(Images.Energy), x + 125 ,y + 35, applet);
 		//en cost
 		g.drawString("Null" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 40 ,y + 3, applet);
 		// die cost
-		g.drawImage(applet.getImage(Images.Energy), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Spirit20), x ,y + 47, applet);
 	}
 
 }

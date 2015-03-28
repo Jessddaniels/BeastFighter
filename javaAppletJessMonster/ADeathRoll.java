@@ -29,9 +29,9 @@ public class ADeathRoll extends Attack {
 		g.drawString("         own          > opp",x , y + 35);
 		g.setFont(normalFont);
 		g.drawString(getEnergyCost() + "         / 40 DMG (" + calcHDamage()+")" , x + 10, y + 60);
-		g.drawImage(applet.getImage(Images.Energy), x + 55,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Energy), x + 110,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Energy), x + 30,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 55,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 110,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 30,y + 45, applet);
 	}
 
 }

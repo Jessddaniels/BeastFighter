@@ -47,12 +47,12 @@ public class AVileGenesis extends Attack {
 		g.drawString("Random effect" , x + 110, y + 35);
 		//en Cost
 		g.drawString(getEnergyCost()  + "" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 40 ,y + 3, applet);
 		//dice
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x ,y + 47 , applet);
-		g.drawImage(applet.getImage(Images.Spirit), x + 20 ,y + 27, applet);
-		g.drawImage(applet.getImage(Images.Spirit), x + 20 ,y + 47, applet);
+		g.drawImage(applet.getImage(Images.Spirit20), x ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Spirit20), x ,y + 47 , applet);
+		g.drawImage(applet.getImage(Images.Spirit20), x + 20 ,y + 27, applet);
+		g.drawImage(applet.getImage(Images.Spirit20), x + 20 ,y + 47, applet);
 	}
 
 }

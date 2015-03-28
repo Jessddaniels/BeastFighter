@@ -198,21 +198,21 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 					mon.roll(6 - mon.getDiceList().size());
 					mousePressed = true;
 				}// remove dice for reroll 
-			} else if (arg0.getX() > 170 && arg0.getX() < 390 && arg0.getY() > 520 && arg0.getY() < 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
+			} else if (arg0.getX() > 155 && arg0.getX() < 335 && arg0.getY() > 520 && arg0.getY() < 550 && getViewMon() == getActiveMon() && getActiveMon().type.equals("character")){
 				Character mon = (Character) getActiveMon();
 				if (mon.RollNum < 3 && mousePressed == false){
 					mousePressed = true;
-					if (arg0.getX() > 370 && arg0.getX() < 390 && mon.getDiceList().size() > 5) {
+					if (arg0.getX() > 305 && arg0.getX() < 335 && mon.getDiceList().size() > 5) {
 						mon.removeDie(5);
-					} else if (arg0.getX() > 330 && arg0.getX() < 350 && mon.getDiceList().size() > 4) {
+					} else if (arg0.getX() > 275 && arg0.getX() < 305 && mon.getDiceList().size() > 4) {
 						mon.removeDie(4);
-					} else if (arg0.getX() > 290 && arg0.getX() < 310 && mon.getDiceList().size() > 3) {
+					} else if (arg0.getX() > 245 && arg0.getX() < 275 && mon.getDiceList().size() > 3) {
 						mon.removeDie(3);
-					} else if (arg0.getX() > 250 && arg0.getX() < 270 && mon.getDiceList().size() > 2) {
+					} else if (arg0.getX() > 215 && arg0.getX() < 245 && mon.getDiceList().size() > 2) {
 						mon.removeDie(2);
-					} else if (arg0.getX() > 210 && arg0.getX() < 230 && mon.getDiceList().size() > 1) {
+					} else if (arg0.getX() > 185 && arg0.getX() < 215 && mon.getDiceList().size() > 1) {
 						mon.removeDie(1);
-					} else if (arg0.getX() > 170 && arg0.getX() < 190 && mon.getDiceList().size() > 0) {
+					} else if (arg0.getX() > 155 && arg0.getX() < 185 && mon.getDiceList().size() > 0) {
 						mon.removeDie(0);
 					} else {
 						mousePressed = false;

@@ -26,10 +26,10 @@ public class ABash extends Attack {
 		g.drawString(getExDamage() + "          DMG (" + calcExDamage() +")" , x + 130, y + 55);
 		g.drawImage(applet.getImage(Images.Combat), x + 150 ,y + 40, applet);
 		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 30 ,y + 5, applet);
-		g.drawImage(applet.getImage(Images.Combat), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Combat), x + 20 ,y + 45, applet);
-		g.drawImage(applet.getImage(Images.Experience), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 30 ,y + 5, applet);
+		g.drawImage(applet.getImage(Images.Combat20), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Combat20), x + 20 ,y + 45, applet);
+		g.drawImage(applet.getImage(Images.Experience20), x ,y + 45 , applet);
 	}
 
 }

@@ -24,13 +24,13 @@ public class AStunningThrow extends Attack {
 		g.drawImage(applet.getImage(Images.Combat), x + 110 ,y + 30, applet);
 		//en cost
 		g.drawString(getEnergyCost() + "" , x + 10, y + 20);
-		g.drawImage(applet.getImage(Images.Energy), x + 40 ,y + 3, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 40 ,y + 3, applet);
 		//die cost
 		y += 2;
-		g.drawImage(applet.getImage(Images.Health), x ,y + 25, applet);
-		g.drawImage(applet.getImage(Images.Health), x ,y + 45 , applet);
-		g.drawImage(applet.getImage(Images.Energy), x + 20, y + 25, applet);
-		g.drawImage(applet.getImage(Images.Energy), x +20, y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Health20), x ,y + 25, applet);
+		g.drawImage(applet.getImage(Images.Health20), x ,y + 45 , applet);
+		g.drawImage(applet.getImage(Images.Energy20), x + 20, y + 25, applet);
+		g.drawImage(applet.getImage(Images.Energy20), x +20, y + 45 , applet);
 	}
 
 }

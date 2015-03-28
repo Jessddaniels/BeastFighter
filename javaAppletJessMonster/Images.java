@@ -12,12 +12,24 @@ public class Images {
 	public static final String Debira = "Pictures/WomanWarrior.jpg";
 	public static final String Adipedys = "Pictures/King.jpg";
 	//stats
-	public static final String Combat = "Pictures/Combat.jpg";
-	public static final String Energy = "Pictures/Energy.jpg";
-	public static final String Experience = "Pictures/Experience.jpg";
-	public static final String Health = "Pictures/Health.jpg";
-	public static final String Damage = "Pictures/Damage.jpg";
-	public static final String Spirit = "Pictures/Spirit.jpg";
+	public static final String Combat = "Pictures/Combat14.14.png";
+	public static final String Combat20 = "Pictures/Combat20.20.png";
+	public static final String Combat30 = "Pictures/Combat30.30.png";
+	public static final String Energy = "Pictures/Energy14.14.png";
+	public static final String Energy20 = "Pictures/Energy20.20.png";
+	public static final String Energy30 = "Pictures/Energy30.30.png";
+	public static final String Experience = "Pictures/Experience14.14.png";
+	public static final String Experience20 = "Pictures/Experience20.20.png";
+	public static final String Experience30 = "Pictures/Experience30.30.png";
+	public static final String Health = "Pictures/Health14.14.png";
+	public static final String Health20 = "Pictures/Health20.20.png";
+	public static final String Health30 = "Pictures/Health30.30.png";
+	public static final String Damage = "Pictures/Damage14.14.png";
+	public static final String Damage20 = "Pictures/Damage20.20.png";
+	public static final String Damage30 = "Pictures/Damage30.30.png";
+	public static final String Spirit = "Pictures/Spirit14.14.png";
+	public static final String Spirit20 = "Pictures/Spirit20.20.png";
+	public static final String Spirit30 = "Pictures/Spirit30.30.png";
 	//attacks
 	public static final String Adipedys1Attack = "Pictures/Adipedys1Attack.jpg";
 	public static final String Adipedys2Attack = "Pictures/Adipedys2Attack.jpg";
