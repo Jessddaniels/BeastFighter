@@ -25,7 +25,7 @@ public class Player extends Leader implements KeyListener, MouseMotionListener, 
 		//applet.addMouseListener(this);
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(getPlayer(), 150, 0, applet);
+		//g.drawImage(getPlayer(), 150, 0, applet);
 		for (int i = 0; i < monsterList.size(); i++){
 			if (getViewMon() == monsterList.get(i) ){
 				monsterList.get(i).paint(g,150,100, applet);

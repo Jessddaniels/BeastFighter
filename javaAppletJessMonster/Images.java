@@ -9,7 +9,7 @@ public class Images {
 	//characters
 	public static final String Calumbra = "Pictures/Calumbra.jpg";
 	public static final String Virgeo = "Pictures/Virgeo.jpg";
-	public static final String Debira = "Pictures/WomanWarrior.jpg";
+	public static final String Debira = "Pictures/CharDebira.jpg";
 	public static final String Adipedys = "Pictures/King.jpg";
 	//stats
 	public static final String Combat = "Pictures/Combat14.14.png";
@@ -60,6 +60,8 @@ public class Images {
 	public static final String Virgeo1Attack = "Pictures/Virgeo1Attack.jpg";
 	public static final String Virgeo2Attack = "Pictures/Virgeo2Attack.jpg";
 	public static final String Virgeo3Attack = "Pictures/Virgeo3Attack.jpg";
+	//cards
+	public static final String BeerCard = "Pictures/CardBeer.jpg";
 	//misc
 	public static final String TextBox = "Pictures/TextBox.jpg";
 	public static final String YouWin = "Pictures/YouWin.jpg";

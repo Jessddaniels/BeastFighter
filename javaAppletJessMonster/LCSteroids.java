@@ -23,9 +23,9 @@ public class LCSteroids extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/Steroids.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20    -20   -15" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Combat.jpg"), x,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Health.jpg"), x + 60,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Combat), x,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Health), x + 60,y + 30, applet);
 	}
 	String nameToString() {
 		return "Steroids";

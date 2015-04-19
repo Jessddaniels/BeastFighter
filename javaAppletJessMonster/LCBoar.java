@@ -25,7 +25,7 @@ public class LCBoar extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/HealthPack.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" Boar     -40" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 30,y + 30, applet);
 	}
 	String nameToString() {
 		return "Boar";

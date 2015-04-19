@@ -22,8 +22,8 @@ public class LCEnergyDrink extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/EnergyDrink.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20     -20" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Energy.jpg"), x,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Energy), x,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 30,y + 30, applet);
 	}
 	String nameToString() {
 		return "Energy Drink";

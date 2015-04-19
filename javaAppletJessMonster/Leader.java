@@ -37,7 +37,7 @@ public abstract class Leader{
 		match = applet.match;
 	}
 	public void paint(Graphics g, JessMonster applet){
-		g.drawImage(player, applet.getWidth() - 250, 0, applet);
+		//g.drawImage(player, applet.getWidth() - 250, 0, applet);
 		for (int i = 0; i < monsterList.size(); i++){
 			if (monsterList.get(i) != null && viewMon == monsterList.get(i) ){
 				monsterList.get(i).paint(g,applet.getWidth() - 400,100, applet);

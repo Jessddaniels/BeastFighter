@@ -22,8 +22,8 @@ public class LCHealthPack extends LeaderCard {
 		g.drawImage(applet.getImage(player.getURL(),"Pictures/HealthPack.jpg"), x,y, applet);
 		g.drawString(nameToString() , x, y + 15);
 		g.drawString(" 20     -20" , x, y + 25);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Health.jpg"), x,y + 30, applet);
-		g.drawImage(applet.getImage(player.getURL(),"Pictures/Spirit.jpg"), x + 30,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Health), x,y + 30, applet);
+		g.drawImage(applet.getImage(Images.Spirit), x + 30,y + 30, applet);
 	}
 	String nameToString() {
 		return "Health Pack";

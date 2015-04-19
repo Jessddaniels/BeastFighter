@@ -29,7 +29,11 @@ public abstract class Character extends Monster {
 	}
 	public void paint(Graphics g, int x, int y, JessMonster applet, Image pic){
 		super.paint(g, x, y, applet, pic);
-		g.drawImage(applet.getImage(getURL(),"Pictures/Die.jpg"), x + 120,y + 455, applet);
+		if (RollNum < 4) {
+			g.drawImage(applet.getImage(getURL(),"Pictures/Die.png"), x + 120,y + 455, applet);
+		} else {
+			g.drawImage(applet.getImage(getURL(),"Pictures/DieUsed.png"), x + 120,y + 455, applet);
+		}
 		for (int i = 0; i < getDiceList().size(); i++){
 			if (getDiceList().get(i).equals("Health")){
 				g.drawImage(applet.getImage(Images.Health30), x +5+ i * 30,y + 420, applet);
