@@ -1,4 +1,4 @@
 BeastFighter
 ============
 
-video game where animals fight
+video game where animals fight.
